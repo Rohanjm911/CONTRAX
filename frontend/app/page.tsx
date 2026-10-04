@@ -37,6 +37,15 @@ export default function Home() {
   useEffect(() => {
     setIsAudioMuted(sounds.getMuted());
     const unsubscribe = sounds.subscribe((muted) => setIsAudioMuted(muted));
+    
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const tabParam = params.get("tab");
+      if (tabParam) {
+        setCurrentTab(tabParam);
+      }
+    }
+
     return () => unsubscribe();
   }, []);
 
@@ -104,6 +113,15 @@ export default function Home() {
         const existingFindings = await fetchAllFindings();
         if (existingFindings && existingFindings.length > 0) {
           setFindings(existingFindings);
+          if (typeof window !== "undefined") {
+            const params = new URLSearchParams(window.location.search);
+            if (params.get("finding")) {
+              setSelectedFinding(existingFindings[0]);
+            }
+            if (params.get("guide")) {
+              setIsGuideOpen(true);
+            }
+          }
         }
       } catch (err) {
         console.error("Workspace init error:", err);
