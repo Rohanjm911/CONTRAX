@@ -1,24 +1,30 @@
 <div align="center">
 
-# CONTRAX
+<img src="assets/contrax_header_banner.svg" alt="CONTRAX Header Banner" width="100%" />
 
-### *Smart Contract Automated Vulnerability Scanner & Audit Visualizer*
+<br/><br/>
 
-**"See the flaw before they do."**
-
-[![Python Version](https://img.shields.io/badge/Python-3.11%2B-blue?style=flat-square&logo=python)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.110%2B-009688?style=flat-square&logo=fastapi)](https://fastapi.tiangolo.com/)
-[![Next.js](https://img.shields.io/badge/Next.js-14.2%2B-black?style=flat-square&logo=next.js)](https://nextjs.org/)
-[![Theme: Deep Navy & Ivory](https://img.shields.io/badge/Theme-Deep%20Navy%20%26%20Ivory-080D1A?style=flat-square)](https://github.com/)
-[![Accents: Crimson & Emerald](https://img.shields.io/badge/Accents-Crimson%20%26%20Emerald-E11D48?style=flat-square)](https://github.com/)
-[![Zero Gradients](https://img.shields.io/badge/Gradients-0%25%20Solid%20Only-10B981?style=flat-square)](https://github.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
-[![Security Standard](https://img.shields.io/badge/Security-SWC%20Registry-red?style=flat-square)](https://swcregistry.io/)
+[![Python Version](https://img.shields.io/badge/Python-3.11%2B-00E5FF?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.110%2B-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Next.js](https://img.shields.io/badge/Next.js-14.2%2B-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![Theme: Tactical Radar](https://img.shields.io/badge/Theme-Tactical%20Radar-0B0E14?style=for-the-badge&color=00E5FF)](https://github.com/Rohanjm911/CONTRAX)
+[![Accents: Cyan & Amber](https://img.shields.io/badge/Accents-Cyan%20%26%20Amber-F59E0B?style=for-the-badge)](https://github.com/Rohanjm911/CONTRAX)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![Security Standard](https://img.shields.io/badge/Security-SWC%20Registry-EF4444?style=for-the-badge)](https://swcregistry.io/)
 
 ---
 
-CONTRAX is an enterprise-grade smart contract cybersecurity analysis workbench. Engineered with an Apple-inspired minimalist **Deep Navy Blue, Ivory, Crimson Red, and Emerald Green** theme (strictly **zero gradients**), CONTRAX unifies static AST semantic parsing, Slither static detector passes, Mythril symbolic execution paths, EVM gas profiling, and Web3 on-chain inspection into an intuitive, auditor-grade workflow.
+CONTRAX is an enterprise-grade smart contract cybersecurity analysis workbench. Built on a high-contrast **Tactical Cyan & Amber Radar** design system, CONTRAX unifies static AST semantic parsing, Slither static detector passes, Mythril symbolic execution paths, EVM gas profiling, and Web3 on-chain inspection into an intuitive, auditor-grade workflow.
 
+</div>
+
+---
+
+## 🖥️ Tactical Security Console Preview
+
+<div align="center">
+  <img src="assets/contrax_dashboard_preview.jpg" alt="CONTRAX Security Console Dashboard" width="100%" style="border-radius: 12px; border: 1px solid #1F2B3E;" />
+  <p align="center"><i>Real-time Tactical Radar HUD, AST Syntax Hierarchy Graph, Embedded Monaco Code Inspector, and EVM Gas Profiler.</i></p>
 </div>
 
 ---
@@ -28,41 +34,37 @@ CONTRAX is an enterprise-grade smart contract cybersecurity analysis workbench. 
 To start the entire CONTRAX platform with a single click:
 
 ```cmd
-:: Double-click in Explorer or run from terminal:
 start_contrax.bat
 ```
 
-- ✅ Automatically verifies Python 3.10+ and Node.js / npm
-- ✅ Launches the FastAPI backend daemon on `http://127.0.0.1:8000`
-- ✅ Launches the Next.js frontend dev server on `http://localhost:3000`
-- ✅ Opens the CONTRAX Security Console automatically in your default browser
+- Automatically verifies Python 3.10+ and Node.js / npm
+- Launches the FastAPI backend daemon on `http://127.0.0.1:8000`
+- Launches the Next.js frontend dev server on `http://localhost:3000`
+- Opens the CONTRAX Security Console automatically in your default browser
 
-To stop all background services cleanly, run [`stop_contrax.bat`](file:///d:/projects%20and%20certificates/projects/block/Contrax/stop_contrax.bat).
-
----
-
-## 📑 Table of Contents
-
-- [Architectural Overview](#-architectural-overview)
-- [Key Features](#-key-features)
-- [Design Aesthetics: Midnight Navy & Frost White](#-design-aesthetics-midnight-navy--frost-white)
-- [Project Directory Structure](#-project-directory-structure)
-- [Tech Stack](#-tech-stack)
-- [Vulnerability Detection Coverage](#-vulnerability-detection-coverage)
-- [Getting Started](#-getting-started)
-- [API Reference](#-api-reference)
-- [Sandbox & File Upload Security](#-sandbox--file-upload-security)
-- [Auditor Disclaimer](#-auditor-disclaimer)
+To stop all background services cleanly, run [stop_contrax.bat](file:///d:/projects%20and%20certificates/projects/block/Contrax/stop_contrax.bat).
 
 ---
 
-## 🏛️ Architectural Overview
+## 🎯 Real-Time Threat Radar & Vulnerability Telemetry
+
+<div align="center">
+  <img src="assets/threat_radar_animated.svg" alt="CONTRAX Real-time Threat Radar" width="100%" />
+</div>
+
+---
+
+## 🏛️ Multi-Engine Pipeline Architecture
+
+<div align="center">
+  <img src="assets/scan_pipeline_animated.svg" alt="CONTRAX Multi-Engine Pipeline" width="100%" />
+</div>
 
 CONTRAX orchestrates multiple static and symbolic engines asynchronously without blocking user requests:
 
 ```mermaid
 flowchart TD
-    subgraph Client ["Client Interface (Next.js / Monaco / Midnight Navy)"]
+    subgraph Client ["Client Interface (Next.js / Monaco / Tactical Radar)"]
         UI["Executive Dashboard & Threat Posture (0-100)"]
         Monaco["Monaco Editor (Source Jump & Marker Annotations)"]
         ASTVis["Semantic AST Tree & Property Inspector"]
@@ -108,33 +110,29 @@ flowchart TD
 | **Interactive AST Explorer** | Visualizes contract hierarchies, state variables, modifiers, events, and functions with a dedicated node inspector. |
 | **EVM Gas Profiler** | Detects expensive operations: `SSTORE` storage writes, external cross-contract calls, and unbounded loop hazards. Statically marked as `ESTIMATED`. |
 | **SVG Visual Risk Distribution** | Custom SVG Severity Donut Chart with active segment hover and SWC Taxonomy horizontal distribution bars. |
-| **Auditor-Ready Reports** | One-click generation of minimalist dual-tone **PDF Audit Reports** and machine-readable **JSON reports** suitable for CI/CD pipelines. |
+| **Auditor-Ready Reports** | One-click generation of dual-tone **PDF Audit Reports** and machine-readable **JSON reports** suitable for CI/CD pipelines. |
 
 ---
 
-## 🎨 Design Aesthetics: Deep Navy Blue, Ivory, Crimson Red & Emerald Green
+## 🎨 Design System: Tactical Cyan & Amber Radar
 
-CONTRAX enforces strict **solid colors with zero gradients** for maximum clarity and zero visual fatigue:
+CONTRAX utilizes a military aerospace radar design language for zero visual fatigue and instant telemetry discernment:
 
-- **Apple Pro Human Interface**: macOS window title bar, squircle radiuses (`rounded-xl`, `rounded-2xl`), SF Pro typography, and cold steel hairline borders.
-- **Deep Navy Blue Canvas & Surfaces**:
-  - **App Canvas:** `#080D1A` (Deepest Navy Black)
-  - **Card Panels:** `#111C35` (Navy Surface Card)
-  - **Elevated States:** `#172545` (Navy Elevated Slate)
-  - **Active Selection:** `#1E315B` (Navy Active Highlight)
-  - **Hairline Borders:** `#233866` (Hairline Navy Border)
-- **Ivory Typography**:
-  - **Primary Headings & Key Metrics:** `#FAF7EE` (Warm High-Contrast Ivory)
-  - **Secondary Labels & Descriptions:** `#C8C5B9` (Soft Muted Ivory) / `#8E9BB5` (Subtle Slate Ivory)
-- **Crimson Red & Emerald Green Semantic Accents**:
-  - `CRITICAL` & Threat Warnings &rarr; Solid Crimson Red (`#E11D48`, Secondary `#F43F5E`)
-  - `HIGH` &rarr; Solid Coral Crimson (`#F43F5E`)
-  - `MEDIUM` &rarr; Solid Amber (`#F59E0B`)
-  - `LOW` &rarr; Solid Sky (`#38BDF8`)
-  - `INFORMATIONAL` &rarr; Solid Emerald Green (`#10B981`)
-  - `SECURE / SAFE / BRAND` &rarr; Solid Emerald Green (`#10B981`)
-- **Strict Zero-Gradient Rule**: Absolute solid colors across cards, badges, text, and buttons (`background-image: none !important;`).
-- **Apple Frosted Glassmorphism Architecture**: Translucent Deep Navy panels with optical backdrop blurring (`backdrop-filter: blur(16px)`), specular hairline borders (`rgba(35, 56, 102, 0.75)`), and top-edge glass reflections (`inset 0 1px 0 0 rgba(250, 247, 238, 0.08)`).
+- **Carbon Canvas & Gunmetal Surfaces**:
+  - **Void Canvas:** `#0B0E14` (Tactical Carbon)
+  - **Surface Panels:** `#111722` (Gunmetal Base)
+  - **Elevated Cards:** `#17202E` (Gunmetal Raised)
+  - **Inset Workspaces:** `#0B0F17` (Terminal Recessed)
+  - **Hairline Steel Dividers:** `#1F2B3E` / `#293B54`
+- **Telemetry & Semantic Accents**:
+  - `PRIMARY TELEMETRY / SAFE / RADAR` &rarr; Cyber Cyan (`#00E5FF`, Glow: `rgba(0, 229, 255, 0.25)`)
+  - `CAUTION / WARNING / HIGH` &rarr; Tactical Amber (`#F59E0B`, Amber Orange: `#F97316`)
+  - `THREAT / CRITICAL / HAZARD` &rarr; Ruby Crimson (`#EF4444`, Alert Glow)
+  - `LOW / NOTICE` &rarr; Sky Blue (`#38BDF8`)
+- **Typography Matrix**:
+  - **Primary Metric Readouts:** `#F3F6FA` (High-Contrast Radar White)
+  - **Secondary Telemetry Labels:** `#94A3B8` (Tactical Slate)
+  - **Muted Coordinates & Offsets:** `#64748B` (Steel Dim)
 
 ---
 
@@ -142,6 +140,12 @@ CONTRAX enforces strict **solid colors with zero gradients** for maximum clarity
 
 ```
 contrax/
+├── assets/                            # Graphical assets, banners, and vector animations
+│   ├── contrax_header_banner.svg      # Animated radar header banner
+│   ├── contrax_dashboard_preview.jpg  # Full dashboard interface showcase
+│   ├── scan_pipeline_animated.svg     # Animated multi-stage execution pipeline
+│   └── threat_radar_animated.svg      # Animated 360-degree radar HUD visualizer
+│
 ├── start_contrax.bat                  # One-click Windows launch script
 ├── stop_contrax.bat                   # One-click Windows shutdown script
 ├── README.md                          # Main project presentation & documentation
@@ -183,11 +187,11 @@ contrax/
 │   │   ├── contract-graph/            # Interactive SVG node-link graph
 │   │   ├── charts/                    # Donut chart, Category bars, Gas profiler
 │   │   └── ui/                        # Compliance & PDF/JSON reports
-│   ├── styles/                        # Midnight Navy Tailwind CSS & globals
+│   ├── styles/                        # Tactical Radar Tailwind CSS & globals
 │   ├── package.json                   # Frontend npm dependencies
 │   └── Dockerfile
 │
-└── contracts/samples/                 # Intentionally-vulnerable testing fixtures
+└── contracts/samples/                 # Testing fixtures
     ├── ReentrancyExample.sol          # Checks-Effects-Interactions violation
     ├── AccessControlExample.sol       # tx.origin authentication & missing access controls
     ├── UncheckedCallExample.sol       # Unchecked low-level external call return value
@@ -202,13 +206,13 @@ contrax/
 
 | Domain | Technologies |
 | :--- | :--- |
-| **Backend** | Python 3.10+, FastAPI, SQLAlchemy (Async), Alembic, Pydantic v2, PBKDF2 |
+| **Backend** | Python 3.11+, FastAPI, SQLAlchemy (Async), Alembic, Pydantic v2, PBKDF2 |
 | **Frontend** | Next.js 14, React 18, TypeScript, Tailwind CSS, Monaco Editor, Lucide Icons |
 | **Analyzers** | Custom Solidity AST Visitor Engine, Slither Analyzer, Mythril Symbolic Execution |
 | **Visualizations** | Native Responsive SVG Donut Chart, Horizontal Bar Chart, Node-Link Relationship Graph |
 | **Infrastructure** | Async SQLite (Zero-Config Default), PostgreSQL, Redis, Docker, Docker Compose |
 | **Web3 & RPC** | `web3.py`, Etherscan API, Polygonscan, Arbiscan, Ankr RPCs |
-| **Reporting** | ReportLab (Custom Dual-Tone Vector PDF Engine), Jinja2 |
+| **Reporting** | ReportLab (Dual-Tone Vector PDF Engine), Jinja2 |
 
 </div>
 

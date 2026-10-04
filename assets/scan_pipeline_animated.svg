@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 210" width="100%" height="210">
+  <defs>
+    <linearGradient id="pipeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090D13" />
+      <stop offset="100%" stop-color="#111722" />
+    </linearGradient>
+    <linearGradient id="cyanLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00E5FF" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+    <filter id="glowFilt" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes conduitFlow {
+      0% { stroke-dashoffset: 140; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes nodePulse {
+      0%, 100% { stroke-opacity: 0.4; }
+      50% { stroke-opacity: 1; stroke-width: 2px; }
+    }
+    @keyframes ledBlink {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+    .flow-line {
+      stroke-dasharray: 8 12;
+      animation: conduitFlow 1.8s linear infinite;
+    }
+    .flow-line-fast {
+      stroke-dasharray: 6 10;
+      animation: conduitFlow 1.2s linear infinite;
+    }
+    .pulse-border {
+      animation: nodePulse 2.5s ease-in-out infinite;
+    }
+    .led-1 { animation: ledBlink 1.4s infinite; }
+    .led-2 { animation: ledBlink 1.8s infinite 0.3s; }
+    .led-3 { animation: ledBlink 1.2s infinite 0.6s; }
+    .led-4 { animation: ledBlink 2s infinite 0.9s; }
+    .led-5 { animation: ledBlink 1.5s infinite 1.2s; }
+  </style>
+
+  <rect width="960" height="210" rx="14" fill="url(#pipeBg)" stroke="#1F2B3E" stroke-width="1.2" />
+
+  <path d="M 160 105 L 210 105" stroke="#1F2B3E" stroke-width="4" stroke-linecap="round" />
+  <path d="M 160 105 L 210 105" stroke="#00E5FF" stroke-width="2" class="flow-line" />
+
+  <path d="M 350 105 L 400 105" stroke="#1F2B3E" stroke-width="4" stroke-linecap="round" />
+  <path d="M 350 105 L 400 105" stroke="#00E5FF" stroke-width="2" class="flow-line" />
+
+  <path d="M 540 105 L 590 105" stroke="#1F2B3E" stroke-width="4" stroke-linecap="round" />
+  <path d="M 540 105 L 590 105" stroke="#F59E0B" stroke-width="2" class="flow-line" />
+
+  <path d="M 730 105 L 780 105" stroke="#1F2B3E" stroke-width="4" stroke-linecap="round" />
+  <path d="M 730 105 L 780 105" stroke="#00E5FF" stroke-width="2" class="flow-line" />
+
+  <g transform="translate(20, 40)">
+    <rect width="140" height="130" rx="10" fill="#0B0F17" stroke="#1F2B3E" stroke-width="1.2" class="pulse-border" />
+    <circle cx="20" cy="22" r="4" fill="#38BDF8" class="led-1" filter="url(#glowFilt)" />
+    <text x="32" y="26" fill="#94A3B8" font-family="monospace" font-size="10" font-weight="700">STAGE 01</text>
+    <text x="18" y="55" fill="#F3F6FA" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">Contract Ingest</text>
+    <text x="18" y="75" fill="#64748B" font-family="monospace" font-size="10.5">.sol / ZIP / On-Chain</text>
+    <rect x="18" y="90" width="104" height="22" rx="4" fill="#111722" stroke="#1F2B3E" stroke-width="0.8" />
+    <text x="26" y="105" fill="#38BDF8" font-family="monospace" font-size="9.5" font-weight="600">ZIP-Slip Guarded</text>
+  </g>
+
+  <g transform="translate(210, 40)">
+    <rect width="140" height="130" rx="10" fill="#0B0F17" stroke="#0D4B5C" stroke-width="1.2" class="pulse-border" />
+    <circle cx="20" cy="22" r="4" fill="#00E5FF" class="led-2" filter="url(#glowFilt)" />
+    <text x="32" y="26" fill="#00E5FF" font-family="monospace" font-size="10" font-weight="700">STAGE 02</text>
+    <text x="18" y="55" fill="#F3F6FA" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">AST Syntax Tree</text>
+    <text x="18" y="75" fill="#64748B" font-family="monospace" font-size="10.5">Semantic Node Vis</text>
+    <rect x="18" y="90" width="104" height="22" rx="4" fill="#07242E" stroke="#0D4B5C" stroke-width="0.8" />
+    <text x="26" y="105" fill="#00E5FF" font-family="monospace" font-size="9.5" font-weight="600">Cross-Refs Mapped</text>
+  </g>
+
+  <g transform="translate(400, 40)">
+    <rect width="140" height="130" rx="10" fill="#0B0F17" stroke="#1F2B3E" stroke-width="1.2" class="pulse-border" />
+    <circle cx="20" cy="22" r="4" fill="#F59E0B" class="led-3" filter="url(#glowFilt)" />
+    <text x="32" y="26" fill="#F59E0B" font-family="monospace" font-size="10" font-weight="700">STAGE 03</text>
+    <text x="18" y="55" fill="#F3F6FA" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">Dual Engines</text>
+    <text x="18" y="75" fill="#64748B" font-family="monospace" font-size="10.5">Slither + Mythril</text>
+    <rect x="18" y="90" width="104" height="22" rx="4" fill="#1C1808" stroke="#5A3F0E" stroke-width="0.8" />
+    <text x="26" y="105" fill="#F59E0B" font-family="monospace" font-size="9.5" font-weight="600">SWC-107 / 115 / 104</text>
+  </g>
+
+  <g transform="translate(590, 40)">
+    <rect width="140" height="130" rx="10" fill="#0B0F17" stroke="#1F2B3E" stroke-width="1.2" class="pulse-border" />
+    <circle cx="20" cy="22" r="4" fill="#00E5FF" class="led-4" filter="url(#glowFilt)" />
+    <text x="32" y="26" fill="#00E5FF" font-family="monospace" font-size="10" font-weight="700">STAGE 04</text>
+    <text x="18" y="55" fill="#F3F6FA" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">Gas Profiler</text>
+    <text x="18" y="75" fill="#64748B" font-family="monospace" font-size="10.5">SSTORE &amp; Loops</text>
+    <rect x="18" y="90" width="104" height="22" rx="4" fill="#07242E" stroke="#0D4B5C" stroke-width="0.8" />
+    <text x="26" y="105" fill="#00E5FF" font-family="monospace" font-size="9.5" font-weight="600">Hazard Static Warn</text>
+  </g>
+
+  <g transform="translate(780, 40)">
+    <rect width="160" height="130" rx="10" fill="#0B0F17" stroke="#0D4B5C" stroke-width="1.5" class="pulse-border" />
+    <circle cx="20" cy="22" r="4" fill="#00E5FF" class="led-5" filter="url(#glowFilt)" />
+    <text x="32" y="26" fill="#00E5FF" font-family="monospace" font-size="10" font-weight="700">OUTPUT</text>
+    <text x="18" y="55" fill="#F3F6FA" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">Threat Posture</text>
+    <text x="18" y="75" fill="#00E5FF" font-family="monospace" font-size="15" font-weight="800">92 / 100 DEFENDED</text>
+    <rect x="18" y="90" width="124" height="22" rx="4" fill="#111722" stroke="#1F2B3E" stroke-width="0.8" />
+    <text x="24" y="105" fill="#F3F6FA" font-family="monospace" font-size="9.5" font-weight="600">PDF &amp; JSON Report</text>
+  </g>
+</svg>
