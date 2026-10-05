@@ -2,6 +2,10 @@
 .env.local
 *.env
 
+# Scratch/test screenshots
+scratch_*.png
+test_*.png
+
 __pycache__/
 *.py[cod]
 *$py.class
