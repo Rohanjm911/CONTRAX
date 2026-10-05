@@ -1,7 +1,7 @@
 <div align="center">
 
 <a href="#-tactical-security-console--live-interface-showcase">
-  <img src="assets/contrax_logo.png" alt="CONTRAX Cybersecurity Analysis Workbench Logo" width="380" />
+  <img src="assets/contrax_logo.png" alt="CONTRAX Emblem Logo" width="200" />
 </a>
 
 <br/><br/>
