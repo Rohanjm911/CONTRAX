@@ -4,6 +4,15 @@ import type { Metadata, Viewport } from "next";
 export const metadata: Metadata = {
   title: "CONTRAX | Smart Contract Security Scanner",
   description: "Automated vulnerability scanner and audit visualizer for Solidity smart contracts. See the flaw before they do.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "192x192" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
 };
 
 export const viewport: Viewport = {

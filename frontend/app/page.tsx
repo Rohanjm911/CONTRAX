@@ -237,7 +237,10 @@ export default function Home() {
               <Menu className="w-5 h-5 text-[#00E5FF]" />
             </button>
 
-            <span className="font-semibold text-[#F3F6FA] tracking-tight shrink-0 font-mono">CONTRAX</span>
+            <div className="flex items-center space-x-1.5 shrink-0">
+              <img src="/logo_mark.png" alt="CONTRAX" className="w-5 h-5 object-contain drop-shadow-[0_0_6px_rgba(255,103,31,0.4)]" />
+              <span className="font-bold tracking-tight font-mono bg-gradient-to-r from-[#FF671F] via-[#FFFFFF] to-[#22C55E] bg-clip-text text-transparent">CONTRAX</span>
+            </div>
             <span className="text-[#1F2B3E] hidden sm:inline">/</span>
             <span className="text-[#94A3B8] hidden sm:inline truncate max-w-[140px] md:max-w-none text-xs">Security Console</span>
             <span className="text-[#1F2B3E]">/</span>

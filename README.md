@@ -1,5 +1,11 @@
 <div align="center">
 
+<a href="#-tactical-security-console--live-interface-showcase">
+  <img src="assets/contrax_logo.png" alt="CONTRAX Cybersecurity Analysis Workbench Logo" width="380" />
+</a>
+
+<br/><br/>
+
 <img src="assets/contrax_header_banner.svg" alt="CONTRAX Header Banner" width="100%" />
 
 <br/><br/>
@@ -8,13 +14,15 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110%2B-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Next.js](https://img.shields.io/badge/Next.js-14.2%2B-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![Theme: Tactical Radar](https://img.shields.io/badge/Theme-Tactical%20Radar-0B0E14?style=for-the-badge&color=00E5FF)](https://github.com/Rohanjm911/CONTRAX)
-[![Accents: Cyan & Amber](https://img.shields.io/badge/Accents-Cyan%20%26%20Amber-F59E0B?style=for-the-badge)](https://github.com/Rohanjm911/CONTRAX)
+[![Brand: Tricolor Saffron & Emerald](https://img.shields.io/badge/Brand-Saffron%20%26%20Emerald-FF671F?style=for-the-badge)](https://github.com/Rohanjm911/CONTRAX)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![Security Standard](https://img.shields.io/badge/Security-SWC%20Registry-EF4444?style=for-the-badge)](https://swcregistry.io/)
 
 ---
 
-CONTRAX is an enterprise-grade smart contract cybersecurity analysis workbench. Built on a high-contrast **Tactical Cyan & Amber Radar** design system, CONTRAX unifies static AST semantic parsing, Slither static detector passes, Mythril symbolic execution paths, EVM gas profiling, and Web3 on-chain inspection into an intuitive, auditor-grade workflow.
+**CONTRAX** is an enterprise-grade smart contract cybersecurity analysis workbench. Built on a high-contrast **Tactical Carbon & Telemetry** design system, CONTRAX unifies static AST semantic parsing, Slither static detector passes, Mythril symbolic execution paths, EVM gas profiling, and Web3 on-chain inspection into an intuitive, auditor-grade workflow.
+
+> **"See the flaw before they do."**
 
 </div>
 
@@ -215,7 +223,10 @@ CONTRAX utilizes a military aerospace radar design language for zero visual fati
 
 ```
 contrax/
-├── assets/                            # Graphical assets, banners, and live UI screenshot suite
+├── assets/                            # Brand assets, logos, vector banners, and UI suite
+│   ├── contrax_logo.png               # Official CONTRAX brand logo (Wordmark & Subtitle)
+│   ├── contrax_logo_mark.png          # High-resolution circular/wing emblem mark
+│   ├── contrax_logo_1024.png          # Master 1024x1024 high-DPI brand asset
 │   ├── contrax_header_banner.svg      # Animated radar header banner
 │   ├── contrax_dashboard_real.png     # Full executive operations console & threat HUD
 │   ├── contrax_scanner_real.png       # Multi-engine scanner pipeline HUD & dropzone
@@ -321,7 +332,7 @@ CONTRAX correlates findings from multiple static and symbolic passes to detect i
 ## 🚀 Getting Started
 
 ### Option A: One-Click Quickstart (Recommended)
-Double click [`start_contrax.bat`](file:///d:/projects%20and%20certificates/projects/block/Contrax/start_contrax.bat).
+Double click [`start_contrax.bat`](file:///d:/projects%20and%20certificates/projects/block/Contrax/start_contrax.bat) to launch both FastAPI backend and Next.js frontend automatically.
 
 ### Option B: Manual Launch
 1. **Backend:**
@@ -338,7 +349,11 @@ Double click [`start_contrax.bat`](file:///d:/projects%20and%20certificates/proj
    ```
    Web console: `http://localhost:3000`
 
-3. **Run Unit Tests:**
+3. **Default Security Researcher Credentials:**
+   - **Username:** `researcher`
+   - **Password:** `ContraxAdmin2026!`
+
+4. **Run Unit Tests:**
    ```bash
    cd backend
    python -m pytest tests/unit/ -v

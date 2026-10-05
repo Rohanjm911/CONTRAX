@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="assets/contrax_logo.png" alt="CONTRAX Logo" width="320" />
+</div>
+
 # CONTRAX - How To Run Guide
 
 > **"See the flaw before they do."**  
@@ -14,7 +18,10 @@ For instant local execution without manually launching multiple terminals:
    - Spawns the FastAPI backend daemon on `http://127.0.0.1:8000`.
    - Spawns the Next.js frontend dev server on `http://localhost:3000`.
    - Automatically opens your default web browser to the CONTRAX Security Console.
-2. **Stop the Platform:** Double-click [`stop_contrax.bat`](file:///d:/projects%20and%20certificates/projects/block/Contrax/stop_contrax.bat) to terminate backend and frontend processes cleanly.
+2. **Default Security Researcher Credentials:**
+   - **Username:** `researcher`
+   - **Password:** `ContraxAdmin2026!`
+3. **Stop the Platform:** Double-click [`stop_contrax.bat`](file:///d:/projects%20and%20certificates/projects/block/Contrax/stop_contrax.bat) to terminate backend and frontend processes cleanly.
 
 ---
 
