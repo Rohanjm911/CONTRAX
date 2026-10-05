@@ -4,7 +4,9 @@
   <img src="assets/contrax_logo.png" alt="CONTRAX Emblem Logo" width="200" />
 </a>
 
-<br/><br/>
+<h1>CONTRAX</h1>
+<p><em>Smart Contract Audit Workbench</em></p>
+
 
 <img src="assets/contrax_header_banner.svg" alt="CONTRAX Header Banner" width="100%" />
 
