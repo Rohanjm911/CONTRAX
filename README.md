@@ -1,12 +1,10 @@
 <div align="center">
 
 <a href="#-tactical-security-console--live-interface-showcase">
-  <img src="assets/contrax_logo.png" alt="CONTRAX Emblem Logo" width="200" />
+  <img src="assets/contrax_logo.png" alt="CONTRAX Logo" width="280" />
 </a>
 
-<h1>CONTRAX</h1>
-<p><em>Smart Contract Audit Workbench</em></p>
-
+<br/>
 
 <img src="assets/contrax_header_banner.svg" alt="CONTRAX Header Banner" width="100%" />
 

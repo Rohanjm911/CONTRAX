@@ -30,6 +30,18 @@ def make_driver():
     return driver
 
 
+TAB_BUTTON_LABELS = {
+    "dashboard": "Overview",
+    "scanner": "Vulnerability Scanner",
+    "source-viewer": "Source & Monaco",
+    "ast": "AST Visualizer",
+    "graph": "Contract Relationship Graph",
+    "findings": "Findings",
+    "gas": "Gas & Loops",
+    "reports": "Audit Reports",
+}
+
+
 def wait_and_scroll(driver, secs=3):
     time.sleep(secs)
     driver.execute_script("window.scrollTo(0,0)")
@@ -37,7 +49,18 @@ def wait_and_scroll(driver, secs=3):
 
 
 def navigate(driver, tab, extra_wait=3):
-    driver.get(f"{BASE_URL}/?tab={tab}")
+    label = TAB_BUTTON_LABELS.get(tab)
+    clicked = False
+    if label:
+        try:
+            buttons = driver.find_elements(By.XPATH, f"//aside//button[contains(., '{label}')]")
+            if buttons:
+                buttons[0].click()
+                clicked = True
+        except Exception:
+            pass
+    if not clicked:
+        driver.get(f"{BASE_URL}/?tab={tab}")
     wait_and_scroll(driver, extra_wait)
 
 
@@ -51,16 +74,38 @@ def save(driver, filename):
 def click_finding_for_modal(driver):
     """Try to click the first finding row to trigger modal."""
     try:
-        rows = driver.find_elements(By.CSS_SELECTOR, "button[id^='finding-']")
-        if not rows:
-            rows = driver.find_elements(By.XPATH, "//button[contains(@class,'glass-panel') and .//*[contains(@class,'CRITICAL') or contains(@class,'HIGH')]]")
-        if rows:
-            rows[0].click()
+        rows = driver.find_elements(By.CSS_SELECTOR, "tbody tr")
+        for r in rows:
+            if "No matching" not in r.text and len(r.text.strip()) > 0:
+                r.click()
+                time.sleep(1.5)
+                return True
+        buttons = driver.find_elements(By.XPATH, "//tr[contains(., 'CRITICAL') or contains(., 'HIGH')]")
+        if buttons:
+            buttons[0].click()
             time.sleep(1.5)
             return True
     except Exception as e:
         print(f"  ! Modal click skipped: {e}")
     return False
+
+
+def close_modal(driver):
+    """Close an open modal cleanly."""
+    try:
+        close_btns = driver.find_elements(By.XPATH, "//div[contains(@class,'fixed')]//button[contains(@class,'hover:text')]")
+        if close_btns:
+            close_btns[0].click()
+            time.sleep(1)
+            return
+    except Exception:
+        pass
+    try:
+        from selenium.webdriver.common.keys import Keys
+        driver.find_element(By.TAG_NAME, "body").send_keys(Keys.ESCAPE)
+        time.sleep(0.8)
+    except Exception:
+        pass
 
 
 def main():
@@ -98,9 +143,7 @@ def main():
     time.sleep(1)
     save(driver, "contrax_modal_real.png")
     if clicked:
-        # close modal via Escape
-        from selenium.webdriver.common.keys import Keys
-        driver.find_element(By.TAG_NAME, "body").send_keys(Keys.ESCAPE)
+        close_modal(driver)
 
     # ---- 6. Monaco Source Viewer ----
     print("\n[5] Monaco Source Viewer...")
