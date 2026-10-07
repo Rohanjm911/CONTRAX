@@ -53,13 +53,13 @@ export const ReportsView: React.FC<ReportsViewProps> = ({ currentScanId, onOpenG
             <Sparkles className="w-6 h-6 text-[#00E5FF]" />
           </div>
           <div className="text-sm font-semibold text-[#F3F6FA]">No active scan selected</div>
-          <div className="text-xs text-[#64748B] max-w-sm mx-auto">
+          <div className="text-xs text-[#CBD5E1] max-w-sm mx-auto">
             Execute a vulnerability scan from the Scanner tab to compile and export reports.
           </div>
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div className="p-6 crystal-card crystal-facet rounded-2xl flex flex-col justify-between transition-all border border-[#1F2B3E] hover:border-[#00E5FF]/40">
+          <div className="p-6 crystal-card crystal-facet rounded-2xl flex flex-col justify-between transition-all border border-[#293B54] hover:border-[#00E5FF]/40">
             <div>
               <div className="w-11 h-11 bg-[#00E5FF]/10 border border-[#00E5FF]/30 rounded-xl flex items-center justify-center mb-4 text-[#00E5FF]">
                 <FileText className="w-5 h-5 text-[#00E5FF]" />
@@ -67,20 +67,20 @@ export const ReportsView: React.FC<ReportsViewProps> = ({ currentScanId, onOpenG
               <h3 className="text-sm font-semibold text-[#F3F6FA] tracking-tight font-mono">
                 PDF Security Audit Document
               </h3>
-              <p className="text-xs text-[#94A3B8] mt-2 leading-relaxed">
+              <p className="text-xs text-[#CBD5E1] mt-2 leading-relaxed">
                 Minimalist solid executive report containing contract metadata, categorized vulnerability findings, source snippets, remediation steps, and auditor disclaimers.
               </p>
             </div>
             <button
               onClick={() => downloadReport("pdf")}
-              className="mt-6 w-full py-2.5 bg-gradient-to-r from-cyan-400 via-cyan-300 to-amber-300 hover:from-cyan-300 hover:to-amber-200 text-[#0B0E14] text-xs font-bold rounded-xl flex items-center justify-center space-x-2 transition-all shadow-[0_2px_12px_rgba(0,229,255,0.25)]"
+              className="btn-contrax-primary mt-6 w-full py-2.5 text-xs font-bold rounded-xl flex items-center justify-center space-x-2 transition-all active:scale-95 cursor-pointer shadow-lg"
             >
               <Download className="w-4 h-4 text-[#0B0E14] stroke-[2.5]" />
               <span>Download PDF Audit</span>
             </button>
           </div>
 
-          <div className="p-6 crystal-card crystal-facet rounded-2xl flex flex-col justify-between transition-all border border-[#1F2B3E] hover:border-[#00E5FF]/40">
+          <div className="p-6 crystal-card crystal-facet rounded-2xl flex flex-col justify-between transition-all border border-[#293B54] hover:border-[#00E5FF]/40">
             <div>
               <div className="w-11 h-11 bg-[#F59E0B]/10 border border-[#F59E0B]/30 rounded-xl flex items-center justify-center mb-4 text-[#F59E0B]">
                 <FileJson className="w-5 h-5 text-[#F59E0B]" />
@@ -88,13 +88,13 @@ export const ReportsView: React.FC<ReportsViewProps> = ({ currentScanId, onOpenG
               <h3 className="text-sm font-semibold text-[#F3F6FA] tracking-tight font-mono">
                 Machine-Readable JSON Report
               </h3>
-              <p className="text-xs text-[#94A3B8] mt-2 leading-relaxed">
+              <p className="text-xs text-[#CBD5E1] mt-2 leading-relaxed">
                 Structured JSON schema payload suitable for DevSecOps pipelines, automated GitHub actions, finding correlation, and continuous smart-contract security testing.
               </p>
             </div>
             <button
               onClick={() => downloadReport("json")}
-              className="mt-6 w-full py-2.5 bg-[#111722] hover:bg-[#17202E] text-[#F3F6FA] text-xs font-semibold rounded-xl border border-[#1F2B3E] hover:border-[#00E5FF]/40 flex items-center justify-center space-x-2 transition-all"
+              className="mt-6 w-full py-2.5 bg-[#111722] hover:bg-[#17202E] text-[#F3F6FA] text-xs font-semibold rounded-xl border border-[#293B54] hover:border-[#00E5FF]/40 flex items-center justify-center space-x-2 transition-all"
             >
               <Download className="w-4 h-4 text-[#00E5FF]" />
               <span>Export JSON Report</span>
@@ -103,7 +103,7 @@ export const ReportsView: React.FC<ReportsViewProps> = ({ currentScanId, onOpenG
         </div>
       )}
 
-      <div className="p-5 bg-[#0B0F17] border border-[#1F2B3E] rounded-2xl text-[11px] text-[#94A3B8] space-y-1.5 leading-relaxed">
+      <div className="p-5 bg-[#0B0F17] border border-[#293B54] rounded-2xl text-[11px] text-[#CBD5E1] space-y-1.5 leading-relaxed">
         <div className="font-semibold text-[#F3F6FA] flex items-center space-x-1.5">
           <ShieldCheck className="w-4 h-4 text-[#00E5FF]" />
           <span>Automated Analysis Notice & Auditor Disclaimer:</span>

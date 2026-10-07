@@ -82,8 +82,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
         <div className="p-3 space-y-4">
           {navigationSections.map((section) => (
             <div key={section.title} className="space-y-1">
-              <div className="px-3 text-[10px] font-semibold tracking-wider text-[#64748B] uppercase font-sans flex items-center space-x-1.5 font-mono">
-                <span className="w-1 h-1 rounded-full bg-[#00E5FF] shadow-[0_0_4px_#00E5FF]"></span>
+              <div className="px-3 text-[10px] font-bold tracking-wider text-[#94A3B8] uppercase font-sans flex items-center space-x-1.5 font-mono">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shadow-[0_0_4px_#00E5FF]"></span>
                 <span>{section.title}</span>
               </div>
               <div className="space-y-1">
@@ -101,7 +101,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                       className={`relative w-full flex items-center justify-between pl-3 pr-3 py-2.5 md:py-2 rounded-xl text-xs font-medium transition-all duration-200 text-left group ${
                         isActive
                           ? "bg-gradient-to-r from-[#17202E] via-[#1A2535] to-[#111722]/80 text-[#F3F6FA] border border-[#293B54] shadow-[0_2px_12px_rgba(0,0,0,0.4)]"
-                          : "text-[#94A3B8] hover:bg-[#17202E]/60 hover:text-[#F3F6FA] border border-transparent"
+                          : "text-[#CBD5E1] hover:bg-[#17202E]/60 hover:text-[#FFFFFF] border border-transparent"
                       }`}
                     >
                       {isActive && (
@@ -112,7 +112,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                         <Icon className={`w-4 h-4 transition-colors ${
                           isActive 
                             ? "text-[#00E5FF] drop-shadow-[0_0_6px_rgba(0,229,255,0.45)]" 
-                            : "text-[#64748B] group-hover:text-[#F3F6FA]"
+                            : "text-[#94A3B8] group-hover:text-[#FFFFFF]"
                         }`} />
                         <span className="tracking-tight">{item.label}</span>
                       </div>
@@ -142,13 +142,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 onOpenGuide();
                 onClose?.();
               }}
-              className="w-full flex items-center justify-between px-3 py-2.5 md:py-2 rounded-xl text-xs font-medium text-[#F3F6FA] bg-[#111722]/80 hover:bg-[#17202E] border border-[#1F2B3E] hover:border-[#00E5FF]/40 transition-all group"
+              className="w-full flex items-center justify-between px-3 py-2.5 md:py-2 rounded-xl text-xs font-semibold text-[#F3F6FA] bg-[#111722]/80 hover:bg-[#17202E] border border-[#293B54] hover:border-[#00E5FF]/40 transition-all group"
             >
               <div className="flex items-center space-x-2">
                 <HelpCircle className="w-3.5 h-3.5 text-[#00E5FF] group-hover:rotate-12 transition-transform" />
                 <span>How to Use</span>
               </div>
-              <span className="text-[10px] font-mono text-[#64748B] px-1.5 py-0.5 rounded bg-[#0B0E14] border border-[#1F2B3E] group-hover:text-[#00E5FF] group-hover:border-[#00E5FF]/40 transition-colors">
+              <span className="text-[10px] font-mono text-[#CBD5E1] px-1.5 py-0.5 rounded bg-[#0B0E14] border border-[#293B54] group-hover:text-[#00E5FF] group-hover:border-[#00E5FF]/40 transition-colors">
                 Guide
               </span>
             </button>
@@ -164,11 +164,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#00E5FF] shadow-[0_0_8px_#00E5FF]"></span>
             </div>
             <div>
-              <div className="text-[11px] font-medium text-[#F3F6FA] leading-tight">Analysis Sandbox</div>
-              <div className="text-[10px] font-mono text-[#64748B]">Zero-Trust • Isolated</div>
+              <div className="text-[11px] font-semibold text-[#F3F6FA] leading-tight">Analysis Sandbox</div>
+              <div className="text-[10px] font-mono text-[#CBD5E1]">Zero-Trust • Isolated</div>
             </div>
           </div>
-          <span className="text-[10px] font-mono text-[#00E5FF] px-1.5 py-0.5 bg-[#07242E] rounded border border-[#0D4B5C]">
+          <span className="text-[10px] font-mono text-[#00E5FF] px-1.5 py-0.5 bg-[#07242E] rounded border border-[#0D4B5C] font-semibold">
             v1.0
           </span>
         </div>

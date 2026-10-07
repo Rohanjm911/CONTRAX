@@ -362,23 +362,23 @@ export const ContractGraph: React.FC<ContractGraphProps> = ({
 
           <div className="flex items-center space-x-2">
             <div className="relative">
-              <Search className="w-3.5 h-3.5 absolute left-2.5 top-2 text-[#64748B]" />
+              <Search className="w-3.5 h-3.5 absolute left-2.5 top-2 text-[#94A3B8]" />
               <input
                 type="text"
                 placeholder="Search..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-8 pr-3 py-1 bg-[#0B0F17] border border-[#1F2B3E] rounded-lg text-xs text-[#F3F6FA] placeholder-[#64748B] w-28 sm:w-36 focus:w-44 focus:border-[#00E5FF] focus:outline-none transition-all"
+                className="pl-8 pr-3 py-1 bg-[#0B0F17] border border-[#293B54] rounded-lg text-xs text-[#F3F6FA] placeholder-[#94A3B8] w-28 sm:w-36 focus:w-44 focus:border-[#00E5FF] focus:outline-none transition-all"
               />
             </div>
 
-            <div className="flex items-center space-x-1 border-l border-[#1F2B3E] pl-2">
+            <div className="flex items-center space-x-1 border-l border-[#293B54] pl-2">
               <button
                 onClick={() => {
                   sounds.playSubtleClick();
                   setScale((s) => Math.min(s + 0.15, 2.0));
                 }}
-                className="p-1.5 bg-[#0B0F17] hover:bg-[#17202E] text-[#94A3B8] hover:text-[#F3F6FA] rounded-md border border-[#1F2B3E] transition-colors"
+                className="p-1.5 bg-[#0B0F17] hover:bg-[#17202E] text-[#CBD5E1] hover:text-[#F3F6FA] rounded-md border border-[#293B54] transition-colors"
                 title="Zoom In"
               >
                 <ZoomIn className="w-3.5 h-3.5" />
@@ -388,7 +388,7 @@ export const ContractGraph: React.FC<ContractGraphProps> = ({
                   sounds.playSubtleClick();
                   setScale((s) => Math.max(s - 0.15, 0.5));
                 }}
-                className="p-1.5 bg-[#0B0F17] hover:bg-[#17202E] text-[#94A3B8] hover:text-[#F3F6FA] rounded-md border border-[#1F2B3E] transition-colors"
+                className="p-1.5 bg-[#0B0F17] hover:bg-[#17202E] text-[#CBD5E1] hover:text-[#F3F6FA] rounded-md border border-[#293B54] transition-colors"
                 title="Zoom Out"
               >
                 <ZoomOut className="w-3.5 h-3.5" />
@@ -398,7 +398,7 @@ export const ContractGraph: React.FC<ContractGraphProps> = ({
                   sounds.playSubtleClick();
                   setScale(1);
                 }}
-                className="p-1.5 bg-[#0B0F17] hover:bg-[#17202E] text-[#94A3B8] hover:text-[#F3F6FA] rounded-md border border-[#1F2B3E] transition-colors"
+                className="p-1.5 bg-[#0B0F17] hover:bg-[#17202E] text-[#CBD5E1] hover:text-[#F3F6FA] rounded-md border border-[#293B54] transition-colors"
                 title="Reset Zoom"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
@@ -410,7 +410,7 @@ export const ContractGraph: React.FC<ContractGraphProps> = ({
                     sounds.playClick();
                     onOpenGuide();
                   }}
-                  className="flex items-center space-x-1 px-2 py-1 bg-[#0B0F17] hover:bg-[#17202E] text-[#00E5FF] rounded-md border border-[#1F2B3E] text-xs font-medium ml-1 transition-all"
+                  className="flex items-center space-x-1 px-2.5 py-1 bg-[#0B0F17] hover:bg-[#17202E] text-[#00E5FF] rounded-md border border-[#293B54] text-xs font-semibold ml-1 transition-all"
                   title="How to Use Contract Graph"
                 >
                   <HelpCircle className="w-3.5 h-3.5 text-[#00E5FF]" />

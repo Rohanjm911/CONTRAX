@@ -214,8 +214,8 @@ contract AccessControlExample {
               disabled={!selectedFile || isUploading}
               className={`w-full py-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center space-x-2 ${
                 !selectedFile || isUploading
-                  ? "bg-[#17202E] text-[#64748B] cursor-not-allowed border border-[#1F2B3E]"
-                  : "bg-gradient-to-r from-cyan-400 via-cyan-300 to-amber-300 hover:from-cyan-300 hover:to-amber-200 text-[#0B0E14] shadow-[0_2px_12px_rgba(0,229,255,0.25)] hover:shadow-[0_4px_18px_rgba(0,229,255,0.45)]"
+                  ? "bg-[#17202E] text-[#94A3B8] cursor-not-allowed border border-[#293B54]"
+                  : "btn-contrax-primary active:scale-95 cursor-pointer shadow-lg"
               }`}
             >
               <Play className="w-3.5 h-3.5 fill-current" />
@@ -223,8 +223,8 @@ contract AccessControlExample {
             </button>
           </div>
 
-          <div className="glass-panel p-5 rounded-2xl border border-[#1F2B3E]">
-            <div className="text-[10px] font-semibold text-[#64748B] uppercase tracking-wider mb-3 flex items-center space-x-1.5 font-mono">
+          <div className="glass-panel p-5 rounded-2xl border border-[#293B54]/70">
+            <div className="text-[10px] font-bold text-[#94A3B8] uppercase tracking-wider mb-3 flex items-center space-x-1.5 font-mono">
               <Sparkles className="w-3.5 h-3.5 text-[#00E5FF]" />
               <span>TEST FIXTURES (INTENTIONALLY VULNERABLE)</span>
             </div>
@@ -233,13 +233,13 @@ contract AccessControlExample {
                 <div
                   key={sample.name}
                   onClick={() => handleSelectSample(sample)}
-                  className="p-4 crystal-card crystal-facet rounded-xl cursor-pointer transition-all flex flex-col justify-between border border-[#1F2B3E] hover:border-[#00E5FF]/40"
+                  className="p-4 crystal-card crystal-facet rounded-xl cursor-pointer transition-all flex flex-col justify-between border border-[#293B54] hover:border-[#00E5FF]/40"
                 >
                   <div>
                     <div className="font-mono text-xs font-bold text-[#F3F6FA]">
                       {sample.name}
                     </div>
-                    <div className="text-[11px] text-[#64748B] mt-1 leading-snug">
+                    <div className="text-[11px] text-[#CBD5E1] mt-1 leading-snug">
                       {sample.desc}
                     </div>
                   </div>
@@ -254,10 +254,10 @@ contract AccessControlExample {
       )}
 
       {activeTab === "ON_CHAIN" && (
-        <div className="glass-panel p-8 rounded-2xl space-y-6 border border-[#1F2B3E]">
+        <div className="glass-panel p-8 rounded-2xl space-y-6 border border-[#293B54]">
           <div className="space-y-4">
             <div>
-              <label className="block text-xs font-medium text-[#94A3B8] mb-1.5 font-mono">
+              <label className="block text-xs font-medium text-[#CBD5E1] mb-1.5 font-mono">
                 Contract Address (0x...)
               </label>
               <input
@@ -265,18 +265,18 @@ contract AccessControlExample {
                 placeholder="0x1234567890abcdef1234567890abcdef12345678"
                 value={contractAddress}
                 onChange={(e) => setContractAddress(e.target.value.trim())}
-                className="w-full bg-[#0B0F17] border border-[#1F2B3E] focus:border-[#00E5FF] focus:outline-none px-3.5 py-2.5 text-xs font-mono text-[#F3F6FA] rounded-xl placeholder-[#64748B]"
+                className="w-full bg-[#0B0F17] border border-[#293B54] focus:border-[#00E5FF] focus:outline-none px-3.5 py-2.5 text-xs font-mono text-[#F3F6FA] rounded-xl placeholder-[#94A3B8]"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-[#94A3B8] mb-1.5 font-mono">
+              <label className="block text-xs font-medium text-[#CBD5E1] mb-1.5 font-mono">
                 EVM Network Target
               </label>
               <select
                 value={network}
                 onChange={(e) => setNetwork(e.target.value)}
-                className="w-full bg-[#0B0F17] border border-[#1F2B3E] focus:border-[#00E5FF] focus:outline-none px-3.5 py-2.5 text-xs text-[#F3F6FA] rounded-xl cursor-pointer"
+                className="w-full bg-[#0B0F17] border border-[#293B54] focus:border-[#00E5FF] focus:outline-none px-3.5 py-2.5 text-xs text-[#F3F6FA] rounded-xl cursor-pointer"
               >
                 <option value="ethereum">Ethereum Mainnet</option>
                 <option value="sepolia">Sepolia Testnet</option>
@@ -287,7 +287,7 @@ contract AccessControlExample {
               </select>
             </div>
 
-            <div className="p-4 bg-[#0B0F17] border border-[#1F2B3E] rounded-xl text-[11px] text-[#64748B] space-y-1">
+            <div className="p-4 bg-[#0B0F17] border border-[#293B54] rounded-xl text-[11px] text-[#CBD5E1] space-y-1">
               <div className="font-semibold text-[#F3F6FA]">Important On-Chain Analysis Disclaimer:</div>
               <div>
                 If verified source code is unavailable on the network explorer, analysis is limited to available contract bytecode and metadata.
@@ -300,8 +300,8 @@ contract AccessControlExample {
             disabled={!contractAddress || isUploading}
             className={`w-full py-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center space-x-2 ${
               !contractAddress || isUploading
-                ? "bg-[#17202E] text-[#64748B] cursor-not-allowed border border-[#1F2B3E]"
-                : "bg-gradient-to-r from-cyan-400 via-cyan-300 to-amber-300 hover:from-cyan-300 hover:to-amber-200 text-[#0B0E14] shadow-[0_2px_12px_rgba(0,229,255,0.25)] hover:shadow-[0_4px_18px_rgba(0,229,255,0.45)]"
+                ? "bg-[#17202E] text-[#94A3B8] cursor-not-allowed border border-[#293B54]"
+                : "btn-contrax-primary active:scale-95 cursor-pointer shadow-lg"
             }`}
           >
             <Play className="w-3.5 h-3.5 fill-current" />

@@ -236,22 +236,22 @@ export default function Home() {
               <img src="/logo_mark.png" alt="CONTRAX" className="w-6 h-6 object-contain drop-shadow-[0_0_8px_rgba(255,103,31,0.45)]" />
               <span className="font-bold tracking-tight font-mono bg-gradient-to-r from-[#FF671F] via-[#FFFFFF] to-[#22C55E] bg-clip-text text-transparent">CONTRAX</span>
             </div>
-            <span className="text-[#1F2B3E] hidden sm:inline">/</span>
-            <span className="text-[#94A3B8] hidden sm:inline truncate max-w-[140px] md:max-w-none text-xs">Security Console</span>
-            <span className="text-[#1F2B3E]">/</span>
-            <span className="px-2 py-0.5 rounded-md glass-pill text-[#F3F6FA] font-mono text-[11px] font-medium truncate max-w-[120px] sm:max-w-none border border-[#1F2B3E]">
+            <span className="text-[#475569] hidden sm:inline">/</span>
+            <span className="text-[#CBD5E1] hidden sm:inline truncate max-w-[140px] md:max-w-none text-xs font-medium">Security Console</span>
+            <span className="text-[#475569]">/</span>
+            <span className="px-2.5 py-0.5 rounded-md glass-pill text-[#FFFFFF] font-mono text-[11px] font-semibold truncate max-w-[120px] sm:max-w-none border border-[#293B54] shadow-sm">
               {tabLabels[currentTab] || "Overview"}
             </span>
           </div>
 
           <div className="flex items-center space-x-2 sm:space-x-3 shrink-0">
-            <div className="hidden lg:flex items-center space-x-2.5 px-3 py-1 glass-pill rounded-xl text-[11px] font-mono border border-[#1F2B3E]">
+            <div className="hidden lg:flex items-center space-x-2.5 px-3 py-1.5 glass-pill rounded-xl text-[11px] font-mono border border-[#293B54]">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00E5FF] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00E5FF] shadow-[0_0_6px_#00E5FF]"></span>
               </span>
-              <span className="text-[#94A3B8]">Engines:</span>
-              <span className="text-[#00E5FF] font-semibold">Armed & Ready</span>
+              <span className="text-[#CBD5E1] font-medium">Engines:</span>
+              <span className="text-[#00E5FF] font-bold">Armed & Ready</span>
             </div>
 
             <button
@@ -259,7 +259,7 @@ export default function Home() {
                 const nextMuted = sounds.toggleMute();
                 setIsAudioMuted(nextMuted);
               }}
-              className="flex items-center space-x-1.5 px-2.5 sm:px-3 py-1.5 glass-panel hover:bg-[#17202E] text-[#F3F6FA] rounded-xl text-xs font-medium transition-all border border-[#1F2B3E]"
+              className="flex items-center space-x-1.5 px-2.5 sm:px-3 py-1.5 glass-panel hover:bg-[#17202E] text-[#F3F6FA] rounded-xl text-xs font-medium transition-all border border-[#293B54]"
               title={isAudioMuted ? "Sound Effects Muted (Click to Unmute)" : "Sound Effects Active (Click to Mute)"}
             >
               {isAudioMuted ? (
@@ -274,7 +274,7 @@ export default function Home() {
 
             <button
               onClick={() => handleOpenGuide(currentTab)}
-              className="flex items-center space-x-1.5 px-2.5 sm:px-3 py-1.5 glass-panel hover:bg-[#17202E] hover:border-[#00E5FF]/40 text-[#F3F6FA] rounded-xl text-xs font-medium transition-all group border border-[#1F2B3E]"
+              className="flex items-center space-x-1.5 px-2.5 sm:px-3 py-1.5 glass-panel hover:bg-[#17202E] hover:border-[#00E5FF]/40 text-[#F3F6FA] rounded-xl text-xs font-medium transition-all group border border-[#293B54]"
               title="Open Feature Guide"
             >
               <HelpCircle className="w-3.5 h-3.5 text-[#00E5FF] group-hover:rotate-12 transition-transform" />
@@ -287,7 +287,7 @@ export default function Home() {
                 sounds.playBeep(1100);
                 setCurrentTab("scanner");
               }}
-              className="flex items-center space-x-1.5 px-3 sm:px-4 py-1.5 bg-gradient-to-r from-cyan-400 via-cyan-300 to-amber-300 hover:from-cyan-300 hover:to-amber-200 text-[#0B0E14] rounded-xl text-xs font-bold transition-all shadow-[0_2px_12px_rgba(0,229,255,0.25)] hover:shadow-[0_4px_18px_rgba(0,229,255,0.45)] active:scale-95"
+              className="btn-contrax-primary flex items-center space-x-1.5 px-3 sm:px-4 py-1.5 rounded-xl text-xs font-bold transition-all active:scale-95 cursor-pointer"
             >
               <Plus className="w-3.5 h-3.5 text-[#0B0E14] stroke-[2.5]" />
               <span className="hidden sm:inline">New Scan</span>

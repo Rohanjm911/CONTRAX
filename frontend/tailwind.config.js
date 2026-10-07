@@ -20,11 +20,8 @@ module.exports = {
         navyMuted: "#64748B",
 
         cyberCyan: "#00E5FF",
-        cyan: "#00E5FF",
-        amber: "#F59E0B",
         ruby: "#EF4444",
         crimson: "#EF4444",
-        emerald: "#00E5FF",
         
         critical: "#EF4444",
         high: "#F97316",

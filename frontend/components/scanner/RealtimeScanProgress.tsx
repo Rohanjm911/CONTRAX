@@ -264,51 +264,51 @@ export const RealtimeScanProgress: React.FC<RealtimeScanProgressProps> = ({ scan
       </div>
 
       <div className="space-y-2 border-t border-[#1F2B3E] pt-5">
-        <div className="text-[10px] font-semibold text-[#64748B] uppercase tracking-wider">
+        <div className="text-[10px] font-bold text-[#94A3B8] uppercase tracking-wider">
           Real-Time Vulnerability Interception
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-center font-mono">
           <div className="p-3 bg-[#0B0E14] border border-[#5C1D24] rounded-xl hover:border-[#EF4444]/60 transition-colors shadow-[0_0_12px_rgba(239,68,68,0.12)]">
-            <div className="flex items-center justify-between text-[10px] text-[#64748B] mb-1">
+            <div className="flex items-center justify-between text-[10px] text-[#CBD5E1] font-semibold mb-1">
               <span>CRITICAL</span>
               <AlertTriangle className="w-3 h-3 text-[#EF4444]" />
             </div>
             <div className="text-2xl font-extrabold text-[#EF4444]">{scan.critical_count}</div>
-            <div className="text-[9px] text-[#94A3B8] mt-0.5">Direct Exploit</div>
+            <div className="text-[9px] text-[#CBD5E1] mt-0.5">Direct Exploit</div>
           </div>
 
           <div className="p-3 bg-[#0B0E14] border border-[#5A2C10] rounded-xl hover:border-[#F97316]/60 transition-colors">
-            <div className="flex items-center justify-between text-[10px] text-[#64748B] mb-1">
+            <div className="flex items-center justify-between text-[10px] text-[#CBD5E1] font-semibold mb-1">
               <span>HIGH</span>
               <Flame className="w-3 h-3 text-[#F97316]" />
             </div>
             <div className="text-2xl font-extrabold text-[#F97316]">{scan.high_count}</div>
-            <div className="text-[9px] text-[#94A3B8] mt-0.5">Logic Flow</div>
+            <div className="text-[9px] text-[#CBD5E1] mt-0.5">Logic Flow</div>
           </div>
 
           <div className="p-3 bg-[#0B0E14] border border-[#5A3F0E] rounded-xl hover:border-[#F59E0B]/60 transition-colors">
-            <div className="flex items-center justify-between text-[10px] text-[#64748B] mb-1">
+            <div className="flex items-center justify-between text-[10px] text-[#CBD5E1] font-semibold mb-1">
               <span>MEDIUM</span>
               <ShieldAlert className="w-3 h-3 text-[#F59E0B]" />
             </div>
             <div className="text-2xl font-extrabold text-[#F59E0B]">{scan.medium_count}</div>
-            <div className="text-[9px] text-[#94A3B8] mt-0.5">Bad Practice</div>
+            <div className="text-[9px] text-[#CBD5E1] mt-0.5">Bad Practice</div>
           </div>
 
           <div className="p-3 bg-[#0B0E14] border border-[#0D4B5C] rounded-xl hover:border-[#00E5FF]/60 transition-colors shadow-[0_0_12px_rgba(0,229,255,0.08)]">
-            <div className="flex items-center justify-between text-[10px] text-[#64748B] mb-1">
+            <div className="flex items-center justify-between text-[10px] text-[#CBD5E1] font-semibold mb-1">
               <span>LOW</span>
               <Activity className="w-3 h-3 text-[#00E5FF]" />
             </div>
             <div className="text-2xl font-extrabold text-[#00E5FF]">{scan.low_count}</div>
-            <div className="text-[9px] text-[#94A3B8] mt-0.5">Optimization</div>
+            <div className="text-[9px] text-[#CBD5E1] mt-0.5">Optimization</div>
           </div>
         </div>
       </div>
 
       <div className="border-t border-[#1F2B3E] pt-5 space-y-2">
-        <div className="flex items-center justify-between text-[10px] font-semibold text-[#64748B] uppercase tracking-wider font-mono">
+        <div className="flex items-center justify-between text-[10px] font-bold text-[#94A3B8] uppercase tracking-wider font-mono">
           <div className="flex items-center space-x-1.5">
             <Terminal className="w-3.5 h-3.5 text-[#00E5FF]" />
             <span>Sandbox Execution Stream</span>
@@ -316,10 +316,10 @@ export const RealtimeScanProgress: React.FC<RealtimeScanProgressProps> = ({ scan
           <span className="text-[#00E5FF] animate-pulse">● STREAMING</span>
         </div>
 
-        <div className="bg-[#070A0F] border border-[#1F2B3E] rounded-xl p-3.5 h-28 overflow-y-auto font-mono text-[11px] space-y-1.5 select-text">
+        <div className="bg-[#070A0F] border border-[#293B54] rounded-xl p-3.5 h-28 overflow-y-auto font-mono text-[11px] space-y-1.5 select-text">
           {logs.map((log, idx) => (
             <div key={idx} className="flex items-start space-x-2 leading-tight">
-              <span className="text-[#64748B] shrink-0">[{log.time}]</span>
+              <span className="text-[#94A3B8] shrink-0 font-medium">[{log.time}]</span>
               <span className={
                 log.type === "success" 
                   ? "text-[#00E5FF]" 

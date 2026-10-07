@@ -87,9 +87,9 @@ export const MonacoSourceViewer: React.FC<MonacoSourceViewerProps> = ({
           </div>
 
           <div className="hidden sm:flex items-center space-x-1.5 truncate">
-            <span>contracts</span>
-            <ChevronRight className="w-3 h-3 text-[#64748B]" />
-            <span className="text-[#F3F6FA] font-semibold truncate">{selectedFile}</span>
+            <span className="text-[#CBD5E1]">contracts</span>
+            <ChevronRight className="w-3 h-3 text-[#94A3B8]" />
+            <span className="text-[#F3F6FA] font-bold truncate">{selectedFile}</span>
           </div>
 
           {targetLine && (
@@ -99,19 +99,19 @@ export const MonacoSourceViewer: React.FC<MonacoSourceViewerProps> = ({
           )}
         </div>
 
-        <div className="flex items-center space-x-2 text-[10px] font-mono text-[#64748B] shrink-0">
+        <div className="flex items-center space-x-2 text-[10px] font-mono text-[#CBD5E1] shrink-0">
           {onOpenGuide && (
             <button
               onClick={onOpenGuide}
-              className="flex items-center space-x-1 px-2 py-0.5 glass-panel hover:bg-[#17202E] text-[#F3F6FA] rounded-md border border-[#1F2B3E] hover:border-[#00E5FF]/40 transition-all"
+              className="flex items-center space-x-1 px-2.5 py-1 glass-panel hover:bg-[#17202E] text-[#F3F6FA] rounded-md border border-[#293B54] hover:border-[#00E5FF]/40 transition-all font-semibold"
               title="How to Use Monaco Source Viewer"
             >
-              <HelpCircle className="w-3 h-3 text-[#00E5FF]" />
+              <HelpCircle className="w-3.5 h-3.5 text-[#00E5FF]" />
               <span className="font-sans text-[11px]">Guide</span>
             </button>
           )}
-          <span className="hidden sm:flex items-center space-x-1 px-2 py-0.5 bg-[#0B0F17] rounded-md border border-[#1F2B3E]">
-            <Lock className="w-3 h-3 text-[#64748B]" />
+          <span className="hidden sm:flex items-center space-x-1 px-2.5 py-1 bg-[#0B0F17] rounded-md border border-[#293B54] text-[#CBD5E1] font-semibold">
+            <Lock className="w-3 h-3 text-[#00E5FF]" />
             <span>READ ONLY</span>
           </span>
         </div>
@@ -119,7 +119,7 @@ export const MonacoSourceViewer: React.FC<MonacoSourceViewerProps> = ({
 
       <div className="flex flex-1 overflow-hidden">
         <div className="hidden sm:flex w-60 bg-[#0B0F17] border-r border-[#1F2B3E] p-3 flex-col shrink-0">
-          <div className="text-[10px] font-semibold text-[#64748B] uppercase tracking-wider mb-2 px-2 font-mono">
+          <div className="text-[10px] font-bold text-[#94A3B8] uppercase tracking-wider mb-2 px-2 font-mono">
             Target Sources ({files.length})
           </div>
           <div className="space-y-1 overflow-y-auto flex-1">
@@ -131,11 +131,11 @@ export const MonacoSourceViewer: React.FC<MonacoSourceViewerProps> = ({
                   onClick={() => onSelectFile(file.file_path)}
                   className={`w-full flex items-center space-x-2 px-2.5 py-1.5 rounded-lg text-xs text-left transition-all ${
                     isSelected
-                      ? "bg-[#17202E] text-[#F3F6FA] font-medium border border-[#00E5FF]/40"
-                      : "text-[#94A3B8] hover:bg-[#111722] hover:text-[#F3F6FA] border border-transparent"
+                      ? "bg-[#17202E] text-[#F3F6FA] font-bold border border-[#00E5FF]/40"
+                      : "text-[#CBD5E1] hover:bg-[#111722] hover:text-[#F3F6FA] border border-transparent"
                   }`}
                 >
-                  <FileCode className={`w-3.5 h-3.5 shrink-0 ${isSelected ? "text-[#00E5FF]" : "text-[#64748B]"}`} />
+                  <FileCode className={`w-3.5 h-3.5 shrink-0 ${isSelected ? "text-[#00E5FF]" : "text-[#94A3B8]"}`} />
                   <span className="truncate">{file.file_path}</span>
                 </button>
               );

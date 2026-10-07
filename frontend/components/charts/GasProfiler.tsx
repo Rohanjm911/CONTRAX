@@ -22,14 +22,14 @@ export const GasProfiler: React.FC<GasProfilerProps> = ({ gasData, onOpenGuide }
     <div className="p-4 sm:p-8 max-w-7xl mx-auto space-y-5 sm:space-y-7">
       <div className="flex flex-col md:flex-row md:items-center justify-between pb-4 border-b border-[#1F2B3E] gap-4">
         <div>
-          <div className="text-[11px] font-mono text-[#64748B] uppercase tracking-wider mb-1 flex items-center space-x-2">
+          <div className="text-[11px] font-mono text-[#94A3B8] font-bold uppercase tracking-wider mb-1 flex items-center space-x-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shadow-[0_0_6px_#00E5FF]"></span>
             <span>EVM EFFICIENCY & PROFILING</span>
           </div>
           <h2 className="text-xl font-semibold text-[#F3F6FA] tracking-tight font-mono">
             Gas & Loop Execution Profiler
           </h2>
-          <p className="text-xs text-[#94A3B8] mt-0.5">
+          <p className="text-xs text-[#CBD5E1] mt-0.5">
             Static operation estimation: Storage writes (SSTORE), external invocations, and loop hazards.
           </p>
         </div>
@@ -37,22 +37,22 @@ export const GasProfiler: React.FC<GasProfilerProps> = ({ gasData, onOpenGuide }
           {onOpenGuide && (
             <button
               onClick={onOpenGuide}
-              className="flex items-center space-x-1.5 px-3 py-1.5 glass-panel hover:bg-[#17202E] text-[#F3F6FA] rounded-xl text-xs font-medium border border-[#1F2B3E] hover:border-[#00E5FF]/40 transition-all"
+              className="flex items-center space-x-1.5 px-3 py-1.5 glass-panel hover:bg-[#17202E] text-[#F3F6FA] rounded-xl text-xs font-semibold border border-[#293B54] hover:border-[#00E5FF]/40 transition-all"
             >
               <HelpCircle className="w-3.5 h-3.5 text-[#00E5FF]" />
               <span>How to use</span>
             </button>
           )}
-          <div className="text-xs font-mono text-[#94A3B8] px-3 py-1.5 bg-[#0B0F17] border border-[#1F2B3E] rounded-xl">
+          <div className="text-xs font-mono text-[#CBD5E1] px-3 py-1.5 bg-[#0B0F17] border border-[#293B54] rounded-xl font-medium">
             Status: ESTIMATED STATICALLY
           </div>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="crystal-card crystal-facet p-5 rounded-2xl flex flex-col justify-between border border-[#1F2B3E] hover:border-[#F59E0B]/40 transition-all">
-          <div className="flex items-center justify-between text-xs text-[#94A3B8]">
-            <span className="font-semibold uppercase tracking-wider text-[10px]">SSTORE Storage Writes</span>
+        <div className="crystal-card crystal-facet p-5 rounded-2xl flex flex-col justify-between border border-[#293B54] hover:border-[#F59E0B]/40 transition-all">
+          <div className="flex items-center justify-between text-xs text-[#CBD5E1]">
+            <span className="font-bold uppercase tracking-wider text-[10px]">SSTORE Storage Writes</span>
             <div className="p-1.5 rounded-md bg-[#F59E0B]/10 border border-[#F59E0B]/30">
               <Database className="w-3.5 h-3.5 text-[#F59E0B]" />
             </div>
@@ -62,12 +62,12 @@ export const GasProfiler: React.FC<GasProfilerProps> = ({ gasData, onOpenGuide }
               {totalWrites}
             </div>
           </div>
-          <div className="text-[11px] text-[#64748B]">~5,000 - 20,000 gas per slot write</div>
+          <div className="text-[11px] text-[#CBD5E1] font-medium">~5,000 - 20,000 gas per slot write</div>
         </div>
 
-        <div className="crystal-card crystal-facet p-5 rounded-2xl flex flex-col justify-between border border-[#1F2B3E] hover:border-[#00E5FF]/40 transition-all">
-          <div className="flex items-center justify-between text-xs text-[#94A3B8]">
-            <span className="font-semibold uppercase tracking-wider text-[10px]">External Calls</span>
+        <div className="crystal-card crystal-facet p-5 rounded-2xl flex flex-col justify-between border border-[#293B54] hover:border-[#00E5FF]/40 transition-all">
+          <div className="flex items-center justify-between text-xs text-[#CBD5E1]">
+            <span className="font-bold uppercase tracking-wider text-[10px]">External Calls</span>
             <div className="p-1.5 rounded-md bg-[#00E5FF]/10 border border-[#00E5FF]/30">
               <ArrowRightLeft className="w-3.5 h-3.5 text-[#00E5FF]" />
             </div>
@@ -77,12 +77,12 @@ export const GasProfiler: React.FC<GasProfilerProps> = ({ gasData, onOpenGuide }
               {totalCalls}
             </div>
           </div>
-          <div className="text-[11px] text-[#64748B]">~2,600 gas base per non-warm target</div>
+          <div className="text-[11px] text-[#CBD5E1] font-medium">~2,600 gas base per non-warm target</div>
         </div>
 
-        <div className="crystal-card crystal-facet p-5 rounded-2xl flex flex-col justify-between border border-[#1F2B3E] hover:border-[#EF4444]/40 transition-all">
-          <div className="flex items-center justify-between text-xs text-[#94A3B8]">
-            <span className="font-semibold uppercase tracking-wider text-[10px]">Unbounded Loops</span>
+        <div className="crystal-card crystal-facet p-5 rounded-2xl flex flex-col justify-between border border-[#293B54] hover:border-[#EF4444]/40 transition-all">
+          <div className="flex items-center justify-between text-xs text-[#CBD5E1]">
+            <span className="font-bold uppercase tracking-wider text-[10px]">Unbounded Loops</span>
             <div className="p-1.5 rounded-md bg-[#EF4444]/10 border border-[#EF4444]/30">
               <Repeat className="w-3.5 h-3.5 text-[#EF4444]" />
             </div>
@@ -92,7 +92,7 @@ export const GasProfiler: React.FC<GasProfilerProps> = ({ gasData, onOpenGuide }
               {totalLoops}
             </div>
           </div>
-          <div className="text-[11px] text-[#64748B]">Potential block gas limit exhaustion risk</div>
+          <div className="text-[11px] text-[#CBD5E1] font-medium">Potential block gas limit exhaustion risk</div>
         </div>
       </div>
 

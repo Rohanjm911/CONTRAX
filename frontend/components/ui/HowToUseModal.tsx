@@ -458,12 +458,12 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({
         </div>
 
         <div className="p-4 px-7 border-t border-[#1F2B3E] bg-[#17202E]/70 flex items-center justify-between text-xs select-none">
-          <div className="text-[#64748B] font-mono text-[11px]">
+          <div className="text-[#CBD5E1] font-mono text-[11px]">
             CONTRAX Security Guidance Suite • Tactical Radar Edition
           </div>
           <button
             onClick={onClose}
-            className="px-4 py-1.5 bg-gradient-to-r from-cyan-400 via-cyan-300 to-amber-300 hover:from-cyan-300 hover:to-amber-200 text-[#0B0E14] font-bold text-xs rounded-xl transition-all shadow-[0_2px_12px_rgba(0,229,255,0.25)]"
+            className="btn-contrax-primary px-4 py-1.5 font-bold text-xs rounded-xl transition-all active:scale-95 cursor-pointer shadow-lg"
           >
             Got It, Continue Work
           </button>

@@ -137,13 +137,13 @@ export const FindingDetailModal: React.FC<FindingDetailModalProps> = ({
         </div>
 
         <div className="p-3 sm:p-4 sm:px-6 border-t border-[#1F2B3E] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-[#17202E]/60">
-          <div className="text-[11px] font-mono text-[#64748B] text-center sm:text-left">
-            Detector: {finding.detector}
+          <div className="text-[11px] font-mono text-[#CBD5E1] text-center sm:text-left">
+            Detector: <span className="font-semibold text-[#00E5FF]">{finding.detector}</span>
           </div>
           <div className="flex items-center space-x-2 w-full sm:w-auto">
             <button
               onClick={handleCopy}
-              className="flex-1 sm:flex-initial justify-center px-3.5 py-2 bg-[#111722] hover:bg-[#1E2B3D] text-[#94A3B8] hover:text-[#F3F6FA] rounded-xl text-xs font-medium border border-[#1F2B3E] hover:border-[#00E5FF]/40 flex items-center space-x-1.5 transition-all"
+              className="flex-1 sm:flex-initial justify-center px-3.5 py-2 bg-[#111722] hover:bg-[#1E2B3D] text-[#CBD5E1] hover:text-[#F3F6FA] rounded-xl text-xs font-semibold border border-[#293B54] hover:border-[#00E5FF]/40 flex items-center space-x-1.5 transition-all"
             >
               {copied ? <Check className="w-3.5 h-3.5 text-[#00E5FF]" /> : <Copy className="w-3.5 h-3.5 text-[#94A3B8]" />}
               <span>{copied ? "Copied" : "Copy Finding"}</span>
@@ -154,7 +154,7 @@ export const FindingDetailModal: React.FC<FindingDetailModalProps> = ({
                 onClose();
                 onJumpToSource(finding.source_file, finding.line_number);
               }}
-              className="flex-1 sm:flex-initial justify-center px-4 py-2 bg-gradient-to-r from-cyan-400 via-cyan-300 to-amber-300 hover:from-cyan-300 hover:to-amber-200 text-[#0B0E14] rounded-xl text-xs font-bold flex items-center space-x-1.5 transition-all shadow-[0_2px_12px_rgba(0,229,255,0.25)]"
+              className="btn-contrax-primary flex-1 sm:flex-initial justify-center px-4 py-2 rounded-xl text-xs font-bold flex items-center space-x-1.5 transition-all active:scale-95 cursor-pointer shadow-lg"
             >
               <Code2 className="w-4 h-4 text-[#0B0E14] stroke-[2.5]" />
               <span>Jump to Source</span>

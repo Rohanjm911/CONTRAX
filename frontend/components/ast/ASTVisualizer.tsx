@@ -23,7 +23,7 @@ export const ASTVisualizer: React.FC<ASTVisualizerProps> = ({ astData, onOpenGui
       <div className="w-full md:w-1/2 h-1/2 md:h-full bg-[#0B0F17] border-b md:border-b-0 md:border-r border-[#1F2B3E] p-4 sm:p-6 overflow-y-auto">
         <div className="flex items-center justify-between pb-4 border-b border-[#1F2B3E] mb-5">
           <div>
-            <div className="text-[10px] font-mono text-[#64748B] uppercase">PARSER HIERARCHY</div>
+            <div className="text-[10px] font-mono text-[#94A3B8] font-bold uppercase">PARSER HIERARCHY</div>
             <h3 className="text-sm font-semibold text-[#F3F6FA] tracking-tight font-mono">
               Abstract Syntax Tree (AST) Explorer
             </h3>
@@ -32,14 +32,14 @@ export const ASTVisualizer: React.FC<ASTVisualizerProps> = ({ astData, onOpenGui
             {onOpenGuide && (
               <button
                 onClick={onOpenGuide}
-                className="flex items-center space-x-1 px-2.5 py-1 glass-panel hover:bg-[#17202E] text-[#F3F6FA] rounded-lg text-xs font-medium border border-[#1F2B3E] hover:border-[#00E5FF]/40 transition-all"
+                className="flex items-center space-x-1 px-2.5 py-1 glass-panel hover:bg-[#17202E] text-[#F3F6FA] rounded-lg text-xs font-semibold border border-[#293B54] hover:border-[#00E5FF]/40 transition-all"
                 title="How to use AST Explorer"
               >
                 <HelpCircle className="w-3.5 h-3.5 text-[#00E5FF]" />
                 <span className="text-[11px]">Guide</span>
               </button>
             )}
-            <span className="text-[10px] font-mono text-[#94A3B8] px-2 py-0.5 bg-[#111722] rounded-md border border-[#1F2B3E]">
+            <span className="text-[10px] font-mono text-[#CBD5E1] px-2.5 py-0.5 bg-[#111722] rounded-md border border-[#293B54] font-semibold">
               {contracts.length} {contracts.length === 1 ? "Contract" : "Contracts"}
             </span>
           </div>

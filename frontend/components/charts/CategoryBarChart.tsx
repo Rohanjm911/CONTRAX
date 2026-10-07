@@ -58,14 +58,14 @@ export const CategoryBarChart: React.FC<CategoryBarChartProps> = ({ findings }) 
     <div className="glass-panel p-6 rounded-2xl flex flex-col justify-between h-full">
       <div className="flex items-center justify-between pb-4 border-b border-[#1F2B3E]">
         <div>
-          <div className="text-[10px] font-mono text-[#64748B] uppercase tracking-wider">
+          <div className="text-[10px] font-mono text-[#94A3B8] font-bold uppercase tracking-wider">
             SWC TAXONOMY
           </div>
           <h3 className="text-xs font-semibold text-[#F3F6FA] uppercase tracking-wider">
             Vulnerability by Category
           </h3>
         </div>
-        <span className="text-[11px] font-mono text-[#94A3B8] px-2 py-0.5 bg-[#0B0F17] rounded-md border border-[#1F2B3E]">
+        <span className="text-[11px] font-mono text-[#CBD5E1] px-2 py-0.5 bg-[#0B0F17] rounded-md border border-[#293B54]">
           {displayCategories.length} Categories
         </span>
       </div>
@@ -86,17 +86,17 @@ export const CategoryBarChart: React.FC<CategoryBarChartProps> = ({ findings }) 
                     className="w-2 h-2 rounded-[2px] flex-shrink-0"
                     style={{ backgroundColor: color }}
                   />
-                  <span className="text-[#94A3B8] text-xs font-medium font-sans truncate">
+                  <span className="text-[#CBD5E1] text-xs font-semibold font-sans truncate">
                     {cat.name}
                   </span>
                 </div>
                 <div className="flex items-center space-x-2 font-mono text-xs flex-shrink-0">
-                  <span className="text-[10px] text-[#64748B] font-mono uppercase">
+                  <span className="text-[10px] text-[#94A3B8] font-bold font-mono uppercase">
                     {short}
                   </span>
                   <span
                     className={`font-semibold ${
-                      cat.count > 0 ? "text-[#F3F6FA]" : "text-[#64748B]"
+                      cat.count > 0 ? "text-[#F3F6FA]" : "text-[#94A3B8]"
                     }`}
                   >
                     {cat.count}
