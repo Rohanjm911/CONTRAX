@@ -273,7 +273,7 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
             </div>
 
             <div className="py-3 space-y-2.5">
-              <div className="p-2.5 bg-[#0B0F17] border border-[#1F2B3E] hover:border-[#293B54] transition-colors rounded-xl flex items-center justify-between text-xs">
+              <div className="p-2.5 neu-inset rounded-xl flex items-center justify-between text-xs">
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 rounded-full bg-[#00E5FF] shadow-[0_0_6px_#00E5FF]"></div>
                   <span className="font-semibold text-[#F3F6FA]">Solidity AST Engine</span>
@@ -281,7 +281,7 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
                 <span className="text-[10px] font-mono text-[#CBD5E1] font-medium">0.08s avg</span>
               </div>
 
-              <div className="p-2.5 bg-[#0B0F17] border border-[#1F2B3E] hover:border-[#293B54] transition-colors rounded-xl flex items-center justify-between text-xs">
+              <div className="p-2.5 neu-inset rounded-xl flex items-center justify-between text-xs">
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 rounded-full bg-[#00E5FF] shadow-[0_0_6px_#00E5FF]"></div>
                   <span className="font-semibold text-[#F3F6FA]">Slither Detector Pass</span>
@@ -289,7 +289,7 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
                 <span className="text-[10px] font-mono text-[#CBD5E1] font-medium">0.42s avg</span>
               </div>
 
-              <div className="p-2.5 bg-[#0B0F17] border border-[#1F2B3E] hover:border-[#293B54] transition-colors rounded-xl flex items-center justify-between text-xs">
+              <div className="p-2.5 neu-inset rounded-xl flex items-center justify-between text-xs">
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 rounded-full bg-[#00E5FF] shadow-[0_0_6px_#00E5FF]"></div>
                   <span className="font-semibold text-[#F3F6FA]">Mythril Symbolic Engine</span>
@@ -297,7 +297,7 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
                 <span className="text-[10px] font-mono text-[#CBD5E1] font-medium">0.85s avg</span>
               </div>
 
-              <div className="p-2.5 bg-[#0B0F17] border border-[#1F2B3E] hover:border-[#293B54] transition-colors rounded-xl flex items-center justify-between text-xs">
+              <div className="p-2.5 neu-inset rounded-xl flex items-center justify-between text-xs">
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 rounded-full bg-[#00E5FF] shadow-[0_0_6px_#00E5FF]"></div>
                   <span className="font-semibold text-[#F3F6FA]">EVM Gas Profiler</span>
@@ -307,14 +307,14 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
             </div>
           </div>
 
-          <div className="p-3 bg-[#0B0F17] rounded-xl border border-[#293B54] text-[10px] font-mono text-[#CBD5E1] font-medium">
+          <div className="p-3 neu-inset rounded-xl text-[10px] font-mono text-[#CBD5E1] font-medium">
             Sandbox: Docker/Host Isolated • Network Guarded
           </div>
         </div>
       </div>
 
       <div className="glass-panel rounded-2xl overflow-hidden border border-[#293B54]/70">
-        <div className="px-6 py-4 border-b border-[#1F2B3E] flex items-center justify-between bg-[#111722]/80">
+        <div className="px-6 py-4 border-b border-[#293B54] flex items-center justify-between bg-[#111722]/80">
           <div>
             <h3 className="text-xs font-semibold text-[#F3F6FA] uppercase tracking-wider">
               Priority Security Vulnerabilities
@@ -329,7 +329,7 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
                 sounds.playClick();
                 onNavigateTab("findings");
               }}
-              className="text-xs text-[#CBD5E1] hover:text-[#00E5FF] font-semibold flex items-center space-x-1 transition-colors"
+              className="neu-button px-3.5 py-1.5 rounded-xl text-xs text-[#00E5FF] font-semibold flex items-center space-x-1.5 transition-all cursor-pointer shadow-sm"
             >
               <span>View All {findings.length} Findings</span>
               <ChevronRight className="w-3.5 h-3.5 text-[#00E5FF]" />

@@ -226,7 +226,7 @@ export default function Home() {
                 sounds.playClick();
                 setIsMobileMenuOpen(true);
               }}
-              className="p-1.5 -ml-1 text-[#94A3B8] hover:text-[#F3F6FA] hover:bg-[#17202E] rounded-xl md:hidden transition-colors"
+              className="p-1.5 -ml-1 neu-button text-[#94A3B8] hover:text-[#F3F6FA] rounded-xl md:hidden transition-all"
               title="Open Navigation Drawer"
             >
               <Menu className="w-5 h-5 text-[#00E5FF]" />
@@ -239,13 +239,13 @@ export default function Home() {
             <span className="text-[#475569] hidden sm:inline">/</span>
             <span className="text-[#CBD5E1] hidden sm:inline truncate max-w-[140px] md:max-w-none text-xs font-medium">Security Console</span>
             <span className="text-[#475569]">/</span>
-            <span className="px-2.5 py-0.5 rounded-md glass-pill text-[#FFFFFF] font-mono text-[11px] font-semibold truncate max-w-[120px] sm:max-w-none border border-[#293B54] shadow-sm">
+            <span className="px-2.5 py-0.5 rounded-lg neu-inset text-[#00E5FF] font-mono text-[11px] font-semibold truncate max-w-[120px] sm:max-w-none border border-[#00E5FF]/20 shadow-inner">
               {tabLabels[currentTab] || "Overview"}
             </span>
           </div>
 
           <div className="flex items-center space-x-2 sm:space-x-3 shrink-0">
-            <div className="hidden lg:flex items-center space-x-2.5 px-3 py-1.5 glass-pill rounded-xl text-[11px] font-mono border border-[#293B54]">
+            <div className="hidden lg:flex items-center space-x-2.5 px-3.5 py-1.5 neu-inset rounded-xl text-[11px] font-mono">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00E5FF] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00E5FF] shadow-[0_0_6px_#00E5FF]"></span>
@@ -259,7 +259,7 @@ export default function Home() {
                 const nextMuted = sounds.toggleMute();
                 setIsAudioMuted(nextMuted);
               }}
-              className="flex items-center space-x-1.5 px-2.5 sm:px-3 py-1.5 glass-panel hover:bg-[#17202E] text-[#F3F6FA] rounded-xl text-xs font-medium transition-all border border-[#293B54]"
+              className="flex items-center space-x-1.5 px-2.5 sm:px-3 py-1.5 neu-button text-[#F3F6FA] rounded-xl text-xs font-medium transition-all cursor-pointer"
               title={isAudioMuted ? "Sound Effects Muted (Click to Unmute)" : "Sound Effects Active (Click to Mute)"}
             >
               {isAudioMuted ? (
@@ -274,7 +274,7 @@ export default function Home() {
 
             <button
               onClick={() => handleOpenGuide(currentTab)}
-              className="flex items-center space-x-1.5 px-2.5 sm:px-3 py-1.5 glass-panel hover:bg-[#17202E] hover:border-[#00E5FF]/40 text-[#F3F6FA] rounded-xl text-xs font-medium transition-all group border border-[#293B54]"
+              className="flex items-center space-x-1.5 px-2.5 sm:px-3 py-1.5 neu-button hover:border-[#00E5FF]/40 text-[#F3F6FA] rounded-xl text-xs font-medium transition-all group cursor-pointer"
               title="Open Feature Guide"
             >
               <HelpCircle className="w-3.5 h-3.5 text-[#00E5FF] group-hover:rotate-12 transition-transform" />
@@ -287,9 +287,9 @@ export default function Home() {
                 sounds.playBeep(1100);
                 setCurrentTab("scanner");
               }}
-              className="btn-contrax-primary flex items-center space-x-1.5 px-3 sm:px-4 py-1.5 rounded-xl text-xs font-bold transition-all active:scale-95 cursor-pointer"
+              className="btn-contrax-primary flex items-center space-x-1.5 px-3 sm:px-4 py-1.5 rounded-xl text-xs font-bold transition-all active:scale-95 cursor-pointer shadow-lg"
             >
-              <Plus className="w-3.5 h-3.5 text-[#0B0E14] stroke-[2.5]" />
+              <Plus className="w-3.5 h-3.5 text-[#070A0F] stroke-[2.5]" />
               <span className="hidden sm:inline">New Scan</span>
               <span className="sm:hidden text-[11px]">Scan</span>
             </button>

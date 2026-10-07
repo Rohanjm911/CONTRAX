@@ -139,15 +139,15 @@ contract AccessControlExample {
         )}
       </div>
 
-      <div className="glass-panel p-1 rounded-xl flex sm:inline-flex w-full sm:w-auto border border-[#293B54]">
+      <div className="neu-segmented p-1.5 rounded-2xl flex sm:inline-flex w-full sm:w-auto gap-1">
         <button
           onClick={() => {
             sounds.playSubtleClick();
             setActiveTab("SOURCE");
           }}
-          className={`flex-1 sm:flex-initial flex items-center justify-center space-x-2 px-4 py-2 sm:py-1.5 rounded-lg text-xs font-medium transition-all ${
+          className={`flex-1 sm:flex-initial flex items-center justify-center space-x-2 px-5 py-2.5 sm:py-2 rounded-xl text-xs font-semibold transition-all ${
             activeTab === "SOURCE"
-              ? "bg-[#00E5FF]/10 text-[#00E5FF] border border-[#00E5FF]/30 shadow-[0_0_12px_rgba(0,229,255,0.15)] font-semibold"
+              ? "neu-button text-[#00E5FF] shadow-[5px_5px_12px_rgba(0,0,0,0.7),-3px_-3px_8px_rgba(0,229,255,0.15)] border-t border-[rgba(255,255,255,0.2)]"
               : "text-[#94A3B8] hover:text-[#F3F6FA] border border-transparent"
           }`}
         >
@@ -159,9 +159,9 @@ contract AccessControlExample {
             sounds.playSubtleClick();
             setActiveTab("ON_CHAIN");
           }}
-          className={`flex-1 sm:flex-initial flex items-center justify-center space-x-2 px-4 py-2 sm:py-1.5 rounded-lg text-xs font-medium transition-all ${
+          className={`flex-1 sm:flex-initial flex items-center justify-center space-x-2 px-5 py-2.5 sm:py-2 rounded-xl text-xs font-semibold transition-all ${
             activeTab === "ON_CHAIN"
-              ? "bg-[#00E5FF]/10 text-[#00E5FF] border border-[#00E5FF]/30 shadow-[0_0_12px_rgba(0,229,255,0.15)] font-semibold"
+              ? "neu-button text-[#00E5FF] shadow-[5px_5px_12px_rgba(0,0,0,0.7),-3px_-3px_8px_rgba(0,229,255,0.15)] border-t border-[rgba(255,255,255,0.2)]"
               : "text-[#94A3B8] hover:text-[#F3F6FA] border border-transparent"
           }`}
         >
@@ -225,25 +225,26 @@ contract AccessControlExample {
                   setErrorMsg(null);
                 }}
               />
-              <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
+              <div className="mt-4 flex flex-wrap items-center justify-center gap-2.5">
                 <label
                   htmlFor="sol-file-input"
-                  className="px-4 py-2 bg-[#17202E] hover:bg-[#1E293B] border border-[#293B54] hover:border-[#00E5FF]/60 text-[#F3F6FA] text-xs font-semibold rounded-lg cursor-pointer transition-all shadow-sm"
+                  className="px-4 py-2.5 neu-button text-[#F3F6FA] text-xs font-semibold rounded-xl cursor-pointer transition-all flex items-center space-x-2"
                 >
-                  Browse Local Files
+                  <Upload className="w-3.5 h-3.5 text-[#94A3B8]" />
+                  <span>Browse Local Files</span>
                 </label>
 
                 <button
                   type="button"
                   onClick={() => handleSelectSample(sampleContracts[0])}
-                  className="px-4 py-2 bg-[#00E5FF]/10 hover:bg-[#00E5FF]/20 border border-[#00E5FF]/40 text-[#00E5FF] text-xs font-semibold rounded-lg cursor-pointer transition-all flex items-center space-x-1.5 shadow-[0_0_12px_rgba(0,229,255,0.15)]"
+                  className="px-4 py-2.5 neu-button text-[#00E5FF] text-xs font-semibold rounded-xl cursor-pointer transition-all flex items-center space-x-1.5 shadow-[0_0_12px_rgba(0,229,255,0.2)]"
                 >
                   <Sparkles className="w-3.5 h-3.5 text-[#00E5FF]" />
                   <span>⚡ Try Demo Contract</span>
                 </button>
 
                 {selectedFile && (
-                  <div className="p-2 bg-[#00E5FF]/10 border border-[#00E5FF]/40 rounded-lg inline-flex items-center space-x-2 text-xs font-mono text-[#00E5FF] shadow-[0_0_12px_rgba(0,229,255,0.1)]">
+                  <div className="p-2.5 neu-card border border-[#00E5FF]/40 rounded-xl inline-flex items-center space-x-2 text-xs font-mono text-[#00E5FF] shadow-[4px_4px_10px_rgba(0,0,0,0.6),-2px_-2px_6px_rgba(0,229,255,0.15)]">
                     <CheckCircle2 className="w-4 h-4 shrink-0 text-[#00E5FF]" />
                     <span className="font-medium text-[#F3F6FA] truncate max-w-[220px]">{selectedFile.name}</span>
                     <span className="text-[#94A3B8]">({(selectedFile.size / 1024).toFixed(1)} KB)</span>
