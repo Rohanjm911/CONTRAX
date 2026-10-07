@@ -306,9 +306,9 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({
   );
 
   return (
-    <div className="fixed inset-0 bg-black/80 flex items-center justify-center p-2 sm:p-4 z-50 animate-in fade-in duration-200">
-      <div className="glass-panel-elevated rounded-2xl max-w-4xl w-full h-[94vh] sm:h-[84vh] flex flex-col overflow-hidden shadow-2xl border border-[#1F2B3E]">
-        <div className="p-3.5 sm:p-5 px-4 sm:px-7 border-b border-[#1F2B3E] flex items-center justify-between bg-[#17202E]/70 select-none">
+    <div className="fixed inset-0 bg-black/75 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 z-50 animate-in fade-in duration-200">
+      <div className="glass-panel-elevated rounded-2xl max-w-4xl w-full h-[94vh] sm:h-[84vh] flex flex-col overflow-hidden shadow-2xl border border-[#293B54]">
+        <div className="p-3.5 sm:p-5 px-4 sm:px-7 border-b border-[#293B54] flex items-center justify-between bg-[#17202E]/40 backdrop-blur-md select-none">
           <div className="flex items-center space-x-3 min-w-0">
             <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-[#00E5FF]/10 border border-[#00E5FF]/30 flex items-center justify-center text-[#00E5FF] shrink-0">
               <BookOpen className="w-4 h-4 sm:w-5 sm:h-5" />

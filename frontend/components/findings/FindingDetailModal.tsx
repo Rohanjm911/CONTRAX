@@ -44,9 +44,9 @@ export const FindingDetailModal: React.FC<FindingDetailModalProps> = ({
       : "bg-[#38BDF8]/10 text-[#38BDF8] border-[#38BDF8]/30";
 
   return (
-    <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4 z-50 animate-in fade-in duration-150">
-      <div className="bg-[#111722] border border-[#1F2B3E] rounded-2xl max-w-2xl w-full max-h-[94vh] sm:max-h-[88vh] overflow-y-auto shadow-2xl flex flex-col justify-between">
-        <div className="p-4 sm:p-6 border-b border-[#1F2B3E] flex items-start justify-between bg-[#17202E]/60">
+    <div className="fixed inset-0 bg-black/75 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 z-50 animate-in fade-in duration-200">
+      <div className="glass-panel-elevated rounded-2xl max-w-2xl w-full max-h-[94vh] sm:max-h-[88vh] overflow-y-auto shadow-2xl flex flex-col justify-between">
+        <div className="p-4 sm:p-6 border-b border-[#293B54] flex items-start justify-between bg-[#17202E]/40 backdrop-blur-md">
           <div>
             <div className="flex items-center space-x-2">
               <span className={`px-2.5 py-0.5 text-[10px] font-mono font-bold rounded-md border ${badge}`}>

@@ -316,7 +316,7 @@ export const RealtimeScanProgress: React.FC<RealtimeScanProgressProps> = ({ scan
           <span className="text-[#00E5FF] animate-pulse">● STREAMING</span>
         </div>
 
-        <div className="bg-[#070A0F] border border-[#293B54] rounded-xl p-3.5 h-28 overflow-y-auto font-mono text-[11px] space-y-1.5 select-text">
+        <div className="neu-inset rounded-xl p-3.5 h-28 overflow-y-auto font-mono text-[11px] space-y-1.5 select-text">
           {logs.map((log, idx) => (
             <div key={idx} className="flex items-start space-x-2 leading-tight">
               <span className="text-[#94A3B8] shrink-0 font-medium">[{log.time}]</span>

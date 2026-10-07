@@ -94,7 +94,7 @@ export const ReportsView: React.FC<ReportsViewProps> = ({ currentScanId, onOpenG
             </div>
             <button
               onClick={() => downloadReport("json")}
-              className="mt-6 w-full py-2.5 bg-[#111722] hover:bg-[#17202E] text-[#F3F6FA] text-xs font-semibold rounded-xl border border-[#293B54] hover:border-[#00E5FF]/40 flex items-center justify-center space-x-2 transition-all"
+              className="mt-6 w-full py-2.5 neu-button text-[#F3F6FA] text-xs font-semibold rounded-xl flex items-center justify-center space-x-2 transition-all cursor-pointer shadow-sm"
             >
               <Download className="w-4 h-4 text-[#00E5FF]" />
               <span>Export JSON Report</span>
