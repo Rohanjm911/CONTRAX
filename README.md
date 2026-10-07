@@ -30,11 +30,11 @@
 
 ## 🖥️ Tactical Security Console & Live Interface Showcase
 
-CONTRAX is designed around a military-grade, dark cyberpunk **Tactical Cyan & Amber Radar** visual hierarchy, eliminating cognitive fatigue during smart contract audits and giving security teams immediate tactical situational awareness.
+CONTRAX is designed around a modern **Cyberpunk Violet & Electric Purple (Neu-Glass Hybrid)** tactile visual hierarchy, combining deep midnight obsidian panels with high-contrast electric violet glows and laser cyan telemetry to eliminate cognitive fatigue during smart contract audits.
 
 ### 1. Executive Operations Console & Threat Posture Gauge
 <div align="center">
-  <img src="assets/contrax_dashboard_real.png" alt="CONTRAX Executive Security Operations Console" width="100%" style="border-radius: 10px; border: 1px solid #1F2B3E; margin-bottom: 8px;" />
+  <img src="assets/contrax_dashboard_real.png" alt="CONTRAX Executive Security Operations Console" width="100%" style="border-radius: 10px; border: 1px solid #201F38; margin-bottom: 8px;" />
   <p align="center"><i><b>Executive Overview:</b> Real-time 0–100 Threat Posture health index, exposure gauge, severity ratio donut chart, SWC taxonomy breakdown, and multi-engine velocity metrics.</i></p>
 </div>
 
@@ -42,7 +42,7 @@ CONTRAX is designed around a military-grade, dark cyberpunk **Tactical Cyan & Am
 
 ### 2. Multi-Engine Vulnerability Scanner & Dropzone
 <div align="center">
-  <img src="assets/contrax_scanner_real.png" alt="CONTRAX Real-time Vulnerability Scanner" width="100%" style="border-radius: 10px; border: 1px solid #1F2B3E; margin-bottom: 8px;" />
+  <img src="assets/contrax_scanner_real.png" alt="CONTRAX Real-time Vulnerability Scanner" width="100%" style="border-radius: 10px; border: 1px solid #201F38; margin-bottom: 8px;" />
   <p align="center"><i><b>Scan Pipeline HUD:</b> Drag-and-drop Solidity files (.sol) or project archives (.zip), on-chain address importer, and instant test fixtures for reentrancy and access control.</i></p>
 </div>
 
@@ -50,7 +50,7 @@ CONTRAX is designed around a military-grade, dark cyberpunk **Tactical Cyan & Am
 
 ### 3. Vulnerability Detection Matrix
 <div align="center">
-  <img src="assets/contrax_findings_real.png" alt="CONTRAX Vulnerability Detection Matrix" width="100%" style="border-radius: 10px; border: 1px solid #1F2B3E; margin-bottom: 8px;" />
+  <img src="assets/contrax_findings_real.png" alt="CONTRAX Vulnerability Detection Matrix" width="100%" style="border-radius: 10px; border: 1px solid #201F38; margin-bottom: 8px;" />
   <p align="center"><i><b>Findings Matrix:</b> Prioritized vulnerability table with severity badges (Critical, High, Medium, Low), source targets with line numbers, detector provenance, confidence ratings, and review triggers.</i></p>
 </div>
 
@@ -58,7 +58,7 @@ CONTRAX is designed around a military-grade, dark cyberpunk **Tactical Cyan & Am
 
 ### 4. Vulnerability Remediation & Deep Inspection Sheet
 <div align="center">
-  <img src="assets/contrax_modal_real.png" alt="CONTRAX Vulnerability Remediation Modal" width="100%" style="border-radius: 10px; border: 1px solid #1F2B3E; margin-bottom: 8px;" />
+  <img src="assets/contrax_modal_real.png" alt="CONTRAX Vulnerability Remediation Modal" width="100%" style="border-radius: 10px; border: 1px solid #201F38; margin-bottom: 8px;" />
   <p align="center"><i><b>Remediation Inspector:</b> Deep dive modal displaying affected code snippets, plain-English security impact, developer remediation guidance, and official SWC registry links.</i></p>
 </div>
 
@@ -66,7 +66,7 @@ CONTRAX is designed around a military-grade, dark cyberpunk **Tactical Cyan & Am
 
 ### 5. Integrated Monaco IDE & Inline Security Annotations
 <div align="center">
-  <img src="assets/contrax_monaco_real.png" alt="CONTRAX Monaco Editor with Inline Annotations" width="100%" style="border-radius: 10px; border: 1px solid #1F2B3E; margin-bottom: 8px;" />
+  <img src="assets/contrax_monaco_real.png" alt="CONTRAX Monaco Editor with Inline Annotations" width="100%" style="border-radius: 10px; border: 1px solid #201F38; margin-bottom: 8px;" />
   <p align="center"><i><b>Monaco Source Viewer:</b> Embedded VS Code engine with Solidity syntax highlighting, contract file explorer, and interactive sidebar annotations linked directly to vulnerable lines.</i></p>
 </div>
 
@@ -74,7 +74,7 @@ CONTRAX is designed around a military-grade, dark cyberpunk **Tactical Cyan & Am
 
 ### 6. Interactive AST Semantic Hierarchy Explorer
 <div align="center">
-  <img src="assets/contrax_ast_real.png" alt="CONTRAX Solidity AST Hierarchy Explorer" width="100%" style="border-radius: 10px; border: 1px solid #1F2B3E; margin-bottom: 8px;" />
+  <img src="assets/contrax_ast_real.png" alt="CONTRAX Solidity AST Hierarchy Explorer" width="100%" style="border-radius: 10px; border: 1px solid #201F38; margin-bottom: 8px;" />
   <p align="center"><i><b>AST Visualizer:</b> Tree hierarchy decomposing contract declarations, state variables, modifiers, events, and functions with a dedicated node attributes inspector.</i></p>
 </div>
 
@@ -82,7 +82,7 @@ CONTRAX is designed around a military-grade, dark cyberpunk **Tactical Cyan & Am
 
 ### 7. Interactive SVG Contract Relationship Graph & Call Flow
 <div align="center">
-  <img src="assets/contrax_graph_real.png" alt="CONTRAX Contract Relationship & Call Graph" width="100%" style="border-radius: 10px; border: 1px solid #1F2B3E; margin-bottom: 8px;" />
+  <img src="assets/contrax_graph_real.png" alt="CONTRAX Contract Relationship & Call Graph" width="100%" style="border-radius: 10px; border: 1px solid #201F38; margin-bottom: 8px;" />
   <p align="center"><i><b>Relationship Visualizer:</b> Interactive node-link topology rendering contracts, function entrypoints, storage slot writes, external invocations, and fund flow vectors with category filtering.</i></p>
 </div>
 
@@ -90,7 +90,7 @@ CONTRAX is designed around a military-grade, dark cyberpunk **Tactical Cyan & Am
 
 ### 8. EVM Gas & Loop Execution Profiler
 <div align="center">
-  <img src="assets/contrax_gas_real.png" alt="CONTRAX EVM Gas & Loop Profiler" width="100%" style="border-radius: 10px; border: 1px solid #1F2B3E; margin-bottom: 8px;" />
+  <img src="assets/contrax_gas_real.png" alt="CONTRAX EVM Gas & Loop Profiler" width="100%" style="border-radius: 10px; border: 1px solid #201F38; margin-bottom: 8px;" />
   <p align="center"><i><b>Gas & Opcode Intelligence:</b> Per-function min/max/average gas consumption benchmarks, SSTORE write counters, external call counts, and unbounded loop hazard warnings.</i></p>
 </div>
 
@@ -98,7 +98,7 @@ CONTRAX is designed around a military-grade, dark cyberpunk **Tactical Cyan & Am
 
 ### 9. Security Audit Reports & Compliance Console
 <div align="center">
-  <img src="assets/contrax_reports_real.png" alt="CONTRAX Audit Report Console" width="100%" style="border-radius: 10px; border: 1px solid #1F2B3E; margin-bottom: 8px;" />
+  <img src="assets/contrax_reports_real.png" alt="CONTRAX Audit Report Console" width="100%" style="border-radius: 10px; border: 1px solid #201F38; margin-bottom: 8px;" />
   <p align="center"><i><b>Audit Reporting:</b> Dual-tone formal PDF audit generation with cryptographic verification seal, executive score summary, and machine-readable JSON exports for CI/CD DevSecOps.</i></p>
 </div>
 
@@ -106,7 +106,7 @@ CONTRAX is designed around a military-grade, dark cyberpunk **Tactical Cyan & Am
 
 ### 10. Interactive Auditor Guidance & Feature Walkthrough
 <div align="center">
-  <img src="assets/contrax_guide_real.png" alt="CONTRAX Auditor Guide and Walkthrough" width="100%" style="border-radius: 10px; border: 1px solid #1F2B3E; margin-bottom: 8px;" />
+  <img src="assets/contrax_guide_real.png" alt="CONTRAX Auditor Guide and Walkthrough" width="100%" style="border-radius: 10px; border: 1px solid #201F38; margin-bottom: 8px;" />
   <p align="center"><i><b>Feature Guide:</b> Step-by-step guidance modal detailing operational workflows, scoring methodology, auditor best practices, and keyboard shortcuts.</i></p>
 </div>
 
