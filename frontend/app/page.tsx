@@ -237,8 +237,8 @@ export default function Home() {
               <Menu className="w-5 h-5 text-[#00E5FF]" />
             </button>
 
-            <div className="flex items-center space-x-1.5 shrink-0">
-              <img src="/logo_mark.png" alt="CONTRAX" className="w-5 h-5 object-contain drop-shadow-[0_0_6px_rgba(255,103,31,0.4)]" />
+            <div className="flex items-center space-x-2 shrink-0">
+              <img src="/logo_mark.png" alt="CONTRAX" className="w-6 h-6 object-contain drop-shadow-[0_0_8px_rgba(255,103,31,0.45)]" />
               <span className="font-bold tracking-tight font-mono bg-gradient-to-r from-[#FF671F] via-[#FFFFFF] to-[#22C55E] bg-clip-text text-transparent">CONTRAX</span>
             </div>
             <span className="text-[#1F2B3E] hidden sm:inline">/</span>

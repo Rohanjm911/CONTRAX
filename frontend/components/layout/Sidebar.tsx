@@ -63,7 +63,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
     <div className="flex flex-col justify-between h-full select-none overflow-hidden">
       <div className="flex-1 overflow-y-auto">
         <div className="p-4 sm:p-5 border-b border-[#1F2B3E] flex items-center justify-between">
-          <ContraxLogo size={32} showText={true} subtitle="Smart Contract Audit" />
+          <ContraxLogo size={38} showText={true} subtitle="Smart Contract Audit" />
 
           {onClose && (
             <button

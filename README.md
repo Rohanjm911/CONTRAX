@@ -1,7 +1,7 @@
 <div align="center">
 
 <a href="#-tactical-security-console--live-interface-showcase">
-  <img src="assets/contrax_logo.png" alt="CONTRAX Logo" width="280" />
+  <img src="assets/contrax_logo.png" alt="CONTRAX Logo" width="480" />
 </a>
 
 <br/>

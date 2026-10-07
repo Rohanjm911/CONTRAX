@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/contrax_logo.png" alt="CONTRAX Logo" width="160" />
+  <img src="assets/contrax_logo.png" alt="CONTRAX Logo" width="280" />
 </div>
 
 # CONTRAX - How To Run Guide
