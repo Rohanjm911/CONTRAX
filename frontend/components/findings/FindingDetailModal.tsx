@@ -59,7 +59,7 @@ export const FindingDetailModal: React.FC<FindingDetailModalProps> = ({
             <h3 className="text-lg font-semibold text-[#F3F6FA] mt-2 tracking-tight font-mono">
               {finding.title}
             </h3>
-            <div className="text-xs font-mono text-[#64748B] mt-0.5">
+            <div className="text-xs font-mono text-[#94A3B8] mt-0.5">
               {finding.source_file}:{finding.line_number || "global"}
             </div>
           </div>
@@ -75,7 +75,7 @@ export const FindingDetailModal: React.FC<FindingDetailModalProps> = ({
         </div>
 
         <div className="p-4 sm:p-6 space-y-4 sm:space-y-5 text-xs">
-          <div className="bg-[#0B0F17] border border-[#1F2B3E] p-3 sm:p-4 rounded-xl space-y-1.5">
+          <div className="bg-[#0B0F17] border border-[#293B54] p-3 sm:p-4 rounded-xl space-y-1.5">
             <div className="font-semibold text-[#94A3B8] uppercase tracking-wider text-[10px]">
               Vulnerability Description
             </div>
@@ -84,7 +84,7 @@ export const FindingDetailModal: React.FC<FindingDetailModalProps> = ({
             </div>
           </div>
 
-          <div className="bg-[#0B0F17] border border-[#1F2B3E] p-3 sm:p-4 rounded-xl space-y-1.5">
+          <div className="bg-[#0B0F17] border border-[#293B54] p-3 sm:p-4 rounded-xl space-y-1.5">
             <div className="font-semibold text-[#94A3B8] uppercase tracking-wider text-[10px]">
               Security Impact
             </div>
@@ -94,17 +94,17 @@ export const FindingDetailModal: React.FC<FindingDetailModalProps> = ({
           </div>
 
           {finding.code_snippet && (
-            <div className="bg-[#0B0F17] border border-[#1F2B3E] p-3 sm:p-4 rounded-xl space-y-1.5">
+            <div className="bg-[#0B0F17] border border-[#293B54] p-3 sm:p-4 rounded-xl space-y-1.5">
               <div className="font-semibold text-[#94A3B8] uppercase tracking-wider text-[10px]">
                 Affected Code Snippet (Line {finding.line_number})
               </div>
-              <pre className="p-3 bg-[#111722] border border-[#1F2B3E] rounded-lg font-mono text-[11px] text-[#F3F6FA] overflow-x-auto">
+              <pre className="p-3 bg-[#111722] border border-[#293B54] rounded-lg font-mono text-[11px] text-[#F3F6FA] overflow-x-auto">
                 {finding.code_snippet}
               </pre>
             </div>
           )}
 
-          <div className="bg-[#0B0F17] border border-[#1F2B3E] p-3 sm:p-4 rounded-xl space-y-1.5">
+          <div className="bg-[#0B0F17] border border-[#293B54] p-3 sm:p-4 rounded-xl space-y-1.5">
             <div className="font-semibold text-[#94A3B8] uppercase tracking-wider text-[10px]">
               Remediation Guidance
             </div>
@@ -114,7 +114,7 @@ export const FindingDetailModal: React.FC<FindingDetailModalProps> = ({
           </div>
 
           {finding.references && finding.references.length > 0 && (
-            <div className="bg-[#0B0F17] border border-[#1F2B3E] p-3 sm:p-4 rounded-xl space-y-2">
+            <div className="bg-[#0B0F17] border border-[#293B54] p-3 sm:p-4 rounded-xl space-y-2">
               <div className="font-semibold text-[#94A3B8] uppercase tracking-wider text-[10px]">
                 Security References & SWC Standard
               </div>
@@ -136,7 +136,7 @@ export const FindingDetailModal: React.FC<FindingDetailModalProps> = ({
           )}
         </div>
 
-        <div className="p-3 sm:p-4 sm:px-6 border-t border-[#1F2B3E] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-[#17202E]/60">
+        <div className="p-3 sm:p-4 sm:px-6 border-t border-[#293B54] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-[#17202E]/60">
           <div className="text-[11px] font-mono text-[#CBD5E1] text-center sm:text-left">
             Detector: <span className="font-semibold text-[#00E5FF]">{finding.detector}</span>
           </div>

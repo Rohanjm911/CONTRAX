@@ -118,10 +118,10 @@ export const GasProfiler: React.FC<GasProfilerProps> = ({ gasData, onOpenGuide }
                 <th className="py-3 px-5 font-semibold text-[11px] uppercase tracking-wider font-mono w-28 text-center">Ext. Calls</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#1F2B3E]">
+            <tbody className="divide-y divide-[#293B54]">
               {gasData.length === 0 ? (
                 <tr>
-                  <td colSpan={6} className="py-12 text-center text-[#64748B]">
+                  <td colSpan={6} className="py-12 text-center text-[#CBD5E1]">
                     No gas profiles available for current scan. Run a scan on a contract containing functions.
                   </td>
                 </tr>
@@ -132,7 +132,7 @@ export const GasProfiler: React.FC<GasProfilerProps> = ({ gasData, onOpenGuide }
                       {item.function_name}()
                     </td>
                     <td className="py-3.5 px-5 font-mono text-[10px] text-[#94A3B8]">
-                      <span className="px-2 py-0.5 bg-[#0B0F17] border border-[#1F2B3E] rounded-md">
+                      <span className="px-2 py-0.5 bg-[#0B0F17] border border-[#293B54] rounded-md">
                         {item.reliability}
                       </span>
                     </td>

@@ -392,34 +392,34 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
         </div>
       </div>
 
-      <div className="glass-panel rounded-2xl overflow-hidden">
-        <div className="px-6 py-4 border-b border-[#1F2B3E] flex items-center justify-between bg-[#111722]/80">
+      <div className="glass-panel rounded-2xl overflow-hidden border border-[#293B54]">
+        <div className="px-6 py-4 border-b border-[#293B54] flex items-center justify-between bg-[#111722]/80">
           <div>
             <h3 className="text-xs font-semibold text-[#F3F6FA] uppercase tracking-wider">
               Recent Audit Executions
             </h3>
-            <p className="text-[11px] text-[#64748B] mt-0.5">
+            <p className="text-[11px] text-[#94A3B8] mt-0.5">
               Historical scan results, timing benchmarks, and severity ratios
             </p>
           </div>
-          <span className="text-[11px] font-mono text-[#94A3B8] px-2.5 py-1 bg-[#0B0F17] rounded-lg border border-[#1F2B3E]">
+          <span className="text-[11px] font-mono text-[#CBD5E1] px-2.5 py-1 bg-[#0B0F17] rounded-lg border border-[#293B54]">
             {scans.length} {scans.length === 1 ? "Audit" : "Audits"} Recorded
           </span>
         </div>
 
-        <div className="divide-y divide-[#1F2B3E]">
+        <div className="divide-y divide-[#293B54]">
           {scans.length === 0 ? (
-            <div className="crystal-placeholder crystal-facet m-5 p-10 text-center space-y-3 rounded-2xl">
-              <div className="w-12 h-12 rounded-2xl crystal-panel flex items-center justify-center mx-auto text-[#00E5FF]">
+            <div className="crystal-placeholder crystal-facet m-5 p-10 text-center space-y-3 rounded-2xl border border-[#293B54]">
+              <div className="w-12 h-12 rounded-2xl crystal-panel flex items-center justify-center mx-auto text-[#00E5FF] border border-[#293B54]">
                 <Terminal className="w-5 h-5" />
               </div>
               <div className="text-xs text-[#F3F6FA] font-semibold">No smart contracts analyzed yet</div>
-              <p className="text-[11px] text-[#64748B] max-w-sm mx-auto">
+              <p className="text-[11px] text-[#CBD5E1] max-w-sm mx-auto">
                 Begin by uploading a Solidity contract (.sol or .zip) or entering an on-chain address in the scanner.
               </p>
               <button
                 onClick={onOpenScanner}
-                className="mt-2 text-xs font-bold text-[#0B0E14] bg-gradient-to-r from-cyan-400 via-cyan-300 to-amber-300 hover:from-cyan-300 hover:to-amber-200 px-4 py-2 rounded-xl transition-all shadow-[0_2px_12px_rgba(0,229,255,0.25)]"
+                className="btn-contrax-primary mt-2 text-xs font-bold px-4 py-2 rounded-xl transition-all shadow-lg active:scale-95 cursor-pointer"
               >
                 Launch Scanner &rarr;
               </button>
@@ -439,12 +439,12 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
                     <span className="text-xs font-mono font-semibold text-[#F3F6FA]">
                       Scan #{scan.id.slice(0, 8)}
                     </span>
-                    <span className="text-[10px] font-mono text-[#64748B]">
+                    <span className="text-[10px] font-mono text-[#94A3B8]">
                       ({scan.contract_id ? scan.contract_id.slice(0, 8) : "source"})
                     </span>
                   </div>
-                  <div className="text-[11px] text-[#64748B] flex items-center space-x-2">
-                    <Clock className="w-3 h-3 text-[#64748B]" />
+                  <div className="text-[11px] text-[#CBD5E1] flex items-center space-x-2">
+                    <Clock className="w-3 h-3 text-[#94A3B8]" />
                     <span>{scan.elapsed_time}s execution</span>
                     <span>•</span>
                     <span className="text-[#94A3B8]">{scan.current_stage}</span>
@@ -473,7 +473,7 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
                         ? "bg-[#00E5FF]/10 text-[#00E5FF] border border-[#00E5FF]/30"
                         : scan.status === "RUNNING"
                         ? "bg-[#F59E0B]/10 text-[#F59E0B] border border-[#F59E0B]/30"
-                        : "bg-[#17202E] text-[#64748B] border border-[#1F2B3E]"
+                        : "bg-[#17202E] text-[#94A3B8] border border-[#293B54]"
                     }`}
                   >
                     • {scan.status}

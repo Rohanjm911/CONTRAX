@@ -20,16 +20,16 @@ export const ReportsView: React.FC<ReportsViewProps> = ({ currentScanId, onOpenG
 
   return (
     <div className="p-4 sm:p-8 max-w-4xl mx-auto space-y-5 sm:space-y-7">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-[#1F2B3E] gap-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-[#293B54] gap-4">
         <div>
-          <div className="text-[11px] font-mono text-[#64748B] uppercase tracking-wider mb-1 flex items-center space-x-2">
+          <div className="text-[11px] font-mono text-[#94A3B8] uppercase tracking-wider mb-1 flex items-center space-x-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shadow-[0_0_6px_#00E5FF]"></span>
             <span>COMPLIANCE & EXPORTS</span>
           </div>
           <h2 className="text-xl font-semibold text-[#F3F6FA] tracking-tight font-mono">
             Security Audit Reports
           </h2>
-          <p className="text-xs text-[#94A3B8] mt-0.5">
+          <p className="text-xs text-[#CBD5E1] mt-0.5">
             Generate auditor-compliant documentation in minimalist dual-tone PDF and structured JSON payloads.
           </p>
         </div>
@@ -39,7 +39,7 @@ export const ReportsView: React.FC<ReportsViewProps> = ({ currentScanId, onOpenG
               sounds.playClick();
               onOpenGuide();
             }}
-            className="flex items-center space-x-1.5 px-3 py-1.5 glass-panel hover:bg-[#17202E] text-[#F3F6FA] rounded-xl text-xs font-medium border border-[#1F2B3E] hover:border-[#00E5FF]/40 transition-all self-start sm:self-auto"
+            className="flex items-center space-x-1.5 px-3 py-1.5 glass-panel hover:bg-[#17202E] text-[#F3F6FA] rounded-xl text-xs font-medium border border-[#293B54] hover:border-[#00E5FF]/40 transition-all self-start sm:self-auto"
           >
             <HelpCircle className="w-3.5 h-3.5 text-[#00E5FF]" />
             <span>How to use</span>
@@ -48,7 +48,7 @@ export const ReportsView: React.FC<ReportsViewProps> = ({ currentScanId, onOpenG
       </div>
 
       {!currentScanId ? (
-        <div className="p-16 text-center crystal-placeholder crystal-facet rounded-2xl space-y-3 border border-[#1F2B3E]">
+        <div className="p-16 text-center crystal-placeholder crystal-facet rounded-2xl space-y-3 border border-[#293B54]">
           <div className="w-12 h-12 rounded-2xl crystal-panel flex items-center justify-center mx-auto text-[#00E5FF]">
             <Sparkles className="w-6 h-6 text-[#00E5FF]" />
           </div>

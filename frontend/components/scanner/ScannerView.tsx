@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { uploadContract, importOnchainContract, startScan } from "@/lib/api";
-import { Upload, Globe, Play, FileCode, CheckCircle2, ShieldAlert, Sparkles, HelpCircle } from "lucide-react";
+import { Upload, Globe, Play, FileCode, CheckCircle2, ShieldAlert, Sparkles, HelpCircle, X } from "lucide-react";
 import { sounds } from "@/lib/sounds";
 
 interface ScannerViewProps {
@@ -110,14 +110,14 @@ contract AccessControlExample {
     <div className="p-4 sm:p-8 max-w-4xl mx-auto space-y-5 sm:space-y-7 select-none">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <div className="text-[10px] font-mono text-[#64748B] uppercase tracking-wider mb-1 flex items-center space-x-2">
+          <div className="text-[10px] font-mono text-[#94A3B8] uppercase tracking-wider mb-1 flex items-center space-x-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shadow-[0_0_6px_#00E5FF]"></span>
             <span>ANALYSIS WORKFLOW</span>
           </div>
           <h2 className="text-xl font-semibold text-[#F3F6FA] tracking-tight font-mono">
             Contract Vulnerability Scanner
           </h2>
-          <p className="text-xs text-[#94A3B8] mt-1 max-w-xl leading-relaxed">
+          <p className="text-xs text-[#CBD5E1] mt-1 max-w-xl leading-relaxed">
             Upload smart contract source files or query on-chain bytecode across supported EVM networks.
           </p>
         </div>
@@ -127,7 +127,7 @@ contract AccessControlExample {
               sounds.playClick();
               onOpenGuide();
             }}
-            className="flex items-center space-x-1.5 px-3 py-1.5 glass-panel hover:bg-[#17202E] text-[#F3F6FA] rounded-xl text-xs font-medium border border-[#1F2B3E] hover:border-[#00E5FF]/40 transition-all self-start sm:self-auto"
+            className="flex items-center space-x-1.5 px-3 py-1.5 glass-panel hover:bg-[#17202E] text-[#F3F6FA] rounded-xl text-xs font-medium border border-[#293B54] hover:border-[#00E5FF]/40 transition-all self-start sm:self-auto"
           >
             <HelpCircle className="w-3.5 h-3.5 text-[#00E5FF]" />
             <span>How to use</span>
@@ -135,7 +135,7 @@ contract AccessControlExample {
         )}
       </div>
 
-      <div className="glass-panel p-1 rounded-xl flex sm:inline-flex w-full sm:w-auto border border-[#1F2B3E]">
+      <div className="glass-panel p-1 rounded-xl flex sm:inline-flex w-full sm:w-auto border border-[#293B54]">
         <button
           onClick={() => {
             sounds.playSubtleClick();
@@ -167,23 +167,37 @@ contract AccessControlExample {
       </div>
 
       {errorMsg && (
-        <div className="p-3.5 bg-[#EF4444]/10 border border-[#EF4444]/30 text-[#EF4444] text-xs rounded-xl flex items-center space-x-2">
-          <ShieldAlert className="w-4 h-4 shrink-0" />
-          <span>{errorMsg}</span>
+        <div className="p-4 bg-[#EF4444]/15 border border-[#EF4444]/50 text-[#FCA5A5] text-xs rounded-xl flex items-start justify-between space-x-3 shadow-[0_0_15px_rgba(239,68,68,0.15)] animate-in fade-in duration-200">
+          <div className="flex items-start space-x-2.5">
+            <ShieldAlert className="w-4 h-4 shrink-0 text-[#EF4444] mt-0.5" />
+            <div className="space-y-1">
+              <div className="font-semibold text-[#FCA5A5]">{errorMsg}</div>
+              <div className="text-[11px] text-[#CBD5E1]">
+                CONTRAX scans EVM smart contracts. Please upload a Solidity (<span className="text-[#00E5FF] font-mono font-medium">.sol</span>) file or a <span className="text-[#00E5FF] font-mono font-medium">.zip</span> archive containing Solidity contracts, or click one of the test fixtures below.
+              </div>
+            </div>
+          </div>
+          <button
+            onClick={() => setErrorMsg(null)}
+            className="p-1.5 hover:bg-[#EF4444]/20 rounded-lg text-[#FCA5A5] hover:text-[#FFFFFF] transition-colors shrink-0 cursor-pointer"
+            title="Dismiss error"
+          >
+            <X className="w-4 h-4" />
+          </button>
         </div>
       )}
 
       {activeTab === "SOURCE" && (
         <div className="space-y-5">
-          <div className="glass-panel p-5 sm:p-8 rounded-2xl space-y-5 sm:space-y-6 border border-[#1F2B3E]">
-            <div className="crystal-placeholder crystal-facet rounded-2xl p-6 sm:p-10 text-center transition-all border border-[#1F2B3E] hover:border-[#00E5FF]/40">
-              <div className="w-12 h-12 rounded-2xl crystal-panel flex items-center justify-center mx-auto mb-3 text-[#00E5FF]">
+          <div className="glass-panel p-5 sm:p-8 rounded-2xl space-y-5 sm:space-y-6 border border-[#293B54]">
+            <div className="crystal-placeholder crystal-facet rounded-2xl p-6 sm:p-10 text-center transition-all border border-[#293B54] hover:border-[#00E5FF]/40">
+              <div className="w-12 h-12 rounded-2xl crystal-panel flex items-center justify-center mx-auto mb-3 text-[#00E5FF] border border-[#293B54]">
                 <Upload className="w-5 h-5 text-[#00E5FF]" />
               </div>
               <div className="text-xs font-semibold text-[#F3F6FA]">
                 Drop Solidity contract (<span className="font-mono text-[#00E5FF]">.sol</span>) or project archive (<span className="font-mono text-[#00E5FF]">.zip</span>)
               </div>
-              <div className="text-[11px] text-[#64748B] mt-1 max-w-sm mx-auto">
+              <div className="text-[11px] text-[#94A3B8] mt-1.5 max-w-sm mx-auto">
                 Automatic compilation pragma detection, AST visitor parsing, and multi-analyzer dispatch.
               </div>
               
@@ -192,21 +206,42 @@ contract AccessControlExample {
                 accept=".sol,.zip"
                 id="sol-file-input"
                 className="hidden"
-                onChange={(e) => setSelectedFile(e.target.files?.[0] || null)}
+                onChange={(e) => {
+                  setSelectedFile(e.target.files?.[0] || null);
+                  setErrorMsg(null);
+                }}
               />
-              <label
-                htmlFor="sol-file-input"
-                className="inline-block mt-4 px-4 py-2 bg-[#111722] hover:bg-[#17202E] border border-[#1F2B3E] hover:border-[#00E5FF]/40 text-[#F3F6FA] text-xs font-semibold rounded-lg cursor-pointer transition-all"
-              >
-                Browse Local Files
-              </label>
+              <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
+                <label
+                  htmlFor="sol-file-input"
+                  className="px-4 py-2 bg-[#17202E] hover:bg-[#1E293B] border border-[#293B54] hover:border-[#00E5FF]/60 text-[#F3F6FA] text-xs font-semibold rounded-lg cursor-pointer transition-all shadow-sm"
+                >
+                  Browse Local Files
+                </label>
 
-              {selectedFile && (
-                <div className="mt-4 p-2.5 bg-[#00E5FF]/10 border border-[#00E5FF]/30 rounded-lg inline-flex items-center space-x-2 text-xs font-mono text-[#00E5FF]">
-                  <CheckCircle2 className="w-4 h-4 shrink-0" />
-                  <span>{selectedFile.name} ({(selectedFile.size / 1024).toFixed(1)} KB)</span>
-                </div>
-              )}
+                {selectedFile && (
+                  <div className="p-2 bg-[#00E5FF]/10 border border-[#00E5FF]/40 rounded-lg inline-flex items-center space-x-2 text-xs font-mono text-[#00E5FF] shadow-[0_0_12px_rgba(0,229,255,0.1)]">
+                    <CheckCircle2 className="w-4 h-4 shrink-0 text-[#00E5FF]" />
+                    <span className="font-medium text-[#F3F6FA] truncate max-w-[220px]">{selectedFile.name}</span>
+                    <span className="text-[#94A3B8]">({(selectedFile.size / 1024).toFixed(1)} KB)</span>
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        sounds.playSubtleClick();
+                        setSelectedFile(null);
+                        setErrorMsg(null);
+                        const fileInput = document.getElementById("sol-file-input") as HTMLInputElement;
+                        if (fileInput) fileInput.value = "";
+                      }}
+                      className="p-1 hover:bg-[#EF4444]/20 rounded text-[#94A3B8] hover:text-[#EF4444] transition-colors ml-1 cursor-pointer"
+                      title="Remove selected file"
+                    >
+                      <X className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+                )}
+              </div>
             </div>
 
             <button

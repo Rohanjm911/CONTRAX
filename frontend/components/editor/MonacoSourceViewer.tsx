@@ -166,17 +166,17 @@ export const MonacoSourceViewer: React.FC<MonacoSourceViewerProps> = ({
           />
         </div>
 
-        <div className="w-72 bg-[#111722] border-l border-[#1F2B3E] p-4 flex flex-col">
-          <div className="text-[10px] font-semibold text-[#64748B] uppercase tracking-wider mb-3 flex items-center justify-between font-mono">
+        <div className="w-72 bg-[#111722] border-l border-[#293B54] p-4 flex flex-col">
+          <div className="text-[10px] font-semibold text-[#94A3B8] uppercase tracking-wider mb-3 flex items-center justify-between font-mono">
             <span>File Annotations</span>
-            <span className="font-mono text-[#F3F6FA] px-1.5 py-0.2 rounded bg-[#0B0F17] border border-[#1F2B3E]">
+            <span className="font-mono text-[#F3F6FA] px-1.5 py-0.2 rounded bg-[#0B0F17] border border-[#293B54]">
               {findings.filter((f) => f.source_file === selectedFile).length}
             </span>
           </div>
 
           <div className="space-y-2 overflow-y-auto flex-1">
             {findings.filter((f) => f.source_file === selectedFile).length === 0 ? (
-              <div className="text-center py-8 text-xs text-[#64748B]">
+              <div className="text-center py-8 text-xs text-[#CBD5E1]">
                 No security flags on this source file.
               </div>
             ) : (
@@ -191,7 +191,7 @@ export const MonacoSourceViewer: React.FC<MonacoSourceViewerProps> = ({
                         editorRef.current.setPosition({ lineNumber: f.line_number, column: 1 });
                       }
                     }}
-                    className="p-3 bg-[#0B0F17] border border-[#1F2B3E] hover:border-[#00E5FF]/50 rounded-xl cursor-pointer transition-all text-xs"
+                    className="p-3 bg-[#0B0F17] border border-[#293B54] hover:border-[#00E5FF]/60 rounded-xl cursor-pointer transition-all text-xs"
                   >
                     <div className="flex items-center justify-between font-mono text-[10px]">
                       <span className={`font-bold ${
@@ -199,7 +199,7 @@ export const MonacoSourceViewer: React.FC<MonacoSourceViewerProps> = ({
                       }`}>
                         {f.severity}
                       </span>
-                      <span className="text-[#64748B]">Line {f.line_number || "-"}</span>
+                      <span className="text-[#CBD5E1]">Line {f.line_number || "-"}</span>
                     </div>
                     <div className="font-semibold text-[#F3F6FA] mt-1 line-clamp-1">{f.title}</div>
                     <div className="text-[11px] text-[#94A3B8] mt-0.5 line-clamp-2">{f.description}</div>

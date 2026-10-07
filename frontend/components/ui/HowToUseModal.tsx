@@ -320,7 +320,7 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({
                   Help
                 </span>
               </h2>
-              <p className="text-[11px] sm:text-xs text-[#64748B] mt-0.5 truncate hidden sm:block">
+              <p className="text-[11px] sm:text-xs text-[#94A3B8] mt-0.5 truncate hidden sm:block">
                 Complete walkthroughs, operational steps, and auditor best practices for every workbench function.
               </p>
             </div>
@@ -331,23 +331,23 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({
               sounds.playSubtleClick();
               onClose();
             }}
-            className="text-[#64748B] hover:text-[#F3F6FA] p-1.5 sm:p-2 rounded-xl hover:bg-[#1E2B3D] transition-colors shrink-0"
+            className="text-[#94A3B8] hover:text-[#F3F6FA] p-1.5 sm:p-2 rounded-xl hover:bg-[#1E2B3D] transition-colors shrink-0"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         <div className="flex flex-col md:flex-row flex-1 overflow-hidden">
-          <div className="w-full md:w-72 bg-[#0B0F17] border-b md:border-b-0 md:border-r border-[#1F2B3E] p-3 sm:p-4 flex flex-col justify-between select-none max-h-44 md:max-h-none shrink-0">
+          <div className="w-full md:w-72 bg-[#0B0F17] border-b md:border-b-0 md:border-r border-[#293B54] p-3 sm:p-4 flex flex-col justify-between select-none max-h-44 md:max-h-none shrink-0">
             <div className="space-y-3 flex-1 flex flex-col overflow-hidden">
               <div className="relative">
-                <Search className="w-3.5 h-3.5 absolute left-3 top-2.5 text-[#64748B]" />
+                <Search className="w-3.5 h-3.5 absolute left-3 top-2.5 text-[#94A3B8]" />
                 <input
                   type="text"
                   placeholder="Search features..."
                   value={searchFilter}
                   onChange={(e) => setSearchFilter(e.target.value)}
-                  className="w-full pl-8 pr-3 py-1.5 bg-[#111722] border border-[#1F2B3E] rounded-xl text-xs text-[#F3F6FA] placeholder-[#64748B] focus:outline-none focus:border-[#00E5FF]"
+                  className="w-full pl-8 pr-3 py-1.5 bg-[#111722] border border-[#293B54] rounded-xl text-xs text-[#F3F6FA] placeholder-[#94A3B8] focus:outline-none focus:border-[#00E5FF]"
                 />
               </div>
 
@@ -366,13 +366,13 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({
                       className={`w-full flex items-center space-x-2.5 px-3 py-2.5 rounded-xl text-xs text-left transition-all ${
                         isSelected
                           ? "bg-[#17202E] text-[#F3F6FA] font-semibold border border-[#00E5FF]/40 shadow-sm"
-                          : "text-[#94A3B8] hover:bg-[#111722] hover:text-[#F3F6FA] border border-transparent"
+                          : "text-[#CBD5E1] hover:bg-[#111722] hover:text-[#F3F6FA] border border-transparent"
                       }`}
                     >
-                      <Icon className={`w-4 h-4 shrink-0 ${isSelected ? "text-[#00E5FF]" : "text-[#64748B]"}`} />
+                      <Icon className={`w-4 h-4 shrink-0 ${isSelected ? "text-[#00E5FF]" : "text-[#94A3B8]"}`} />
                       <div className="truncate flex-1">
                         <div className="truncate">{guide.title}</div>
-                        <div className="text-[10px] text-[#64748B] font-normal truncate">
+                        <div className="text-[10px] text-[#94A3B8] font-normal truncate">
                           {guide.badgeText}
                         </div>
                       </div>
@@ -382,7 +382,7 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({
               </div>
             </div>
 
-            <div className="pt-3 border-t border-[#1F2B3E] text-[11px] text-[#64748B] space-y-1">
+            <div className="pt-3 border-t border-[#293B54] text-[11px] text-[#CBD5E1] space-y-1">
               <div className="flex items-center space-x-1.5 text-[#F3F6FA] font-medium">
                 <Sparkles className="w-3.5 h-3.5 text-[#00E5FF]" />
                 <span>Auditor Quicktip:</span>
@@ -394,7 +394,7 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({
           </div>
 
           <div className="flex-1 bg-transparent p-4 sm:p-7 overflow-y-auto space-y-5 sm:space-y-6">
-            <div className="space-y-2 pb-5 border-b border-[#1F2B3E]">
+            <div className="space-y-2 pb-5 border-b border-[#293B54]">
               <div className="flex items-center space-x-2.5">
                 {React.createElement(currentGuide.icon, {
                   className: "w-6 h-6 text-[#00E5FF]"
@@ -406,13 +406,13 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({
                   {currentGuide.badgeText}
                 </span>
               </div>
-              <p className="text-xs text-[#94A3B8] leading-relaxed">
+              <p className="text-xs text-[#CBD5E1] leading-relaxed">
                 {currentGuide.description}
               </p>
             </div>
 
             <div className="space-y-3">
-              <div className="text-[11px] font-mono text-[#64748B] uppercase tracking-wider">
+              <div className="text-[11px] font-mono text-[#94A3B8] uppercase tracking-wider">
                 STEP-BY-STEP WORKFLOW
               </div>
 
@@ -420,7 +420,7 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({
                 {currentGuide.steps.map((step, idx) => (
                   <div
                     key={idx}
-                    className="p-3.5 glass-panel rounded-xl flex items-start space-x-3.5 transition-all border border-[#1F2B3E]"
+                    className="p-3.5 glass-panel rounded-xl flex items-start space-x-3.5 transition-all border border-[#293B54]"
                   >
                     <div className="w-6 h-6 rounded-lg bg-[#00E5FF]/10 border border-[#00E5FF]/30 flex items-center justify-center font-mono text-xs font-bold text-[#00E5FF] shrink-0 mt-0.5">
                       {idx + 1}
@@ -429,7 +429,7 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({
                       <h4 className="text-xs font-semibold text-[#F3F6FA]">
                         {step.title}
                       </h4>
-                      <p className="text-[11px] text-[#94A3B8] leading-relaxed">
+                      <p className="text-[11px] text-[#CBD5E1] leading-relaxed">
                         {step.desc}
                       </p>
                     </div>
@@ -444,7 +444,7 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({
                   <CheckCircle2 className="w-4 h-4 text-[#00E5FF]" />
                   <span>AUDITOR BEST PRACTICES & SHORTCUTS</span>
                 </div>
-                <ul className="space-y-1.5 text-xs text-[#94A3B8]">
+                <ul className="space-y-1.5 text-xs text-[#CBD5E1]">
                   {currentGuide.proTips.map((tip, idx) => (
                     <li key={idx} className="flex items-start space-x-2 text-[11px] leading-relaxed">
                       <span className="text-[#00E5FF] font-bold">•</span>
@@ -457,7 +457,7 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({
           </div>
         </div>
 
-        <div className="p-4 px-7 border-t border-[#1F2B3E] bg-[#17202E]/70 flex items-center justify-between text-xs select-none">
+        <div className="p-4 px-7 border-t border-[#293B54] bg-[#17202E]/70 flex items-center justify-between text-xs select-none">
           <div className="text-[#CBD5E1] font-mono text-[11px]">
             CONTRAX Security Guidance Suite • Tactical Radar Edition
           </div>

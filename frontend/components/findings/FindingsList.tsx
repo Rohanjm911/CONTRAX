@@ -28,16 +28,16 @@ export const FindingsList: React.FC<FindingsListProps> = ({ findings, onSelectFi
 
   return (
     <div className="p-4 sm:p-8 max-w-7xl mx-auto space-y-5 sm:space-y-6">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-[#1F2B3E]">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-[#293B54]">
         <div>
-          <div className="text-[11px] font-mono text-[#64748B] uppercase tracking-wider mb-1 flex items-center space-x-2">
+          <div className="text-[11px] font-mono text-[#94A3B8] uppercase tracking-wider mb-1 flex items-center space-x-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shadow-[0_0_6px_#00E5FF]"></span>
             <span>DETECTION MATRIX</span>
           </div>
           <h2 className="text-xl font-semibold text-[#F3F6FA] tracking-tight font-mono">
             Security Vulnerability Findings
           </h2>
-          <p className="text-xs text-[#94A3B8] mt-0.5">
+          <p className="text-xs text-[#CBD5E1] mt-0.5">
             Normalized findings correlated across AST, Slither static detectors, and Mythril symbolic traces.
           </p>
         </div>

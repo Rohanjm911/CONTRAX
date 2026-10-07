@@ -20,8 +20,8 @@ export const ASTVisualizer: React.FC<ASTVisualizerProps> = ({ astData, onOpenGui
 
   return (
     <div className="flex flex-col md:flex-row h-[calc(100vh-56px)] overflow-hidden">
-      <div className="w-full md:w-1/2 h-1/2 md:h-full bg-[#0B0F17] border-b md:border-b-0 md:border-r border-[#1F2B3E] p-4 sm:p-6 overflow-y-auto">
-        <div className="flex items-center justify-between pb-4 border-b border-[#1F2B3E] mb-5">
+      <div className="w-full md:w-1/2 h-1/2 md:h-full bg-[#0B0F17] border-b md:border-b-0 md:border-r border-[#293B54] p-4 sm:p-6 overflow-y-auto">
+        <div className="flex items-center justify-between pb-4 border-b border-[#293B54] mb-5">
           <div>
             <div className="text-[10px] font-mono text-[#94A3B8] font-bold uppercase">PARSER HIERARCHY</div>
             <h3 className="text-sm font-semibold text-[#F3F6FA] tracking-tight font-mono">
@@ -51,7 +51,7 @@ export const ASTVisualizer: React.FC<ASTVisualizerProps> = ({ astData, onOpenGui
             const isContractOpen = expandedNodes[cKey] !== false;
 
             return (
-              <div key={cKey} className="border border-[#1F2B3E] hover:border-[#00E5FF]/30 rounded-2xl bg-[#111722] p-3 space-y-2 transition-all">
+              <div key={cKey} className="border border-[#293B54] hover:border-[#00E5FF]/40 rounded-2xl bg-[#111722] p-3 space-y-2 transition-all">
                 <div
                   onClick={() => {
                     toggleNode(cKey);
@@ -60,13 +60,13 @@ export const ASTVisualizer: React.FC<ASTVisualizerProps> = ({ astData, onOpenGui
                   className="flex items-center space-x-2 text-[#F3F6FA] font-semibold cursor-pointer p-1.5 rounded-lg hover:bg-[#17202E] transition-colors"
                 >
                   {isContractOpen ? (
-                    <ChevronDown className="w-4 h-4 text-[#64748B]" />
+                    <ChevronDown className="w-4 h-4 text-[#94A3B8]" />
                   ) : (
-                    <ChevronRight className="w-4 h-4 text-[#64748B]" />
+                    <ChevronRight className="w-4 h-4 text-[#94A3B8]" />
                   )}
                   <Box className="w-4 h-4 text-[#00E5FF]" />
                   <span>{contract.name}</span>
-                  <span className="text-[10px] text-[#64748B] font-sans font-normal">
+                  <span className="text-[10px] text-[#94A3B8] font-sans font-normal">
                     ({contract.type})
                   </span>
                 </div>
@@ -79,7 +79,7 @@ export const ASTVisualizer: React.FC<ASTVisualizerProps> = ({ astData, onOpenGui
                           <Cpu className="w-3.5 h-3.5 text-[#F59E0B]" />
                           <span>State Variables ({contract.stateVariables.length})</span>
                         </div>
-                        <div className="pl-3 space-y-0.5 border-l border-[#1F2B3E]">
+                        <div className="pl-3 space-y-0.5 border-l border-[#293B54]">
                           {contract.stateVariables.map((v: any, vIdx: number) => (
                             <div
                               key={vIdx}
@@ -89,7 +89,7 @@ export const ASTVisualizer: React.FC<ASTVisualizerProps> = ({ astData, onOpenGui
                               <span>
                                 <span className="text-[#F59E0B]">{v.type}</span> {v.name}
                               </span>
-                              <span className="text-[10px] text-[#64748B]">Line {v.line}</span>
+                              <span className="text-[10px] text-[#94A3B8]">Line {v.line}</span>
                             </div>
                           ))}
                         </div>
@@ -102,7 +102,7 @@ export const ASTVisualizer: React.FC<ASTVisualizerProps> = ({ astData, onOpenGui
                           <Shield className="w-3.5 h-3.5 text-[#00E5FF]" />
                           <span>Functions ({contract.functions.length})</span>
                         </div>
-                        <div className="pl-3 space-y-0.5 border-l border-[#1F2B3E]">
+                        <div className="pl-3 space-y-0.5 border-l border-[#293B54]">
                           {contract.functions.map((fn: any, fnIdx: number) => (
                             <div
                               key={fnIdx}
@@ -110,7 +110,7 @@ export const ASTVisualizer: React.FC<ASTVisualizerProps> = ({ astData, onOpenGui
                               className="text-[11px] text-[#F3F6FA] hover:bg-[#17202E] px-2 py-1 rounded-md cursor-pointer flex items-center justify-between transition-colors"
                             >
                               <span>{fn.name || "fallback"}()</span>
-                              <span className="text-[10px] text-[#64748B] font-mono">
+                              <span className="text-[10px] text-[#94A3B8] font-mono">
                                 {fn.visibility}
                               </span>
                             </div>
@@ -147,8 +147,8 @@ export const ASTVisualizer: React.FC<ASTVisualizerProps> = ({ astData, onOpenGui
       </div>
 
       <div className="w-full md:w-1/2 h-1/2 md:h-full bg-[#111722] p-4 sm:p-6 overflow-y-auto">
-        <div className="pb-4 border-b border-[#1F2B3E] mb-5">
-          <div className="text-[10px] font-mono text-[#64748B] uppercase">PROPERTY INSPECTOR</div>
+        <div className="pb-4 border-b border-[#293B54] mb-5">
+          <div className="text-[10px] font-mono text-[#94A3B8] uppercase">PROPERTY INSPECTOR</div>
           <h3 className="text-sm font-semibold text-[#F3F6FA] tracking-tight font-mono">
             Node Attributes & Scope
           </h3>
@@ -156,52 +156,52 @@ export const ASTVisualizer: React.FC<ASTVisualizerProps> = ({ astData, onOpenGui
 
         {selectedNode ? (
           <div className="space-y-4">
-            <div className="p-4 bg-[#0B0F17] border border-[#1F2B3E] rounded-xl">
-              <div className="text-[10px] font-mono text-[#64748B] uppercase">NODE CLASSIFICATION</div>
+            <div className="p-4 bg-[#0B0F17] border border-[#293B54] rounded-xl">
+              <div className="text-[10px] font-mono text-[#94A3B8] uppercase">NODE CLASSIFICATION</div>
               <div className="text-sm font-bold text-[#00E5FF] font-mono mt-0.5">
                 {selectedNode.type}
               </div>
             </div>
 
-            <div className="p-4 bg-[#0B0F17] border border-[#1F2B3E] rounded-xl space-y-2.5 text-xs">
-              <div className="flex justify-between py-1 border-b border-[#1F2B3E]">
+            <div className="p-4 bg-[#0B0F17] border border-[#293B54] rounded-xl space-y-2.5 text-xs">
+              <div className="flex justify-between py-1 border-b border-[#293B54]">
                 <span className="text-[#94A3B8]">Identifier</span>
                 <span className="text-[#F3F6FA] font-mono font-semibold">{selectedNode.name}</span>
               </div>
               {selectedNode.line && (
-                <div className="flex justify-between py-1 border-b border-[#1F2B3E]">
+                <div className="flex justify-between py-1 border-b border-[#293B54]">
                   <span className="text-[#94A3B8]">Source Line</span>
                   <span className="text-[#F3F6FA] font-mono">{selectedNode.line}</span>
                 </div>
               )}
               {selectedNode.visibility && (
-                <div className="flex justify-between py-1 border-b border-[#1F2B3E]">
+                <div className="flex justify-between py-1 border-b border-[#293B54]">
                   <span className="text-[#94A3B8]">Visibility Scope</span>
                   <span className="text-[#F3F6FA] font-mono">{selectedNode.visibility}</span>
                 </div>
               )}
               {selectedNode.mutability && (
-                <div className="flex justify-between py-1 border-b border-[#1F2B3E]">
+                <div className="flex justify-between py-1 border-b border-[#293B54]">
                   <span className="text-[#94A3B8]">State Mutability</span>
                   <span className="text-[#F3F6FA] font-mono">{selectedNode.mutability}</span>
                 </div>
               )}
             </div>
 
-            <div className="p-4 bg-[#0B0F17] border border-[#1F2B3E] rounded-xl">
-              <div className="text-[10px] font-mono text-[#64748B] uppercase mb-2">RAW SYNTAX OBJECT</div>
-              <pre className="text-[11px] font-mono text-[#F3F6FA] overflow-x-auto p-2.5 bg-[#111722] rounded-lg border border-[#1F2B3E]">
+            <div className="p-4 bg-[#0B0F17] border border-[#293B54] rounded-xl">
+              <div className="text-[10px] font-mono text-[#94A3B8] uppercase mb-2">RAW SYNTAX OBJECT</div>
+              <pre className="text-[11px] font-mono text-[#F3F6FA] overflow-x-auto p-2.5 bg-[#111722] rounded-lg border border-[#293B54]">
                 {JSON.stringify(selectedNode, null, 2)}
               </pre>
             </div>
           </div>
         ) : (
-          <div className="crystal-placeholder crystal-facet p-12 text-center text-xs text-[#64748B] space-y-3 rounded-2xl border border-[#1F2B3E]">
+          <div className="crystal-placeholder crystal-facet p-12 text-center text-xs text-[#CBD5E1] space-y-3 rounded-2xl border border-[#293B54]">
             <div className="w-12 h-12 rounded-2xl crystal-panel flex items-center justify-center mx-auto text-[#00E5FF]">
               <Layers className="w-5 h-5" />
             </div>
             <div className="font-semibold text-[#F3F6FA]">Select an AST Hierarchy Node</div>
-            <div className="max-w-xs mx-auto text-[11px] leading-relaxed">
+            <div className="max-w-xs mx-auto text-[11px] leading-relaxed text-[#94A3B8]">
               Click any contract, function, state variable, or event in the left outline to inspect scope, visibility, and raw syntax tokens.
             </div>
           </div>

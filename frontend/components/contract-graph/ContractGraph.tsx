@@ -540,10 +540,10 @@ export const ContractGraph: React.FC<ContractGraphProps> = ({
         </div>
       </div>
 
-      <div className="w-full lg:w-80 bg-[#111722] border-t lg:border-t-0 lg:border-l border-[#1F2B3E] p-4 sm:p-6 flex flex-col justify-between overflow-y-auto max-h-[35vh] lg:max-h-none shrink-0">
+      <div className="w-full lg:w-80 bg-[#111722] border-t lg:border-t-0 lg:border-l border-[#293B54] p-4 sm:p-6 flex flex-col justify-between overflow-y-auto max-h-[35vh] lg:max-h-none shrink-0">
         <div>
-          <div className="pb-3 border-b border-[#1F2B3E] mb-5">
-            <div className="text-[10px] font-mono text-[#64748B] uppercase">GRAPH INSPECTOR</div>
+          <div className="pb-3 border-b border-[#293B54] mb-5">
+            <div className="text-[10px] font-mono text-[#94A3B8] uppercase">GRAPH INSPECTOR</div>
             <h3 className="text-sm font-semibold text-[#F3F6FA] tracking-tight font-mono">
               Selected Relationship Node
             </h3>
@@ -551,8 +551,8 @@ export const ContractGraph: React.FC<ContractGraphProps> = ({
 
           {selectedNode ? (
             <div className="space-y-4">
-              <div className="p-4 bg-[#0B0F17] border border-[#1F2B3E] rounded-xl">
-                <div className="text-[10px] font-mono text-[#64748B] uppercase">NODE IDENTIFIER</div>
+              <div className="p-4 bg-[#0B0F17] border border-[#293B54] rounded-xl">
+                <div className="text-[10px] font-mono text-[#94A3B8] uppercase">NODE IDENTIFIER</div>
                 <div className="text-sm font-bold text-[#F3F6FA] font-mono mt-0.5">
                   {selectedNode.name}
                 </div>
@@ -569,20 +569,20 @@ export const ContractGraph: React.FC<ContractGraphProps> = ({
                 </span>
               </div>
 
-              <div className="p-4 bg-[#0B0F17] border border-[#1F2B3E] rounded-xl space-y-2 text-xs">
-                <div className="flex justify-between py-1 border-b border-[#1F2B3E]">
+              <div className="p-4 bg-[#0B0F17] border border-[#293B54] rounded-xl space-y-2 text-xs">
+                <div className="flex justify-between py-1 border-b border-[#293B54]">
                   <span className="text-[#94A3B8]">Type</span>
                   <span className="font-mono text-[#F3F6FA]">{selectedNode.type}</span>
                 </div>
                 {selectedNode.contractName && (
-                  <div className="flex justify-between py-1 border-b border-[#1F2B3E]">
+                  <div className="flex justify-between py-1 border-b border-[#293B54]">
                     <span className="text-[#94A3B8]">Contract</span>
                     <span className="font-mono text-[#F3F6FA]">{selectedNode.contractName}</span>
                   </div>
                 )}
                 {selectedNode.details &&
                   Object.entries(selectedNode.details).map(([k, v]) => (
-                    <div key={k} className="flex justify-between py-1 border-b border-[#1F2B3E]">
+                    <div key={k} className="flex justify-between py-1 border-b border-[#293B54]">
                       <span className="text-[#94A3B8] capitalize">{k}</span>
                       <span className="font-mono text-[#F3F6FA] text-right truncate max-w-[150px]">{v}</span>
                     </div>
@@ -590,20 +590,20 @@ export const ContractGraph: React.FC<ContractGraphProps> = ({
               </div>
             </div>
           ) : (
-            <div className="crystal-placeholder crystal-facet p-6 text-center text-xs text-[#64748B] space-y-2.5 rounded-xl border border-[#1F2B3E]">
+            <div className="crystal-placeholder crystal-facet p-6 text-center text-xs text-[#CBD5E1] space-y-2.5 rounded-xl border border-[#293B54]">
               <div className="w-10 h-10 rounded-xl crystal-panel flex items-center justify-center mx-auto text-[#00E5FF]">
                 <Layers className="w-4 h-4" />
               </div>
               <div className="font-semibold text-[#F3F6FA]">Inspect Node Details</div>
-              <div className="text-[11px] leading-relaxed">
+              <div className="text-[11px] leading-relaxed text-[#94A3B8]">
                 Click any contract, function, or external call node in the graph to view security relationships and risk metrics.
               </div>
             </div>
           )}
         </div>
 
-        <div className="pt-4 border-t border-[#1F2B3E] space-y-2 text-[11px]">
-          <div className="text-[10px] font-mono text-[#64748B] uppercase">LEGEND</div>
+        <div className="pt-4 border-t border-[#293B54] space-y-2 text-[11px]">
+          <div className="text-[10px] font-mono text-[#94A3B8] uppercase">LEGEND</div>
           <div className="grid grid-cols-2 gap-2 text-[#94A3B8]">
             <div className="flex items-center space-x-1.5">
               <div className="w-2.5 h-2.5 rounded-sm bg-[#00E5FF]"></div>
