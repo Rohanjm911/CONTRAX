@@ -9,7 +9,7 @@ class Finding(Base):
     __tablename__ = "findings"
 
     id = Column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
-    scan_id = Column(String(36), ForeignKey("scans.id", ondelete="CASCADE"), nullable=False)
+    scan_id = Column(String(36), ForeignKey("scans.id", ondelete="CASCADE"), nullable=False, index=True)
     
     title = Column(String(255), nullable=False, index=True)
     severity = Column(String(20), nullable=False, index=True)

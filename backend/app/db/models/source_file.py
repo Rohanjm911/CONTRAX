@@ -9,7 +9,7 @@ class SourceFile(Base):
     __tablename__ = "source_files"
 
     id = Column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
-    contract_id = Column(String(36), ForeignKey("contracts.id", ondelete="CASCADE"), nullable=False)
+    contract_id = Column(String(36), ForeignKey("contracts.id", ondelete="CASCADE"), nullable=False, index=True)
     file_path = Column(String(500), nullable=False)
     content = Column(Text, nullable=False)
     file_size = Column(Integer, nullable=False)

@@ -60,6 +60,7 @@ async def run_scan_background_task(scan_id: str):
             results = await pipeline.execute_pipeline(files, progress_callback=stage_callback)
 
             critical = high = medium = low = info = 0
+            findings_db_list = []
             for f in results["findings"]:
                 if f.severity == "CRITICAL": critical += 1
                 elif f.severity == "HIGH": high += 1
@@ -67,7 +68,7 @@ async def run_scan_background_task(scan_id: str):
                 elif f.severity == "LOW": low += 1
                 else: info += 1
 
-                finding_db = Finding(
+                findings_db_list.append(Finding(
                     scan_id=scan.id,
                     title=f.title,
                     severity=f.severity,
@@ -85,11 +86,14 @@ async def run_scan_background_task(scan_id: str):
                     detection_tool=f.detection_tool,
                     remediation=f.remediation,
                     references=f.references
-                )
-                db.add(finding_db)
+                ))
 
+            if findings_db_list:
+                db.add_all(findings_db_list)
+
+            gas_db_list = []
             for g in results["gas_analysis"]:
-                gas_db = GasAnalysis(
+                gas_db_list.append(GasAnalysis(
                     scan_id=scan.id,
                     contract_name=g["contract_name"],
                     function_name=g["function_name"],
@@ -101,8 +105,10 @@ async def run_scan_background_task(scan_id: str):
                     external_calls_count=g["external_calls_count"],
                     loops_detected=g["loops_detected"],
                     details=g["details"]
-                )
-                db.add(gas_db)
+                ))
+
+            if gas_db_list:
+                db.add_all(gas_db_list)
 
             scan.status = "COMPLETED"
             scan.current_stage = "Scan Finished"

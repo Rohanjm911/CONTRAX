@@ -1,6 +1,13 @@
 import re
 from typing import List, Dict, Any
 
+RE_CONTRACT = re.compile(r"contract\s+([A-Za-z0-9_]+)")
+RE_FUNCTION = re.compile(r"function\s+([A-Za-z0-9_]+)\s*\((.*?)\)\s*([^{;]*)\{")
+RE_MAPPING_WRITES = re.compile(r"\b(balances|owner|totalSupply|data|state|allowance)\[.*?\]\s*=")
+RE_ASSIGNMENT_WRITES = re.compile(r"^\s*([A-Za-z0-9_]+)\s*=[^=]", re.MULTILINE)
+RE_EXT_CALLS = re.compile(r"\.(call|transfer|send|delegatecall)\b")
+RE_LOOPS = re.compile(r"\b(for|while)\s*\(")
+
 
 class GasAnalyzer:
     """
@@ -17,25 +24,22 @@ class GasAnalyzer:
 
         for item in files:
             content = item.get("content", "")
-            lines = content.splitlines()
 
-            c_match = re.search(r"contract\s+([A-Za-z0-9_]+)", content)
+            c_match = RE_CONTRACT.search(content)
             contract_name = c_match.group(1) if c_match else "Contract"
 
-            fn_matches = re.finditer(r"function\s+([A-Za-z0-9_]+)\s*\((.*?)\)\s*([^{;]*)\{", content)
+            fn_matches = RE_FUNCTION.finditer(content)
             
             for m in fn_matches:
                 fn_name = m.group(1)
-                start_pos = m.start()
                 
                 fn_body = self._extract_block(content, m.end() - 1)
                 
-                storage_writes = len(re.findall(r"\b(balances|owner|totalSupply|data|state|allowance)\[.*?\]\s*=", fn_body))
-                storage_writes += len(re.findall(r"^\s*([A-Za-z0-9_]+)\s*=[^=]", fn_body, re.MULTILINE))
+                storage_writes = len(RE_MAPPING_WRITES.findall(fn_body))
+                storage_writes += len(RE_ASSIGNMENT_WRITES.findall(fn_body))
                 
-                ext_calls = len(re.findall(r"\.(call|transfer|send|delegatecall)\b", fn_body))
-
-                loops = len(re.findall(r"\b(for|while)\s*\(", fn_body))
+                ext_calls = len(RE_EXT_CALLS.findall(fn_body))
+                loops = len(RE_LOOPS.findall(fn_body))
 
                 base_cost = 21000
                 write_cost = storage_writes * 5000

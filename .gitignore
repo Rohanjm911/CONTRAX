@@ -46,6 +46,8 @@ yarn-error.log*
 *.db
 *.sqlite3
 contrax.db
+*.db-shm
+*.db-wal
 uploads/
 reports/generated/
 analysis_sandbox/

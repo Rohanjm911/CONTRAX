@@ -9,7 +9,7 @@ class Contract(Base):
     __tablename__ = "contracts"
 
     id = Column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
-    project_id = Column(String(36), ForeignKey("projects.id", ondelete="CASCADE"), nullable=False)
+    project_id = Column(String(36), ForeignKey("projects.id", ondelete="CASCADE"), nullable=False, index=True)
     name = Column(String(100), nullable=False)
     compiler_version = Column(String(50), nullable=True)
     solidity_pragma = Column(String(50), nullable=True)

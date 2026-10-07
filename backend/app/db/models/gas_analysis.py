@@ -9,7 +9,7 @@ class GasAnalysis(Base):
     __tablename__ = "gas_analyses"
 
     id = Column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
-    scan_id = Column(String(36), ForeignKey("scans.id", ondelete="CASCADE"), nullable=False)
+    scan_id = Column(String(36), ForeignKey("scans.id", ondelete="CASCADE"), nullable=False, index=True)
     
     contract_name = Column(String(100), nullable=False)
     function_name = Column(String(100), nullable=False)

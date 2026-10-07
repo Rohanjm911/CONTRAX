@@ -1,6 +1,22 @@
 import re
 from typing import Dict, Any, List
 
+RE_PRAGMA = re.compile(r"pragma\s+solidity\s+([^;]+);")
+RE_IMPORT = re.compile(r'import\s+["\']([^"\']+)["\'];')
+RE_CONTRACT_DEF = re.compile(
+    r"(contract|interface|library|abstract\s+contract)\s+([A-Za-z0-9_]+)(?:\s+is\s+([A-Za-z0-9_,\s]+))?\s*\{"
+)
+RE_STATE_VAR = re.compile(
+    r"^\s*(address|uint\d*|int\d*|bool|bytes\d*|string|mapping\s*\([^;]+\))\s+(public|private|internal)?\s*(immutable|constant)?\s*([A-Za-z0-9_]+)\s*(?:=\s*[^;]+)?;",
+    re.MULTILINE
+)
+RE_MODIFIER = re.compile(r"modifier\s+([A-Za-z0-9_]+)\s*\((.*?)\)", re.MULTILINE)
+RE_EVENT = re.compile(r"event\s+([A-Za-z0-9_]+)\s*\((.*?)\)\s*;", re.MULTILINE)
+RE_FUNC_DEF = re.compile(
+    r"(function|constructor|receive|fallback)\s*([A-Za-z0-9_]*)\s*\((.*?)\)\s*([^{;]*)(?:\{|;)",
+    re.MULTILINE
+)
+
 
 class SolidityASTParser:
     """
@@ -22,25 +38,21 @@ class SolidityASTParser:
         lines = content.splitlines()
 
         for idx, line in enumerate(lines, 1):
-            pragma_match = re.search(r"pragma\s+solidity\s+([^;]+);", line)
+            pragma_match = RE_PRAGMA.search(line)
             if pragma_match:
                 ast["pragmas"].append({
                     "version": pragma_match.group(1).strip(),
                     "line": idx
                 })
 
-            import_match = re.search(r'import\s+["\']([^"\']+)["\'];', line)
+            import_match = RE_IMPORT.search(line)
             if import_match:
                 ast["imports"].append({
                     "path": import_match.group(1),
                     "line": idx
                 })
 
-        contract_pattern = re.compile(
-            r"(contract|interface|library|abstract\s+contract)\s+([A-Za-z0-9_]+)(?:\s+is\s+([A-Za-z0-9_,\s]+))?\s*\{"
-        )
-
-        for match in contract_pattern.finditer(content):
+        for match in RE_CONTRACT_DEF.finditer(content):
             contract_type = match.group(1).strip()
             contract_name = match.group(2).strip()
             inherits = [i.strip() for i in match.group(3).split(",")] if match.group(3) else []
@@ -82,8 +94,7 @@ class SolidityASTParser:
 
     def _parse_state_variables(self, block: str, base_line: int) -> List[Dict[str, Any]]:
         vars_list = []
-        pattern = re.compile(r"^\s*(address|uint\d*|int\d*|bool|bytes\d*|string|mapping\s*\([^;]+\))\s+(public|private|internal)?\s*(immutable|constant)?\s*([A-Za-z0-9_]+)\s*(?:=\s*[^;]+)?;", re.MULTILINE)
-        for m in pattern.finditer(block):
+        for m in RE_STATE_VAR.finditer(block):
             line_offset = block[:m.start()].count("\n")
             vars_list.append({
                 "type": m.group(1).strip(),
@@ -96,8 +107,7 @@ class SolidityASTParser:
 
     def _parse_modifiers(self, block: str, base_line: int) -> List[Dict[str, Any]]:
         mods = []
-        pattern = re.compile(r"modifier\s+([A-Za-z0-9_]+)\s*\((.*?)\)", re.MULTILINE)
-        for m in pattern.finditer(block):
+        for m in RE_MODIFIER.finditer(block):
             line_offset = block[:m.start()].count("\n")
             mods.append({
                 "name": m.group(1).strip(),
@@ -108,8 +118,7 @@ class SolidityASTParser:
 
     def _parse_events(self, block: str, base_line: int) -> List[Dict[str, Any]]:
         events = []
-        pattern = re.compile(r"event\s+([A-Za-z0-9_]+)\s*\((.*?)\)\s*;", re.MULTILINE)
-        for m in pattern.finditer(block):
+        for m in RE_EVENT.finditer(block):
             line_offset = block[:m.start()].count("\n")
             events.append({
                 "name": m.group(1).strip(),
@@ -120,8 +129,7 @@ class SolidityASTParser:
 
     def _parse_functions(self, block: str, base_line: int) -> List[Dict[str, Any]]:
         funcs = []
-        pattern = re.compile(r"(function|constructor|receive|fallback)\s*([A-Za-z0-9_]*)\s*\((.*?)\)\s*([^{;]*)(?:\{|;)", re.MULTILINE)
-        for m in pattern.finditer(block):
+        for m in RE_FUNC_DEF.finditer(block):
             fn_kind = m.group(1).strip()
             fn_name = m.group(2).strip() or fn_kind
             params = m.group(3).strip()

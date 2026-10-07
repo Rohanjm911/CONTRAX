@@ -3,6 +3,8 @@ from sqlalchemy.orm import declarative_base
 from app.config.settings import settings
 from app.config.logging import logger
 
+from sqlalchemy import event
+
 engine_kwargs = {}
 if "sqlite" in settings.DATABASE_URL:
     engine_kwargs["connect_args"] = {"check_same_thread": False}
@@ -13,6 +15,17 @@ engine = create_async_engine(
     future=True,
     **engine_kwargs
 )
+
+# Optimize SQLite with Write-Ahead Logging (WAL) and performance pragmas
+if "sqlite" in settings.DATABASE_URL:
+    @event.listens_for(engine.sync_engine, "connect")
+    def _set_sqlite_pragma(dbapi_connection, connection_record):
+        cursor = dbapi_connection.cursor()
+        cursor.execute("PRAGMA journal_mode=WAL")
+        cursor.execute("PRAGMA synchronous=NORMAL")
+        cursor.execute("PRAGMA foreign_keys=ON")
+        cursor.execute("PRAGMA cache_size=-64000")
+        cursor.close()
 
 AsyncSessionLocal = async_sessionmaker(
     bind=engine,

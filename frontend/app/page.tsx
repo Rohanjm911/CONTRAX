@@ -20,7 +20,8 @@ import {
   fetchScans,
   fetchAllFindings,
   getGasAnalysis, 
-  getContractAST 
+  getContractAST,
+  getContractDetails
 } from "@/lib/api";
 import { Finding, ScanStatus, SourceFile, GasAnalysisItem } from "@/types/contract";
 import { Plus, HelpCircle, Menu, Volume2, VolumeX } from "lucide-react";
@@ -97,13 +98,10 @@ export default function Home() {
             const ast = await getContractAST(latestScan.contract_id);
             setAstData(ast);
 
-            const cRes = await fetch(`http://127.0.0.1:8000/api/v1/contracts/${latestScan.contract_id}`);
-            if (cRes.ok) {
-              const cData = await cRes.json();
-              if (cData.source_files && cData.source_files.length > 0) {
-                setSourceFiles(cData.source_files);
-                setSelectedFile(cData.source_files[0].file_path);
-              }
+            const cData = await getContractDetails(latestScan.contract_id);
+            if (cData && cData.source_files && cData.source_files.length > 0) {
+              setSourceFiles(cData.source_files);
+              setSelectedFile(cData.source_files[0].file_path);
             }
           } catch (e) {
             console.error("Error preloading scan artifacts:", e);
@@ -138,13 +136,10 @@ export default function Home() {
     setCurrentTab("scanner");
 
     try {
-      const res = await fetch(`http://127.0.0.1:8000/api/v1/contracts/${contractId}`);
-      if (res.ok) {
-        const cData = await res.json();
-        if (cData.source_files && cData.source_files.length > 0) {
-          setSourceFiles(cData.source_files);
-          setSelectedFile(cData.source_files[0].file_path);
-        }
+      const cData = await getContractDetails(contractId);
+      if (cData && cData.source_files && cData.source_files.length > 0) {
+        setSourceFiles(cData.source_files);
+        setSelectedFile(cData.source_files[0].file_path);
       }
     } catch (e) {
       console.error("Contract source load error:", e);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { GasAnalysisItem } from "@/types/contract";
 import { Database, ArrowRightLeft, Repeat, HelpCircle } from "lucide-react";
 
@@ -8,9 +8,15 @@ interface GasProfilerProps {
 }
 
 export const GasProfiler: React.FC<GasProfilerProps> = ({ gasData, onOpenGuide }) => {
-  const totalWrites = gasData.reduce((acc, curr) => acc + curr.storage_writes_count, 0);
-  const totalCalls = gasData.reduce((acc, curr) => acc + curr.external_calls_count, 0);
-  const totalLoops = gasData.reduce((acc, curr) => acc + curr.loops_detected, 0);
+  const { totalWrites, totalCalls, totalLoops } = useMemo(() => {
+    let writes = 0, calls = 0, loops = 0;
+    for (const item of gasData) {
+      writes += item.storage_writes_count || 0;
+      calls += item.external_calls_count || 0;
+      loops += item.loops_detected || 0;
+    }
+    return { totalWrites: writes, totalCalls: calls, totalLoops: loops };
+  }, [gasData]);
 
   return (
     <div className="p-4 sm:p-8 max-w-7xl mx-auto space-y-5 sm:space-y-7">

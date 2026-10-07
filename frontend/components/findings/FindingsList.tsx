@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { Finding } from "@/types/contract";
 import { Search, ArrowUpRight, ShieldAlert, HelpCircle } from "lucide-react";
 import { sounds } from "@/lib/sounds";
@@ -13,14 +13,18 @@ export const FindingsList: React.FC<FindingsListProps> = ({ findings, onSelectFi
   const [searchTerm, setSearchTerm] = useState("");
   const [severityFilter, setSeverityFilter] = useState("ALL");
 
-  const filtered = findings.filter((f) => {
-    const matchesSearch =
-      f.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      f.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      f.source_file.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesSeverity = severityFilter === "ALL" || f.severity === severityFilter;
-    return matchesSearch && matchesSeverity;
-  });
+  const filtered = useMemo(() => {
+    const term = searchTerm.toLowerCase().trim();
+    return findings.filter((f) => {
+      const matchesSearch =
+        !term ||
+        f.title.toLowerCase().includes(term) ||
+        f.category.toLowerCase().includes(term) ||
+        f.source_file.toLowerCase().includes(term);
+      const matchesSeverity = severityFilter === "ALL" || f.severity === severityFilter;
+      return matchesSearch && matchesSeverity;
+    });
+  }, [findings, searchTerm, severityFilter]);
 
   return (
     <div className="p-4 sm:p-8 max-w-7xl mx-auto space-y-5 sm:space-y-6">

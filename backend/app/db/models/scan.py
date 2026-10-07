@@ -9,7 +9,7 @@ class Scan(Base):
     __tablename__ = "scans"
 
     id = Column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
-    contract_id = Column(String(36), ForeignKey("contracts.id", ondelete="CASCADE"), nullable=False)
+    contract_id = Column(String(36), ForeignKey("contracts.id", ondelete="CASCADE"), nullable=False, index=True)
     scan_type = Column(String(50), default="SOURCE_CODE")
     
     status = Column(String(30), default="PENDING", index=True)

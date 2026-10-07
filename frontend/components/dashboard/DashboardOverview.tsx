@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Finding, ScanStatus } from "@/types/contract";
 import { 
   ShieldAlert, 
@@ -36,21 +36,35 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
   onNavigateTab,
   onOpenGuide
 }) => {
-  const critical = findings.filter(f => f.severity === "CRITICAL").length;
-  const high = findings.filter(f => f.severity === "HIGH").length;
-  const medium = findings.filter(f => f.severity === "MEDIUM").length;
-  const low = findings.filter(f => f.severity === "LOW").length;
-  const informational = findings.filter(f => f.severity === "INFORMATIONAL").length;
+  const { critical, high, medium, low, informational, securityScore, postureRating, topFindings } = useMemo(() => {
+    let crit = 0, h = 0, m = 0, l = 0, info = 0;
+    for (const f of findings) {
+      if (f.severity === "CRITICAL") crit++;
+      else if (f.severity === "HIGH") h++;
+      else if (f.severity === "MEDIUM") m++;
+      else if (f.severity === "LOW") l++;
+      else info++;
+    }
 
-  const penalty = (critical * 25) + (high * 12) + (medium * 5) + (low * 1);
-  const securityScore = Math.max(10, Math.min(100, 100 - penalty));
+    const penalty = (crit * 25) + (h * 12) + (m * 5) + (l * 1);
+    const score = Math.max(10, Math.min(100, 100 - penalty));
 
-  const postureRating = 
-    securityScore >= 85 ? { label: "DEFENDED", color: "text-[#00E5FF]", bg: "bg-[#00E5FF]/10", border: "border-[#00E5FF]/30" } :
-    securityScore >= 60 ? { label: "MODERATE RISK", color: "text-[#F59E0B]", bg: "bg-[#F59E0B]/10", border: "border-[#F59E0B]/30" } :
-    { label: "CRITICAL EXPOSURE", color: "text-[#EF4444]", bg: "bg-[#EF4444]/10", border: "border-[#EF4444]/30" };
+    const rating = 
+      score >= 85 ? { label: "DEFENDED", color: "text-[#00E5FF]", bg: "bg-[#00E5FF]/10", border: "border-[#00E5FF]/30" } :
+      score >= 60 ? { label: "MODERATE RISK", color: "text-[#F59E0B]", bg: "bg-[#F59E0B]/10", border: "border-[#F59E0B]/30" } :
+      { label: "CRITICAL EXPOSURE", color: "text-[#EF4444]", bg: "bg-[#EF4444]/10", border: "border-[#EF4444]/30" };
 
-  const topFindings = findings.slice(0, 4);
+    return {
+      critical: crit,
+      high: h,
+      medium: m,
+      low: l,
+      informational: info,
+      securityScore: score,
+      postureRating: rating,
+      topFindings: findings.slice(0, 4)
+    };
+  }, [findings]);
 
   return (
     <div className="p-4 sm:p-8 space-y-6 sm:space-y-8 max-w-7xl mx-auto select-none">

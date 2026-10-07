@@ -1,5 +1,5 @@
-from typing import List
-from fastapi import APIRouter, Depends, HTTPException
+from typing import List, Optional
+from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 
@@ -11,14 +11,23 @@ from app.core.authentication import get_current_user
 
 router = APIRouter(prefix="/findings", tags=["Findings"])
 
-
 @router.get("", response_model=List[FindingResponse])
 async def list_findings(
+    scan_id: Optional[str] = Query(None, description="Filter findings by scan ID"),
+    severity: Optional[str] = Query(None, description="Filter findings by severity level"),
+    limit: int = Query(500, ge=1, le=1000, description="Maximum number of findings to retrieve"),
+    offset: int = Query(0, ge=0, description="Offset for pagination"),
     db: AsyncSession = Depends(get_db),
     current_user: User = Depends(get_current_user)
 ):
-    """Retrieves all security findings across scans."""
-    res = await db.execute(select(Finding).order_by(Finding.created_at.desc()))
+    """Retrieves security findings across scans with optional filtering and pagination."""
+    query = select(Finding)
+    if scan_id:
+        query = query.where(Finding.scan_id == scan_id)
+    if severity:
+        query = query.where(Finding.severity == severity.upper())
+    query = query.order_by(Finding.created_at.desc()).offset(offset).limit(limit)
+    res = await db.execute(query)
     return res.scalars().all()
 
 
