@@ -28,10 +28,10 @@ export const FindingsList: React.FC<FindingsListProps> = ({ findings, onSelectFi
 
   return (
     <div className="p-4 sm:p-8 max-w-7xl mx-auto space-y-5 sm:space-y-6">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-[#293B54]">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-[#201F38]">
         <div>
           <div className="text-[11px] font-mono text-[#94A3B8] uppercase tracking-wider mb-1 flex items-center space-x-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shadow-[0_0_6px_#00E5FF]"></span>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#A855F7] shadow-[0_0_6px_#A855F7]"></span>
             <span>DETECTION MATRIX</span>
           </div>
           <h2 className="text-xl font-semibold text-[#F3F6FA] tracking-tight font-mono">
@@ -45,13 +45,13 @@ export const FindingsList: React.FC<FindingsListProps> = ({ findings, onSelectFi
           {onOpenGuide && (
             <button
               onClick={onOpenGuide}
-              className="flex items-center space-x-1.5 px-3 py-1.5 glass-panel hover:bg-[#17202E] text-[#F3F6FA] rounded-xl text-xs font-medium border border-[#1F2B3E] hover:border-[#00E5FF]/40 transition-all"
+              className="flex items-center space-x-1.5 px-3 py-1.5 glass-panel hover:bg-[#151426] text-[#F3F6FA] rounded-xl text-xs font-medium border border-[#201F38] hover:border-[#A855F7]/40 transition-all cursor-pointer"
             >
-              <HelpCircle className="w-3.5 h-3.5 text-[#00E5FF]" />
+              <HelpCircle className="w-3.5 h-3.5 text-[#A855F7]" />
               <span>How to use</span>
             </button>
           )}
-          <div className="text-xs font-mono text-[#94A3B8] px-3 py-1.5 bg-[#0B0F17] border border-[#1F2B3E] rounded-xl">
+          <div className="text-xs font-mono text-[#94A3B8] px-3 py-1.5 bg-[#08070E] border border-[#201F38] rounded-xl">
             {filtered.length} of {findings.length} findings displayed
           </div>
         </div>
@@ -65,7 +65,7 @@ export const FindingsList: React.FC<FindingsListProps> = ({ findings, onSelectFi
             placeholder="Search vulnerabilities, affected contracts, or category..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full h-10 pl-10 pr-4 glass-panel rounded-xl text-xs text-[#F3F6FA] placeholder-[#94A3B8] focus:outline-none focus:border-[#00E5FF] focus:ring-1 focus:ring-[#00E5FF]/50 border border-[#293B54] transition-all"
+            className="w-full h-10 pl-10 pr-4 glass-panel rounded-xl text-xs text-[#F3F6FA] placeholder-[#94A3B8] focus:outline-none focus:border-[#A855F7] focus:ring-1 focus:ring-[#A855F7]/50 border border-[#201F38] transition-all"
           />
         </div>
 
@@ -76,7 +76,7 @@ export const FindingsList: React.FC<FindingsListProps> = ({ findings, onSelectFi
               sounds.playSubtleClick();
               setSeverityFilter(e.target.value);
             }}
-            className="w-full sm:w-auto h-10 glass-panel px-4 text-xs text-[#F3F6FA] rounded-xl cursor-pointer focus:outline-none focus:border-[#00E5FF] border border-[#293B54] bg-[#111722]"
+            className="w-full sm:w-auto h-10 glass-panel px-4 text-xs text-[#F3F6FA] rounded-xl cursor-pointer focus:outline-none focus:border-[#A855F7] border border-[#201F38] bg-[#151426]"
           >
             <option value="ALL">All Severities</option>
             <option value="CRITICAL">Critical Severity</option>
@@ -88,11 +88,11 @@ export const FindingsList: React.FC<FindingsListProps> = ({ findings, onSelectFi
         </div>
       </div>
 
-      <div className="glass-panel rounded-2xl overflow-hidden shadow-sm border border-[#293B54]">
+      <div className="glass-panel rounded-2xl overflow-hidden shadow-sm border border-[#201F38]">
         <div className="overflow-x-auto w-full">
           <table className="w-full text-left border-collapse text-xs min-w-[620px]">
           <thead>
-            <tr className="bg-[#111722]/90 border-b border-[#1F2B3E] text-[#CBD5E1]">
+            <tr className="bg-[#151426]/90 border-b border-[#201F38] text-[#CBD5E1]">
               <th className="py-3 px-5 font-bold text-[11px] uppercase tracking-wider w-28">Severity</th>
               <th className="py-3 px-5 font-bold text-[11px] uppercase tracking-wider">Vulnerability Title</th>
               <th className="py-3 px-5 font-bold text-[11px] uppercase tracking-wider w-44">Source Target</th>
@@ -101,12 +101,12 @@ export const FindingsList: React.FC<FindingsListProps> = ({ findings, onSelectFi
               <th className="py-3 px-5 font-bold text-[11px] uppercase tracking-wider text-right w-24">Details</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#1F2B3E]">
+          <tbody className="divide-y divide-[#201F38]">
             {filtered.length === 0 ? (
               <tr>
                 <td colSpan={6} className="py-12 px-6 text-center">
-                  <div className="crystal-placeholder crystal-facet p-8 rounded-2xl max-w-sm mx-auto space-y-2.5">
-                    <div className="w-10 h-10 rounded-xl crystal-panel flex items-center justify-center mx-auto text-[#00E5FF]">
+                  <div className="crystal-placeholder crystal-facet p-8 rounded-2xl max-w-sm mx-auto space-y-2.5 border border-[#201F38]">
+                    <div className="w-10 h-10 rounded-xl crystal-panel flex items-center justify-center mx-auto text-[#C084FC] border border-[#201F38]">
                       <ShieldAlert className="w-4 h-4" />
                     </div>
                     <div className="text-xs font-semibold text-[#F3F6FA]">No matching security findings</div>
@@ -124,8 +124,8 @@ export const FindingsList: React.FC<FindingsListProps> = ({ findings, onSelectFi
                     : f.severity === "MEDIUM"
                     ? "bg-[#F59E0B]/10 text-[#F59E0B] border-[#F59E0B]/30"
                     : f.severity === "LOW"
-                    ? "bg-[#00E5FF]/10 text-[#00E5FF] border-[#00E5FF]/30"
-                    : "bg-[#38BDF8]/10 text-[#38BDF8] border-[#38BDF8]/30";
+                    ? "bg-[#8B5CF6]/10 text-[#C084FC] border-[#8B5CF6]/30"
+                    : "bg-[#06B6D4]/10 text-[#00E5FF] border-[#06B6D4]/30";
 
                 return (
                   <tr
@@ -134,7 +134,7 @@ export const FindingsList: React.FC<FindingsListProps> = ({ findings, onSelectFi
                       sounds.playClick();
                       onSelectFinding(f);
                     }}
-                    className="hover:bg-[#17202E]/60 cursor-pointer transition-colors"
+                    className="hover:bg-[#151426]/60 cursor-pointer transition-colors"
                   >
                     <td className="py-3.5 px-5">
                       <span className={`px-2 py-0.5 rounded-md text-[10px] font-mono font-bold border ${badge}`}>
@@ -154,8 +154,8 @@ export const FindingsList: React.FC<FindingsListProps> = ({ findings, onSelectFi
                       <div className="truncate max-w-[130px]">{f.detector}</div>
                     </td>
                     <td className="py-3.5 px-5 text-right">
-                      <span className="inline-flex items-center text-[11px] text-[#00E5FF] hover:underline font-mono">
-                        Review <ArrowUpRight className="w-3.5 h-3.5 ml-1 text-[#00E5FF]" />
+                      <span className="inline-flex items-center text-[11px] text-[#C084FC] hover:underline font-mono">
+                        Review <ArrowUpRight className="w-3.5 h-3.5 ml-1 text-[#C084FC]" />
                       </span>
                     </td>
                   </tr>

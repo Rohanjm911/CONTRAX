@@ -19,7 +19,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#0B0E14",
+  themeColor: "#09090F",
 };
 
 export default function RootLayout({
@@ -29,11 +29,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className="bg-[#0B0E14] text-[#F3F6FA] min-h-screen relative antialiased selection:bg-[#1E2B3D] selection:text-[#00E5FF]">
+      <body className="bg-[#09090F] text-[#F3F4F6] min-h-screen relative antialiased selection:bg-[#8B5CF6]/30 selection:text-[#E9D5FF]">
         <div 
           className="fixed inset-0 pointer-events-none z-0 overflow-hidden"
           style={{
-            background: "radial-gradient(ellipse 85% 55% at 50% -20%, rgba(0, 229, 255, 0.16), transparent 70%), radial-gradient(circle at 92% 18%, rgba(245, 158, 11, 0.08), transparent 45%), radial-gradient(circle at 6% 75%, rgba(0, 229, 255, 0.07), transparent 50%), radial-gradient(circle at 85% 85%, rgba(34, 197, 94, 0.05), transparent 45%)"
+            background: "radial-gradient(ellipse 85% 55% at 50% -20%, rgba(139, 92, 246, 0.22), transparent 70%), radial-gradient(circle at 92% 18%, rgba(6, 182, 212, 0.12), transparent 45%), radial-gradient(circle at 6% 75%, rgba(168, 85, 247, 0.12), transparent 50%), radial-gradient(circle at 85% 85%, rgba(124, 58, 237, 0.08), transparent 45%)"
           }}
         />
         <div className="relative z-10 min-h-screen flex flex-col">

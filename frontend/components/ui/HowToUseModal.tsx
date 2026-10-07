@@ -34,7 +34,7 @@ const FEATURE_GUIDES: FeatureGuide[] = [
     title: "Executive Operations Console",
     subtitle: "Real-time threat posture scoring and cybersecurity KPI telemetry",
     icon: Activity,
-    badgeColor: "text-[#00E5FF] bg-[#00E5FF]/10 border-[#00E5FF]/30",
+    badgeColor: "text-[#C084FC] bg-[#8B5CF6]/15 border-[#8B5CF6]/35",
     badgeText: "Overview",
     description: "The Operations Console provides a high-level executive security overview across all smart contract audit sessions, displaying normalized risk metrics and system health.",
     steps: [
@@ -65,7 +65,7 @@ const FEATURE_GUIDES: FeatureGuide[] = [
     title: "Vulnerability Scanner",
     subtitle: "Multi-engine static AST analysis, Slither passes, and Mythril symbolic execution",
     icon: Terminal,
-    badgeColor: "text-[#00E5FF] bg-[#00E5FF]/10 border-[#00E5FF]/30",
+    badgeColor: "text-[#C084FC] bg-[#8B5CF6]/15 border-[#8B5CF6]/35",
     badgeText: "Analyzer Engine",
     description: "Launch automated security scans on untrusted Solidity source code (.sol / .zip) or directly query verified bytecode from supported EVM blockchains.",
     steps: [
@@ -158,7 +158,7 @@ const FEATURE_GUIDES: FeatureGuide[] = [
     title: "Contract Relationship Graph",
     subtitle: "Dynamic visual map of function calls, storage slots, and external attack paths",
     icon: Network,
-    badgeColor: "text-[#00E5FF] bg-[#00E5FF]/10 border-[#00E5FF]/30",
+    badgeColor: "text-[#C084FC] bg-[#8B5CF6]/15 border-[#8B5CF6]/35",
     badgeText: "Live Visualizer",
     description: "A dynamic SVG node-link visualizer that renders live relationships between contracts, functions, state variables, and external exploit invocations for the active scanned contract.",
     steps: [
@@ -247,7 +247,7 @@ const FEATURE_GUIDES: FeatureGuide[] = [
     title: "Security Audit Reports & Exports",
     subtitle: "Auditor-grade dual-tone PDF executive reports and machine-readable JSON payloads",
     icon: FileText,
-    badgeColor: "text-[#00E5FF] bg-[#00E5FF]/10 border-[#00E5FF]/30",
+    badgeColor: "text-[#C084FC] bg-[#8B5CF6]/15 border-[#8B5CF6]/35",
     badgeText: "Compliance & CI/CD",
     description: "Export formal cybersecurity documentation suitable for DeFi protocol stakeholders, external human auditor hand-offs, and automated CI/CD security gating.",
     steps: [
@@ -307,16 +307,16 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({
 
   return (
     <div className="fixed inset-0 bg-black/75 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 z-50 animate-in fade-in duration-200">
-      <div className="glass-panel-elevated rounded-2xl max-w-4xl w-full h-[94vh] sm:h-[84vh] flex flex-col overflow-hidden shadow-2xl border border-[#293B54]">
-        <div className="p-3.5 sm:p-5 px-4 sm:px-7 border-b border-[#293B54] flex items-center justify-between bg-[#17202E]/40 backdrop-blur-md select-none">
+      <div className="glass-panel-elevated rounded-2xl max-w-4xl w-full h-[94vh] sm:h-[84vh] flex flex-col overflow-hidden shadow-2xl border border-[#201F38]">
+        <div className="p-3.5 sm:p-5 px-4 sm:px-7 border-b border-[#201F38] flex items-center justify-between bg-[#151426]/50 backdrop-blur-md select-none">
           <div className="flex items-center space-x-3 min-w-0">
-            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-[#00E5FF]/10 border border-[#00E5FF]/30 flex items-center justify-center text-[#00E5FF] shrink-0">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-[#8B5CF6]/15 border border-[#8B5CF6]/35 flex items-center justify-center text-[#C084FC] shrink-0">
               <BookOpen className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
             <div className="min-w-0">
               <h2 className="text-sm sm:text-base font-semibold text-[#F3F6FA] tracking-tight font-mono flex items-center space-x-2">
                 <span className="truncate">CONTRAX Feature Guide</span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-[#00E5FF]/10 text-[#00E5FF] border border-[#00E5FF]/30 shrink-0">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-[#8B5CF6]/15 text-[#C084FC] border border-[#8B5CF6]/35 shrink-0">
                   Help
                 </span>
               </h2>
@@ -331,14 +331,14 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({
               sounds.playSubtleClick();
               onClose();
             }}
-            className="text-[#94A3B8] hover:text-[#F3F6FA] p-1.5 sm:p-2 rounded-xl hover:bg-[#1E2B3D] transition-colors shrink-0"
+            className="text-[#94A3B8] hover:text-[#F3F6FA] p-1.5 sm:p-2 rounded-xl hover:bg-[#1A1830] transition-colors shrink-0 cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         <div className="flex flex-col md:flex-row flex-1 overflow-hidden">
-          <div className="w-full md:w-72 bg-[#0B0F17] border-b md:border-b-0 md:border-r border-[#293B54] p-3 sm:p-4 flex flex-col justify-between select-none max-h-44 md:max-h-none shrink-0">
+          <div className="w-full md:w-72 bg-[#08070E] border-b md:border-b-0 md:border-r border-[#201F38] p-3 sm:p-4 flex flex-col justify-between select-none max-h-44 md:max-h-none shrink-0">
             <div className="space-y-3 flex-1 flex flex-col overflow-hidden">
               <div className="relative">
                 <Search className="w-3.5 h-3.5 absolute left-3 top-2.5 text-[#94A3B8]" />
@@ -347,7 +347,7 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({
                   placeholder="Search features..."
                   value={searchFilter}
                   onChange={(e) => setSearchFilter(e.target.value)}
-                  className="w-full pl-8 pr-3 py-1.5 bg-[#111722] border border-[#293B54] rounded-xl text-xs text-[#F3F6FA] placeholder-[#94A3B8] focus:outline-none focus:border-[#00E5FF]"
+                  className="w-full pl-8 pr-3 py-1.5 bg-[#151426] border border-[#201F38] rounded-xl text-xs text-[#F3F6FA] placeholder-[#94A3B8] focus:outline-none focus:border-[#A855F7]"
                 />
               </div>
 
@@ -363,13 +363,13 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({
                         sounds.playClick();
                         setSelectedFeatureId(guide.id);
                       }}
-                      className={`w-full flex items-center space-x-2.5 px-3 py-2.5 rounded-xl text-xs text-left transition-all ${
+                      className={`w-full flex items-center space-x-2.5 px-3 py-2.5 rounded-xl text-xs text-left transition-all cursor-pointer ${
                         isSelected
-                          ? "bg-[#17202E] text-[#F3F6FA] font-semibold border border-[#00E5FF]/40 shadow-sm"
-                          : "text-[#CBD5E1] hover:bg-[#111722] hover:text-[#F3F6FA] border border-transparent"
+                          ? "bg-[#151426] text-[#FFFFFF] font-semibold border border-[#A855F7]/40 shadow-sm"
+                          : "text-[#CBD5E1] hover:bg-[#121024] hover:text-[#F3F6FA] border border-transparent"
                       }`}
                     >
-                      <Icon className={`w-4 h-4 shrink-0 ${isSelected ? "text-[#00E5FF]" : "text-[#94A3B8]"}`} />
+                      <Icon className={`w-4 h-4 shrink-0 ${isSelected ? "text-[#C084FC]" : "text-[#94A3B8]"}`} />
                       <div className="truncate flex-1">
                         <div className="truncate">{guide.title}</div>
                         <div className="text-[10px] text-[#94A3B8] font-normal truncate">
@@ -382,9 +382,9 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({
               </div>
             </div>
 
-            <div className="pt-3 border-t border-[#293B54] text-[11px] text-[#CBD5E1] space-y-1">
+            <div className="pt-3 border-t border-[#201F38] text-[11px] text-[#CBD5E1] space-y-1">
               <div className="flex items-center space-x-1.5 text-[#F3F6FA] font-medium">
-                <Sparkles className="w-3.5 h-3.5 text-[#00E5FF]" />
+                <Sparkles className="w-3.5 h-3.5 text-[#C084FC]" />
                 <span>Auditor Quicktip:</span>
               </div>
               <p className="text-[10px] leading-relaxed">
@@ -394,10 +394,10 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({
           </div>
 
           <div className="flex-1 bg-transparent p-4 sm:p-7 overflow-y-auto space-y-5 sm:space-y-6">
-            <div className="space-y-2 pb-5 border-b border-[#293B54]">
+            <div className="space-y-2 pb-5 border-b border-[#201F38]">
               <div className="flex items-center space-x-2.5">
                 {React.createElement(currentGuide.icon, {
-                  className: "w-6 h-6 text-[#00E5FF]"
+                  className: "w-6 h-6 text-[#C084FC]"
                 })}
                 <h3 className="text-xl font-bold text-[#F3F6FA] tracking-tight font-mono">
                   {currentGuide.title}
@@ -420,9 +420,9 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({
                 {currentGuide.steps.map((step, idx) => (
                   <div
                     key={idx}
-                    className="p-3.5 glass-panel rounded-xl flex items-start space-x-3.5 transition-all border border-[#293B54]"
+                    className="p-3.5 glass-panel rounded-xl flex items-start space-x-3.5 transition-all border border-[#201F38]"
                   >
-                    <div className="w-6 h-6 rounded-lg bg-[#00E5FF]/10 border border-[#00E5FF]/30 flex items-center justify-center font-mono text-xs font-bold text-[#00E5FF] shrink-0 mt-0.5">
+                    <div className="w-6 h-6 rounded-lg bg-[#8B5CF6]/15 border border-[#8B5CF6]/35 flex items-center justify-center font-mono text-xs font-bold text-[#C084FC] shrink-0 mt-0.5">
                       {idx + 1}
                     </div>
                     <div className="space-y-1 flex-1">
@@ -439,15 +439,15 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({
             </div>
 
             {currentGuide.proTips && currentGuide.proTips.length > 0 && (
-              <div className="p-4 bg-[#0B0F17] rounded-xl space-y-2 border border-[#00E5FF]/30">
-                <div className="text-[11px] font-mono text-[#00E5FF] uppercase tracking-wider flex items-center space-x-1.5 font-semibold">
-                  <CheckCircle2 className="w-4 h-4 text-[#00E5FF]" />
+              <div className="p-4 bg-[#08070E] rounded-xl space-y-2 border border-[#8B5CF6]/35">
+                <div className="text-[11px] font-mono text-[#C084FC] uppercase tracking-wider flex items-center space-x-1.5 font-semibold">
+                  <CheckCircle2 className="w-4 h-4 text-[#C084FC]" />
                   <span>AUDITOR BEST PRACTICES & SHORTCUTS</span>
                 </div>
                 <ul className="space-y-1.5 text-xs text-[#CBD5E1]">
                   {currentGuide.proTips.map((tip, idx) => (
                     <li key={idx} className="flex items-start space-x-2 text-[11px] leading-relaxed">
-                      <span className="text-[#00E5FF] font-bold">•</span>
+                      <span className="text-[#C084FC] font-bold">•</span>
                       <span>{tip}</span>
                     </li>
                   ))}
@@ -457,13 +457,13 @@ export const HowToUseModal: React.FC<HowToUseModalProps> = ({
           </div>
         </div>
 
-        <div className="p-4 px-7 border-t border-[#293B54] bg-[#17202E]/70 flex items-center justify-between text-xs select-none">
+        <div className="p-4 px-7 border-t border-[#201F38] bg-[#151426]/80 flex items-center justify-between text-xs select-none">
           <div className="text-[#CBD5E1] font-mono text-[11px]">
             CONTRAX Security Guidance Suite • Tactical Radar Edition
           </div>
           <button
             onClick={onClose}
-            className="btn-contrax-primary px-4 py-1.5 font-bold text-xs rounded-xl transition-all active:scale-95 cursor-pointer shadow-lg"
+            className="btn-contrax-primary px-4 py-1.5 font-extrabold text-[#FFFFFF] text-xs rounded-xl transition-all active:scale-95 cursor-pointer shadow-lg"
           >
             Got It, Continue Work
           </button>

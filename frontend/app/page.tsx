@@ -239,7 +239,7 @@ export default function Home() {
             <span className="text-[#475569] hidden sm:inline">/</span>
             <span className="text-[#CBD5E1] hidden sm:inline truncate max-w-[140px] md:max-w-none text-xs font-medium">Security Console</span>
             <span className="text-[#475569]">/</span>
-            <span className="px-2.5 py-0.5 rounded-lg neu-inset text-[#00E5FF] font-mono text-[11px] font-semibold truncate max-w-[120px] sm:max-w-none border border-[#00E5FF]/20 shadow-inner">
+            <span className="px-2.5 py-0.5 rounded-lg neu-inset text-[#C084FC] font-mono text-[11px] font-semibold truncate max-w-[120px] sm:max-w-none border border-[#8B5CF6]/30 shadow-inner">
               {tabLabels[currentTab] || "Overview"}
             </span>
           </div>
@@ -247,11 +247,11 @@ export default function Home() {
           <div className="flex items-center space-x-2 sm:space-x-3 shrink-0">
             <div className="hidden lg:flex items-center space-x-2.5 px-3.5 py-1.5 neu-inset rounded-xl text-[11px] font-mono">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00E5FF] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00E5FF] shadow-[0_0_6px_#00E5FF]"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#A855F7] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#A855F7] shadow-[0_0_6px_#A855F7]"></span>
               </span>
               <span className="text-[#CBD5E1] font-medium">Engines:</span>
-              <span className="text-[#00E5FF] font-bold">Armed & Ready</span>
+              <span className="text-[#C084FC] font-bold">Armed & Ready</span>
             </div>
 
             <button
@@ -265,7 +265,7 @@ export default function Home() {
               {isAudioMuted ? (
                 <VolumeX className="w-3.5 h-3.5 text-[#EF4444]" />
               ) : (
-                <Volume2 className="w-3.5 h-3.5 text-[#00E5FF]" />
+                <Volume2 className="w-3.5 h-3.5 text-[#C084FC]" />
               )}
               <span className="hidden md:inline text-[11px] font-mono">
                 {isAudioMuted ? "Muted" : "Audio"}
@@ -274,10 +274,10 @@ export default function Home() {
 
             <button
               onClick={() => handleOpenGuide(currentTab)}
-              className="flex items-center space-x-1.5 px-2.5 sm:px-3 py-1.5 neu-button hover:border-[#00E5FF]/40 text-[#F3F6FA] rounded-xl text-xs font-medium transition-all group cursor-pointer"
+              className="flex items-center space-x-1.5 px-2.5 sm:px-3 py-1.5 neu-button hover:border-[#A855F7]/40 text-[#F3F6FA] rounded-xl text-xs font-medium transition-all group cursor-pointer"
               title="Open Feature Guide"
             >
-              <HelpCircle className="w-3.5 h-3.5 text-[#00E5FF] group-hover:rotate-12 transition-transform" />
+              <HelpCircle className="w-3.5 h-3.5 text-[#A855F7] group-hover:rotate-12 transition-transform" />
               <span className="hidden sm:inline">How to Use</span>
               <span className="sm:hidden text-[11px]">Guide</span>
             </button>
@@ -287,9 +287,9 @@ export default function Home() {
                 sounds.playBeep(1100);
                 setCurrentTab("scanner");
               }}
-              className="btn-contrax-primary flex items-center space-x-1.5 px-3 sm:px-4 py-1.5 rounded-xl text-xs font-bold transition-all active:scale-95 cursor-pointer shadow-lg"
+              className="btn-contrax-primary flex items-center space-x-1.5 px-3 sm:px-4 py-1.5 rounded-xl text-xs font-extrabold text-[#FFFFFF] transition-all active:scale-95 cursor-pointer shadow-lg"
             >
-              <Plus className="w-3.5 h-3.5 text-[#070A0F] stroke-[2.5]" />
+              <Plus className="w-3.5 h-3.5 text-[#FFFFFF] stroke-[2.5]" />
               <span className="hidden sm:inline">New Scan</span>
               <span className="sm:hidden text-[11px]">Scan</span>
             </button>

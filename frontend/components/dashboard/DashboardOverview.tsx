@@ -68,10 +68,10 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
 
   return (
     <div className="p-4 sm:p-8 space-y-6 sm:space-y-8 max-w-7xl mx-auto select-none">
-      <div className="flex flex-col md:flex-row md:items-center justify-between pb-4 sm:pb-6 border-b border-[#1F2B3E] gap-4">
+      <div className="flex flex-col md:flex-row md:items-center justify-between pb-4 sm:pb-6 border-b border-[#201F38] gap-4">
         <div>
           <div className="text-[10px] font-mono text-[#94A3B8] font-bold uppercase tracking-wider mb-1 flex items-center space-x-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] shadow-[0_0_6px_#00E5FF]"></span>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#A855F7] shadow-[0_0_6px_#A855F7]"></span>
             <span>CONTRAX • TACTICAL SECURITY OPERATIONS</span>
           </div>
           <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#F3F6FA] font-mono">
@@ -89,9 +89,9 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
                 sounds.playClick();
                 onOpenGuide("dashboard");
               }}
-              className="px-3.5 py-2 glass-panel hover:bg-[#17202E] text-[#F3F6FA] rounded-xl text-xs font-semibold flex items-center space-x-2 transition-all border border-[#293B54] hover:border-[#00E5FF]/40 group"
+              className="px-3.5 py-2 glass-panel hover:bg-[#151426] text-[#F3F6FA] rounded-xl text-xs font-semibold flex items-center space-x-2 transition-all border border-[#201F38] hover:border-[#A855F7]/40 group cursor-pointer"
             >
-              <HelpCircle className="w-3.5 h-3.5 text-[#00E5FF] group-hover:rotate-12 transition-transform" />
+              <HelpCircle className="w-3.5 h-3.5 text-[#A855F7] group-hover:rotate-12 transition-transform" />
               <span>How to use</span>
             </button>
           )}
@@ -101,9 +101,9 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
                 sounds.playClick();
                 onNavigateTab("graph");
               }}
-              className="px-3.5 py-2 bg-[#111722]/80 hover:bg-[#17202E] text-[#F3F6FA] rounded-xl border border-[#293B54] hover:border-[#00E5FF]/40 text-xs font-semibold flex items-center space-x-2 transition-all"
+              className="px-3.5 py-2 bg-[#151426]/80 hover:bg-[#1A1830] text-[#F3F6FA] rounded-xl border border-[#201F38] hover:border-[#A855F7]/40 text-xs font-semibold flex items-center space-x-2 transition-all cursor-pointer"
             >
-              <Network className="w-3.5 h-3.5 text-[#00E5FF]" />
+              <Network className="w-3.5 h-3.5 text-[#C084FC]" />
               <span>Contract Graph</span>
             </button>
           )}
@@ -112,9 +112,9 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
               sounds.playBeep(1100);
               onOpenScanner();
             }}
-            className="btn-contrax-primary px-4 py-2 text-[#0B0E14] font-bold text-xs rounded-xl flex items-center space-x-2 transition-all active:scale-95 cursor-pointer shadow-lg"
+            className="btn-contrax-primary px-4 py-2 text-[#FFFFFF] font-extrabold text-xs rounded-xl flex items-center space-x-2 transition-all active:scale-95 cursor-pointer shadow-lg"
           >
-            <Plus className="w-4 h-4 text-[#0B0E14] stroke-[2.5]" />
+            <Plus className="w-4 h-4 text-[#FFFFFF] stroke-[2.5]" />
             <span>New Contract Scan</span>
           </button>
         </div>
@@ -222,26 +222,26 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
           <div className="text-[11px] text-[#CBD5E1] font-medium leading-tight">Unchecked low-level calls</div>
         </div>
 
-        <div className="crystal-card crystal-facet p-5 rounded-2xl transition-all flex flex-col justify-between border border-[#293B54]/70">
+        <div className="crystal-card crystal-facet p-5 rounded-2xl transition-all flex flex-col justify-between border border-[#201F38]/70">
           <div className="flex items-center justify-between">
             <span className="text-[10px] font-bold tracking-wider text-[#CBD5E1] uppercase">LOW RISK</span>
-            <div className="p-1 rounded-md bg-[#00E5FF]/10 border border-[#00E5FF]/30">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#00E5FF]" />
+            <div className="p-1 rounded-md bg-[#8B5CF6]/10 border border-[#8B5CF6]/30">
+              <ShieldCheck className="w-3.5 h-3.5 text-[#C084FC]" />
             </div>
           </div>
           <div className="my-2.5">
-            <div className="text-3xl font-semibold tracking-tight text-[#00E5FF] font-mono">
+            <div className="text-3xl font-semibold tracking-tight text-[#C084FC] font-mono">
               {String(low).padStart(2, "0")}
             </div>
           </div>
           <div className="text-[11px] text-[#CBD5E1] font-medium leading-tight">Timestamp dependency</div>
         </div>
 
-        <div className="crystal-card crystal-facet p-5 rounded-2xl transition-all flex flex-col justify-between border border-[#293B54]/70">
+        <div className="crystal-card crystal-facet p-5 rounded-2xl transition-all flex flex-col justify-between border border-[#201F38]/70">
           <div className="flex items-center justify-between">
             <span className="text-[10px] font-bold tracking-wider text-[#CBD5E1] uppercase">TOTAL AUDITS</span>
-            <div className="p-1 rounded-md bg-[#00E5FF]/10 border border-[#00E5FF]/30">
-              <Terminal className="w-3.5 h-3.5 text-[#00E5FF]" />
+            <div className="p-1 rounded-md bg-[#8B5CF6]/10 border border-[#8B5CF6]/30">
+              <Terminal className="w-3.5 h-3.5 text-[#C084FC]" />
             </div>
           </div>
           <div className="my-2.5">
@@ -258,16 +258,16 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
 
         <CategoryBarChart findings={findings} />
 
-        <div className="glass-panel p-6 rounded-2xl flex flex-col justify-between h-full">
+        <div className="glass-panel p-6 rounded-2xl flex flex-col justify-between h-full border border-[#201F38]">
           <div>
-            <div className="flex items-center justify-between pb-4 border-b border-[#1F2B3E]">
+            <div className="flex items-center justify-between pb-4 border-b border-[#201F38]">
               <div>
                 <div className="text-[10px] font-mono text-[#94A3B8] font-bold uppercase">ANALYSIS VELOCITY</div>
                 <h3 className="text-xs font-semibold text-[#F3F6FA] uppercase tracking-wider">
                   Engine Modules
                 </h3>
               </div>
-              <span className="text-[10px] font-mono text-[#00E5FF] px-2 py-0.5 bg-[#00E5FF]/10 rounded-md border border-[#00E5FF]/30">
+              <span className="text-[10px] font-mono text-[#C084FC] px-2 py-0.5 bg-[#8B5CF6]/10 rounded-md border border-[#8B5CF6]/30">
                 • 4 Online
               </span>
             </div>
@@ -275,7 +275,7 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
             <div className="py-3 space-y-2.5">
               <div className="p-2.5 neu-inset rounded-xl flex items-center justify-between text-xs">
                 <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 rounded-full bg-[#00E5FF] shadow-[0_0_6px_#00E5FF]"></div>
+                  <div className="w-2 h-2 rounded-full bg-[#A855F7] shadow-[0_0_6px_#A855F7]"></div>
                   <span className="font-semibold text-[#F3F6FA]">Solidity AST Engine</span>
                 </div>
                 <span className="text-[10px] font-mono text-[#CBD5E1] font-medium">0.08s avg</span>
@@ -283,7 +283,7 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
 
               <div className="p-2.5 neu-inset rounded-xl flex items-center justify-between text-xs">
                 <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 rounded-full bg-[#00E5FF] shadow-[0_0_6px_#00E5FF]"></div>
+                  <div className="w-2 h-2 rounded-full bg-[#A855F7] shadow-[0_0_6px_#A855F7]"></div>
                   <span className="font-semibold text-[#F3F6FA]">Slither Detector Pass</span>
                 </div>
                 <span className="text-[10px] font-mono text-[#CBD5E1] font-medium">0.42s avg</span>
@@ -291,7 +291,7 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
 
               <div className="p-2.5 neu-inset rounded-xl flex items-center justify-between text-xs">
                 <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 rounded-full bg-[#00E5FF] shadow-[0_0_6px_#00E5FF]"></div>
+                  <div className="w-2 h-2 rounded-full bg-[#A855F7] shadow-[0_0_6px_#A855F7]"></div>
                   <span className="font-semibold text-[#F3F6FA]">Mythril Symbolic Engine</span>
                 </div>
                 <span className="text-[10px] font-mono text-[#CBD5E1] font-medium">0.85s avg</span>
@@ -299,7 +299,7 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
 
               <div className="p-2.5 neu-inset rounded-xl flex items-center justify-between text-xs">
                 <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 rounded-full bg-[#00E5FF] shadow-[0_0_6px_#00E5FF]"></div>
+                  <div className="w-2 h-2 rounded-full bg-[#A855F7] shadow-[0_0_6px_#A855F7]"></div>
                   <span className="font-semibold text-[#F3F6FA]">EVM Gas Profiler</span>
                 </div>
                 <span className="text-[10px] font-mono text-[#CBD5E1] font-medium">0.02s avg</span>
@@ -313,8 +313,8 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
         </div>
       </div>
 
-      <div className="glass-panel rounded-2xl overflow-hidden border border-[#293B54]/70">
-        <div className="px-6 py-4 border-b border-[#293B54] flex items-center justify-between bg-[#111722]/80">
+      <div className="glass-panel rounded-2xl overflow-hidden border border-[#201F38]/70">
+        <div className="px-6 py-4 border-b border-[#201F38] flex items-center justify-between bg-[#151426]/80">
           <div>
             <h3 className="text-xs font-semibold text-[#F3F6FA] uppercase tracking-wider">
               Priority Security Vulnerabilities
@@ -329,10 +329,10 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
                 sounds.playClick();
                 onNavigateTab("findings");
               }}
-              className="neu-button px-3.5 py-1.5 rounded-xl text-xs text-[#00E5FF] font-semibold flex items-center space-x-1.5 transition-all cursor-pointer shadow-sm"
+              className="neu-button px-3.5 py-1.5 rounded-xl text-xs text-[#C084FC] hover:text-[#FFFFFF] hover:border-[#A855F7]/40 font-semibold flex items-center space-x-1.5 transition-all cursor-pointer shadow-sm"
             >
               <span>View All {findings.length} Findings</span>
-              <ChevronRight className="w-3.5 h-3.5 text-[#00E5FF]" />
+              <ChevronRight className="w-3.5 h-3.5 text-[#C084FC]" />
             </button>
           )}
         </div>
@@ -377,12 +377,12 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
                   </div>
 
                   <div className="flex items-center space-x-3 flex-shrink-0">
-                    <span className="hidden sm:inline-block text-[11px] font-mono text-[#94A3B8] px-2.5 py-1 bg-[#0B0F17] rounded-lg border border-[#1F2B3E]">
+                    <span className="hidden sm:inline-block text-[11px] font-mono text-[#94A3B8] px-2.5 py-1 bg-[#08070E] rounded-lg border border-[#201F38]">
                       Confidence: {f.confidence}
                     </span>
-                    <button className="px-3 py-1.5 bg-[#111722] hover:bg-[#17202E] text-[#F3F6FA] rounded-lg border border-[#1F2B3E] hover:border-[#00E5FF]/40 text-xs font-medium flex items-center space-x-1 transition-all">
+                    <button className="px-3 py-1.5 bg-[#151426] hover:bg-[#1A1830] text-[#F3F6FA] rounded-lg border border-[#201F38] hover:border-[#A855F7]/40 text-xs font-medium flex items-center space-x-1 transition-all cursor-pointer">
                       <span>Inspect</span>
-                      <ArrowUpRight className="w-3.5 h-3.5 text-[#00E5FF]" />
+                      <ArrowUpRight className="w-3.5 h-3.5 text-[#C084FC]" />
                     </button>
                   </div>
                 </div>
@@ -392,8 +392,8 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
         </div>
       </div>
 
-      <div className="glass-panel rounded-2xl overflow-hidden border border-[#293B54]">
-        <div className="px-6 py-4 border-b border-[#293B54] flex items-center justify-between bg-[#111722]/80">
+      <div className="glass-panel rounded-2xl overflow-hidden border border-[#201F38]">
+        <div className="px-6 py-4 border-b border-[#201F38] flex items-center justify-between bg-[#151426]/80">
           <div>
             <h3 className="text-xs font-semibold text-[#F3F6FA] uppercase tracking-wider">
               Recent Audit Executions
@@ -402,15 +402,15 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
               Historical scan results, timing benchmarks, and severity ratios
             </p>
           </div>
-          <span className="text-[11px] font-mono text-[#CBD5E1] px-2.5 py-1 bg-[#0B0F17] rounded-lg border border-[#293B54]">
+          <span className="text-[11px] font-mono text-[#CBD5E1] px-2.5 py-1 bg-[#08070E] rounded-lg border border-[#201F38]">
             {scans.length} {scans.length === 1 ? "Audit" : "Audits"} Recorded
           </span>
         </div>
 
-        <div className="divide-y divide-[#293B54]">
+        <div className="divide-y divide-[#201F38]">
           {scans.length === 0 ? (
-            <div className="crystal-placeholder crystal-facet m-5 p-10 text-center space-y-3 rounded-2xl border border-[#293B54]">
-              <div className="w-12 h-12 rounded-2xl crystal-panel flex items-center justify-center mx-auto text-[#00E5FF] border border-[#293B54]">
+            <div className="crystal-placeholder crystal-facet m-5 p-10 text-center space-y-3 rounded-2xl border border-[#201F38]">
+              <div className="w-12 h-12 rounded-2xl crystal-panel flex items-center justify-center mx-auto text-[#C084FC] border border-[#201F38]">
                 <Terminal className="w-5 h-5" />
               </div>
               <div className="text-xs text-[#F3F6FA] font-semibold">No smart contracts analyzed yet</div>
@@ -419,7 +419,7 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
               </p>
               <button
                 onClick={onOpenScanner}
-                className="btn-contrax-primary mt-2 text-xs font-bold px-4 py-2 rounded-xl transition-all shadow-lg active:scale-95 cursor-pointer"
+                className="btn-contrax-primary mt-2 text-xs font-bold px-4 py-2 rounded-xl transition-all shadow-lg active:scale-95 cursor-pointer text-[#FFFFFF]"
               >
                 Launch Scanner &rarr;
               </button>
@@ -432,7 +432,7 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
                   sounds.playClick();
                   onSelectScan && onSelectScan(scan.id);
                 }}
-                className="p-4 px-4 sm:px-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:bg-[#17202E]/60 transition-colors cursor-pointer"
+                className="p-4 px-4 sm:px-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:bg-[#151426]/60 transition-colors cursor-pointer"
               >
                 <div className="space-y-1">
                   <div className="flex items-center space-x-2">
@@ -462,7 +462,7 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
                     <span className="px-2 py-0.5 rounded-md bg-[#F59E0B]/10 text-[#F59E0B] border border-[#F59E0B]/30">
                       {scan.medium_count} MED
                     </span>
-                    <span className="px-2 py-0.5 rounded-md bg-[#00E5FF]/10 text-[#00E5FF] border border-[#00E5FF]/30">
+                    <span className="px-2 py-0.5 rounded-md bg-[#8B5CF6]/10 text-[#C084FC] border border-[#8B5CF6]/30">
                       {scan.low_count} LOW
                     </span>
                   </div>
@@ -470,10 +470,10 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({
                   <span
                     className={`px-2.5 py-1 rounded-full text-[10px] font-mono font-semibold uppercase ${
                       scan.status === "COMPLETED"
-                        ? "bg-[#00E5FF]/10 text-[#00E5FF] border border-[#00E5FF]/30"
+                        ? "bg-[#8B5CF6]/15 text-[#C084FC] border border-[#8B5CF6]/35"
                         : scan.status === "RUNNING"
                         ? "bg-[#F59E0B]/10 text-[#F59E0B] border border-[#F59E0B]/30"
-                        : "bg-[#17202E] text-[#94A3B8] border border-[#293B54]"
+                        : "bg-[#151426] text-[#94A3B8] border border-[#201F38]"
                     }`}
                   >
                     • {scan.status}

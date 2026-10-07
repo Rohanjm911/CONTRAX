@@ -68,15 +68,15 @@ export const MonacoSourceViewer: React.FC<MonacoSourceViewerProps> = ({
 
   return (
     <div className="flex flex-col h-[calc(100vh-64px)]">
-      <div className="h-10 bg-[#111722] border-b border-[#1F2B3E] px-3 sm:px-4 flex items-center justify-between text-xs select-none">
+      <div className="h-10 bg-[#0E0E18] border-b border-[#201F38] px-3 sm:px-4 flex items-center justify-between text-xs select-none">
         <div className="flex items-center space-x-2 text-[#94A3B8] font-mono text-[11px] min-w-0">
-          <FileCode className="w-3.5 h-3.5 text-[#00E5FF] shrink-0" />
+          <FileCode className="w-3.5 h-3.5 text-[#C084FC] shrink-0" />
           
           <div className="sm:hidden">
             <select
               value={selectedFile}
               onChange={(e) => onSelectFile(e.target.value)}
-              className="bg-[#0B0F17] border border-[#1F2B3E] text-[#F3F6FA] text-[11px] rounded-lg px-2 py-0.5 max-w-[130px] truncate focus:outline-none"
+              className="bg-[#08070E] border border-[#201F38] text-[#F3F6FA] text-[11px] rounded-lg px-2 py-0.5 max-w-[130px] truncate focus:outline-none"
             >
               {files.map((f) => (
                 <option key={f.file_path} value={f.file_path}>
@@ -93,7 +93,7 @@ export const MonacoSourceViewer: React.FC<MonacoSourceViewerProps> = ({
           </div>
 
           {targetLine && (
-            <span className="text-[#00E5FF] font-mono font-bold text-[10px] shrink-0">
+            <span className="text-[#C084FC] font-mono font-bold text-[10px] shrink-0">
               L{targetLine}
             </span>
           )}
@@ -103,22 +103,22 @@ export const MonacoSourceViewer: React.FC<MonacoSourceViewerProps> = ({
           {onOpenGuide && (
             <button
               onClick={onOpenGuide}
-              className="flex items-center space-x-1 px-2.5 py-1 glass-panel hover:bg-[#17202E] text-[#F3F6FA] rounded-md border border-[#293B54] hover:border-[#00E5FF]/40 transition-all font-semibold"
+              className="flex items-center space-x-1 px-2.5 py-1 glass-panel hover:bg-[#151426] text-[#F3F6FA] rounded-md border border-[#201F38] hover:border-[#A855F7]/40 transition-all font-semibold cursor-pointer"
               title="How to Use Monaco Source Viewer"
             >
-              <HelpCircle className="w-3.5 h-3.5 text-[#00E5FF]" />
+              <HelpCircle className="w-3.5 h-3.5 text-[#A855F7]" />
               <span className="font-sans text-[11px]">Guide</span>
             </button>
           )}
-          <span className="hidden sm:flex items-center space-x-1 px-2.5 py-1 bg-[#0B0F17] rounded-md border border-[#293B54] text-[#CBD5E1] font-semibold">
-            <Lock className="w-3 h-3 text-[#00E5FF]" />
+          <span className="hidden sm:flex items-center space-x-1 px-2.5 py-1 bg-[#08070E] rounded-md border border-[#201F38] text-[#CBD5E1] font-semibold">
+            <Lock className="w-3 h-3 text-[#C084FC]" />
             <span>READ ONLY</span>
           </span>
         </div>
       </div>
 
       <div className="flex flex-1 overflow-hidden">
-        <div className="hidden sm:flex w-60 bg-[#0B0F17] border-r border-[#1F2B3E] p-3 flex-col shrink-0">
+        <div className="hidden sm:flex w-60 bg-[#08070E] border-r border-[#201F38] p-3 flex-col shrink-0">
           <div className="text-[10px] font-bold text-[#94A3B8] uppercase tracking-wider mb-2 px-2 font-mono">
             Target Sources ({files.length})
           </div>
@@ -131,11 +131,11 @@ export const MonacoSourceViewer: React.FC<MonacoSourceViewerProps> = ({
                   onClick={() => onSelectFile(file.file_path)}
                   className={`w-full flex items-center space-x-2 px-2.5 py-1.5 rounded-lg text-xs text-left transition-all ${
                     isSelected
-                      ? "bg-[#17202E] text-[#F3F6FA] font-bold border border-[#00E5FF]/40"
-                      : "text-[#CBD5E1] hover:bg-[#111722] hover:text-[#F3F6FA] border border-transparent"
+                      ? "bg-[#151426] text-[#FFFFFF] font-bold border border-[#A855F7]/40 shadow-sm"
+                      : "text-[#CBD5E1] hover:bg-[#0E0E18] hover:text-[#F3F6FA] border border-transparent"
                   }`}
                 >
-                  <FileCode className={`w-3.5 h-3.5 shrink-0 ${isSelected ? "text-[#00E5FF]" : "text-[#94A3B8]"}`} />
+                  <FileCode className={`w-3.5 h-3.5 shrink-0 ${isSelected ? "text-[#C084FC]" : "text-[#94A3B8]"}`} />
                   <span className="truncate">{file.file_path}</span>
                 </button>
               );
@@ -143,7 +143,7 @@ export const MonacoSourceViewer: React.FC<MonacoSourceViewerProps> = ({
           </div>
         </div>
 
-        <div className="flex-1 bg-[#0B0E14]">
+        <div className="flex-1 bg-[#09090F]">
           <Editor
             height="100%"
             language="sol"
@@ -166,10 +166,10 @@ export const MonacoSourceViewer: React.FC<MonacoSourceViewerProps> = ({
           />
         </div>
 
-        <div className="w-72 bg-[#111722] border-l border-[#293B54] p-4 flex flex-col">
+        <div className="w-72 bg-[#0E0E18] border-l border-[#201F38] p-4 flex flex-col">
           <div className="text-[10px] font-semibold text-[#94A3B8] uppercase tracking-wider mb-3 flex items-center justify-between font-mono">
             <span>File Annotations</span>
-            <span className="font-mono text-[#F3F6FA] px-1.5 py-0.2 rounded bg-[#0B0F17] border border-[#293B54]">
+            <span className="font-mono text-[#F3F6FA] px-1.5 py-0.2 rounded bg-[#08070E] border border-[#201F38]">
               {findings.filter((f) => f.source_file === selectedFile).length}
             </span>
           </div>
@@ -191,11 +191,11 @@ export const MonacoSourceViewer: React.FC<MonacoSourceViewerProps> = ({
                         editorRef.current.setPosition({ lineNumber: f.line_number, column: 1 });
                       }
                     }}
-                    className="p-3 bg-[#0B0F17] border border-[#293B54] hover:border-[#00E5FF]/60 rounded-xl cursor-pointer transition-all text-xs"
+                    className="p-3 bg-[#08070E] border border-[#201F38] hover:border-[#A855F7]/60 rounded-xl cursor-pointer transition-all text-xs"
                   >
                     <div className="flex items-center justify-between font-mono text-[10px]">
                       <span className={`font-bold ${
-                        f.severity === "CRITICAL" ? "text-[#EF4444]" : f.severity === "HIGH" ? "text-[#F97316]" : f.severity === "MEDIUM" ? "text-[#F59E0B]" : "text-[#00E5FF]"
+                        f.severity === "CRITICAL" ? "text-[#EF4444]" : f.severity === "HIGH" ? "text-[#F97316]" : f.severity === "MEDIUM" ? "text-[#F59E0B]" : "text-[#C084FC]"
                       }`}>
                         {f.severity}
                       </span>

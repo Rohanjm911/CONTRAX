@@ -24,7 +24,7 @@ export const ContraxLogo: React.FC<ContraxLogoProps> = ({
           src="/logo_full.png"
           alt="CONTRAX - Cybersecurity Analysis Workbench"
           style={{ height: size ? `${size}px` : "40px" }}
-          className="w-auto max-w-full object-contain transition-all duration-300 drop-shadow-[0_2px_12px_rgba(255,103,31,0.25)] group-hover:drop-shadow-[0_0_20px_rgba(34,197,94,0.45)] group-hover:scale-[1.02]"
+          className="w-auto max-w-full object-contain transition-all duration-300 drop-shadow-[0_2px_12px_rgba(168,85,247,0.35)] group-hover:drop-shadow-[0_0_20px_rgba(0,229,255,0.5)] group-hover:scale-[1.02]"
         />
       </div>
     );
@@ -40,12 +40,12 @@ export const ContraxLogo: React.FC<ContraxLogoProps> = ({
             width={size}
             height={size}
             style={{ width: `${size}px`, height: `${size}px` }}
-            className="object-contain transition-all duration-300 drop-shadow-[0_2px_10px_rgba(255,103,31,0.35)] group-hover:drop-shadow-[0_0_16px_rgba(34,197,94,0.55)]"
+            className="object-contain transition-all duration-300 drop-shadow-[0_2px_10px_rgba(168,85,247,0.4)] group-hover:drop-shadow-[0_0_18px_rgba(0,229,255,0.6)]"
           />
           {animated && (
             <span
-              className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-emerald-400 animate-ping opacity-75"
-              style={{ animationDuration: "3s" }}
+              className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-[#A855F7] animate-ping opacity-75 shadow-[0_0_6px_#A855F7]"
+              style={{ animationDuration: "2.8s" }}
             />
           )}
         </div>
@@ -54,10 +54,10 @@ export const ContraxLogo: React.FC<ContraxLogoProps> = ({
       {showText && (
         <div className="flex flex-col justify-center">
           <div className="flex items-center space-x-2">
-            <span className="font-bold tracking-[0.16em] text-base font-mono leading-none bg-gradient-to-r from-[#FF671F] via-[#FFFFFF] to-[#22C55E] bg-clip-text text-transparent">
+            <span className="font-bold tracking-[0.16em] text-base font-mono leading-none bg-gradient-to-r from-[#C084FC] via-[#F3F4F6] to-[#00E5FF] bg-clip-text text-transparent">
               CONTRAX
             </span>
-            <span className="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 uppercase tracking-wider">
+            <span className="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded bg-[#8B5CF6]/15 text-[#C084FC] border border-[#8B5CF6]/35 uppercase tracking-wider">
               Workbench
             </span>
           </div>
