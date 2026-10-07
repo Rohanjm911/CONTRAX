@@ -13,8 +13,8 @@
 [![Python Version](https://img.shields.io/badge/Python-3.11%2B-00E5FF?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110%2B-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Next.js](https://img.shields.io/badge/Next.js-14.2%2B-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
-[![Theme: Tactical Radar](https://img.shields.io/badge/Theme-Tactical%20Radar-0B0E14?style=for-the-badge&color=00E5FF)](https://github.com/Rohanjm911/CONTRAX)
-[![Brand: Tricolor Saffron & Emerald](https://img.shields.io/badge/Brand-Saffron%20%26%20Emerald-FF671F?style=for-the-badge)](https://github.com/Rohanjm911/CONTRAX)
+[![Theme: Cyberpunk Violet](https://img.shields.io/badge/Theme-Cyberpunk%20Violet-09090F?style=for-the-badge&color=8B5CF6)](https://github.com/Rohanjm911/CONTRAX)
+[![Style: Neu--Glass Tactile](https://img.shields.io/badge/Style-Neu--Glass%20Hybrid-A855F7?style=for-the-badge)](https://github.com/Rohanjm911/CONTRAX)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![Security Standard](https://img.shields.io/badge/Security-SWC%20Registry-EF4444?style=for-the-badge)](https://swcregistry.io/)
 
@@ -197,25 +197,26 @@ flowchart TD
 
 ---
 
-## 🎨 Design System: Tactical Cyan & Amber Radar
+## 🎨 Design System: Cyberpunk Violet & Electric Purple (Neu-Glass Hybrid)
 
-CONTRAX utilizes a military aerospace radar design language for zero visual fatigue and instant telemetry discernment:
+CONTRAX utilizes a state-of-the-art **Dark Neumorphism + Frosted Glassmorphism (Neu-Glass)** tactile visual hierarchy with vibrant Cyberpunk Violet and Electric Purple accents:
 
-- **Carbon Canvas & Gunmetal Surfaces**:
-  - **Void Canvas:** `#0B0E14` (Tactical Carbon)
-  - **Surface Panels:** `#111722` (Gunmetal Base)
-  - **Elevated Cards:** `#17202E` (Gunmetal Raised)
-  - **Inset Workspaces:** `#0B0F17` (Terminal Recessed)
-  - **Hairline Steel Dividers:** `#1F2B3E` / `#293B54`
-- **Telemetry & Semantic Accents**:
-  - `PRIMARY TELEMETRY / SAFE / RADAR` &rarr; Cyber Cyan (`#00E5FF`, Glow: `rgba(0, 229, 255, 0.25)`)
+- **Midnight Obsidian Canvas & Multi-Depth Panels**:
+  - **Void Canvas:** `#09090F` (Dark Midnight Void)
+  - **Frosted Glass Panels:** `rgba(18, 17, 30, 0.82)` with `backdrop-filter: blur(20px) saturate(180%)`
+  - **Extruded Neumorphic Cards:** Tactile dual-tone bevel shadows (`7px 7px 18px rgba(0,0,0,0.85)` + `-4px -4px 12px rgba(255,255,255,0.025)`)
+  - **Debossed Inset Wells:** `#07070D` to `#0B0B14` with sunken inner shadows
+  - **Subtle Edge Lighting:** Top hairline violet borders `rgba(168, 85, 247, 0.22)`
+- **Cyberpunk Telemetry & Semantic Accents**:
+  - `PRIMARY CTA / ACCENT` &rarr; Electric Violet to Neon Cyan Gradient (`#A855F7` ➔ `#8B5CF6` ➔ `#06B6D4`)
+  - `ACTIVE TELEMETRY & GLOWS` &rarr; Neon Purple (`#C084FC`, Glow: `rgba(168, 85, 247, 0.35)`)
+  - `COMPLEMENTARY CONTRAST` &rarr; Laser Cyan (`#00E5FF` / `#06B6D4`)
   - `CAUTION / WARNING / HIGH` &rarr; Tactical Amber (`#F59E0B`, Amber Orange: `#F97316`)
   - `THREAT / CRITICAL / HAZARD` &rarr; Ruby Crimson (`#EF4444`, Alert Glow)
-  - `LOW / NOTICE` &rarr; Sky Blue (`#38BDF8`)
 - **Typography Matrix**:
-  - **Primary Metric Readouts:** `#F3F6FA` (High-Contrast Radar White)
+  - **Primary Metric Readouts:** `#F3F4F6` (High-Contrast Platinum White)
   - **Secondary Telemetry Labels:** `#94A3B8` (Tactical Slate)
-  - **Muted Coordinates & Offsets:** `#64748B` (Steel Dim)
+  - **Code & Addresses:** Cascadia Code / JetBrains Mono monospace with zero horizontal scroll clutter
 
 ---
 
